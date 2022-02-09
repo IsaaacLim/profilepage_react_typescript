@@ -17,6 +17,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-image: url("../../images/pear-dessert.jpg");
+  background-position: 0 -5rem;
+  background-size: cover;
+  background-background-repeat: no-repeat;
   color: white;
 }
 .main h1 {

@@ -15,6 +15,15 @@
   -webkit-text-fill-color: transparent;
 }
 
+@mixin background($img-path, $position: 0 0) {
+  background: {
+    image: url($img-path);
+    position: $position;
+    size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 @mixin pageTemplate() {
   padding: 0 18vw 0 18vw;
 }
@@ -32,6 +41,7 @@
 }
 .main {
   @include flexCenter(column);
+  @include background("../../images/pear-dessert.jpg", 0 -5rem);
   color: c.$white;
   h1 {
     font-family: f.$index-title;
