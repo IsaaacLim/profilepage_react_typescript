@@ -44,3 +44,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+---
+
+## Personal Notes
+
+- SASS
+  - [Intro to SASS](https://youtu.be/Zz6eOVaaelI)
+  - replacing `@import` with `@use` & `@forward` [source](https://youtu.be/CR-a8upNjJ0)
+  - watch on terminal with `sass --watch .\src\styles\sass:.\src\styles\css`
