@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+* {
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+}
+
 .bg img {
   width: 100vw;
   height: auto;
@@ -19,9 +24,29 @@
   font-size: 8vw;
 }
 .main p {
-  font-family: "Josefin Sans", sans-serif;
   font-size: 2vw;
   text-align: center;
+}
+
+.home-info-cont {
+  background-color: black;
+}
+.home-info-cont .page1 {
+  position: relative;
+}
+.home-info-cont .page1 .header {
+  padding: 0 18vw 0 18vw;
+  background: -webkit-linear-gradient(left, #e6cb8e, #cd8abd, #9c80e6, #b2e7fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 24vh;
+  font-size: 3vw;
+}
+.home-info-cont .page1 .text {
+  padding: 0 18vw 0 18vw;
+  position: absolute;
+  top: 40vh;
+  right: 0px;
 }
 
 /*# sourceMappingURL=style.css.map */

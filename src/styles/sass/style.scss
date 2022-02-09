@@ -9,6 +9,21 @@
   flex-direction: $direction;
 }
 
+@mixin gradient($direction) {
+  background: -webkit-linear-gradient($direction, c.$gradient1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin pageTemplate() {
+  padding: 0 18vw 0 18vw;
+}
+
+* {
+  font-family: f.$default;
+  color: c.$white;
+}
+
 .bg {
   img {
     width: 100vw;
@@ -23,8 +38,26 @@
     font-size: 8vw;
   }
   p {
-    font-family: f.$index-sub;
     font-size: 2vw;
     text-align: center;
+  }
+}
+
+.home-info-cont {
+  background-color: c.$black;
+  .page1 {
+    position: relative;
+    .header {
+      @include pageTemplate();
+      @include gradient(left);
+      padding-top: 24vh;
+      font-size: 3vw;
+    }
+    .text {
+      @include pageTemplate();
+      position: absolute;
+      top: 40vh;
+      right: 0px;
+    }
   }
 }
