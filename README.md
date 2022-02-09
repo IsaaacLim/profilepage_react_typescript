@@ -54,3 +54,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   - replacing `@import` with `@use` & `@forward` [source](https://youtu.be/CR-a8upNjJ0)
   - watch on terminal with `sass --watch .\src\styles\sass:.\src\styles\css`
 - [React Scroll Motion](https://www.npmjs.com/package/react-scroll-motion)
+- [React Router in Typescript](https://www.pluralsight.com/guides/react-router-typescript)
