@@ -1,0 +1,9 @@
+@use "abstracts/colors" as c;
+@use "abstracts/fonts" as f;
+
+h1 {
+  color: c.$red;
+  color: blue;
+  font: f.$font-stack;
+  font: Helvetica;
+}
