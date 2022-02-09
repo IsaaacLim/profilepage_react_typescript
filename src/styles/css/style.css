@@ -1,7 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
-h1 {
-  color: red;
-  font-family: "Lato", sans-serif;
+.bg img {
+  width: 100vw;
+  height: auto;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.main h1 {
+  font-family: "Dancing Script", cursive, sans-serif;
+  font-size: 8vw;
+}
+.main p {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2vw;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
