@@ -18,11 +18,11 @@ import {
   ZoomOut,
 } from "react-scroll-motion";
 
-export const HomeInfo = () => {
+export const About = () => {
   return (
     <div className="home-info-cont">
       <ScrollContainer>
-        <ScrollPage page={1}>
+        <ScrollPage page={0}>
           <div className="page1">
             <Animator animation={batch(ZoomIn(), FadeIn())}>
               <h2 className="header">
@@ -40,7 +40,7 @@ export const HomeInfo = () => {
             </Animator>
           </div>
         </ScrollPage>
-        <ScrollPage page={2}>
+        <ScrollPage page={1}>
           <Animator animation={FadeUp}>
             <span style={{ fontSize: "40px" }}>I'm FadeUp</span>
           </Animator>
@@ -50,4 +50,4 @@ export const HomeInfo = () => {
   );
 };
 
-export default HomeInfo;
+export default About;

@@ -29,8 +29,13 @@
 }
 
 * {
+  margin: 0;
   font-family: f.$default;
   color: c.$white;
+}
+
+body {
+  background-color: c.$black;
 }
 
 .bg {
