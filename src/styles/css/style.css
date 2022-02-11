@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 * {
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
@@ -29,7 +28,7 @@ body {
   color: white;
 }
 .main h1 {
-  font-family: "Dancing Script", cursive, sans-serif;
+  font-family: "Cardo", serif;
   font-size: 8vw;
 }
 .main p {
@@ -37,25 +36,61 @@ body {
   text-align: center;
 }
 
-.home-info-cont {
+.about-cont {
   background-color: black;
 }
-.home-info-cont .page1 {
-  position: relative;
+.about-cont .section {
+  min-height: 100vh;
+  width: auto;
 }
-.home-info-cont .page1 .header {
-  padding: 0 18vw 0 18vw;
-  background: -webkit-linear-gradient(left, #e6cb8e, #cd8abd, #9c80e6, #b2e7fc);
+.about-cont h2 {
+  background: -webkit-linear-gradient(left, #f9f7d9, #ffc1f3, #cffff3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding-top: 24vh;
+  display: inline-block;
   font-size: 3vw;
 }
-.home-info-cont .page1 .text {
-  padding: 0 18vw 0 18vw;
+.about-cont img {
+  max-width: 40vw;
+  height: auto;
+  object-fit: contain;
+}
+.about-cont #note {
+  font-family: "Cardo", serif;
+  font-weight: bold;
+  font-size: 1.2vw;
+}
+.about-cont #one {
+  position: relative;
+}
+.about-cont #one h2 {
+  margin: 0 18vw 0 18vw;
+  padding-top: 24vh;
+  font-size: 4vw;
+}
+.about-cont #one .text {
+  margin: 0 18vw 0 18vw;
   position: absolute;
   top: 40vh;
   right: 0px;
+}
+.about-cont #one img {
+  margin: 0 18vw 0 18vw;
+  max-width: 40vw;
+  height: auto;
+}
+.about-cont #three {
+  display: flex;
+}
+.about-cont #three img {
+  max-width: 50vw;
+  height: auto;
+}
+.about-cont #three h2 {
+  max-width: 20vw;
+}
+.about-cont #three p {
+  max-width: 20vw;
 }
 
 /*# sourceMappingURL=style.css.map */
