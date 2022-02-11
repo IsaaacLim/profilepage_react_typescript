@@ -1,7 +1,7 @@
 import IRoute from "../interfaces/route";
 import AboutPage from "../pages/About";
 import HomePage from "../pages/Home";
-import Works from "../pages/Works";
+import WorksPage from "../pages/Works";
 
 const routes: IRoute[] =[
 	{
@@ -17,7 +17,7 @@ const routes: IRoute[] =[
 	{
 		path: '/works',
 		name: "Works",
-		component: Works,
+		component: WorksPage,
 	},
 ]
 
