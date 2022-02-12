@@ -53,13 +53,15 @@ export const About = () => {
         <img src={Image5} alt="Hourglass" />
         <div>
           <h2>Facts my friends know about me</h2>
-          <p>
-            Badminton, volleyball, taekwondo, skateboarding, snowboarding, rock
-            climbing; hand crafting, hair cutting; roller coasters, sky diving;
-            &amp;
-            <br /> pet pug called PuiPui (a.k.a Fatty)
-          </p>
-          <p id="note">If I'm reborn, let me be a gymnast. Tqvm</p>
+          <div className="text">
+            <p>
+              Badminton, volleyball, taekwondo, skateboarding, snowboarding,
+              rock climbing; hand crafting, hair cutting; roller coasters, sky
+              diving; &amp;
+              <br /> pet pug called PuiPui (a.k.a Fatty)
+            </p>
+            <p id="note">If I'm reborn, let me be a gymnast. Tq</p>
+          </div>
         </div>
       </div>
     </div>

@@ -82,12 +82,15 @@ body {
 }
 .about-cont #sec2 {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .about-cont #sec2 #img1 {
   position: absolute;
   max-width: 18vw;
   left: 25vw;
-  top: -4vw;
+  top: 2vw;
 }
 .about-cont #sec2 #head1 {
   display: flex;
@@ -106,7 +109,7 @@ body {
   position: absolute;
   max-width: 26vw;
   right: 13vw;
-  top: 20vh;
+  top: 38vh;
 }
 .about-cont #sec2 .group1 {
   display: flex;
@@ -121,13 +124,20 @@ body {
 }
 .about-cont #sec3 {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .about-cont #sec3 img {
-  max-width: 50vw;
+  max-width: 30vw;
   height: auto;
+  margin-right: 3vw;
 }
 .about-cont #sec3 h2 {
   max-width: 20vw;
+}
+.about-cont #sec3 .text {
+  margin-top: 8vh;
+  margin-left: 6vw;
 }
 .about-cont #sec3 p {
   max-width: 20vw;
