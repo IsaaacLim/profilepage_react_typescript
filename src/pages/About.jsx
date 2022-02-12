@@ -10,19 +10,12 @@ export const About = () => {
   return (
     <div className="about-cont">
       <div className="section" id="one">
-        <h2>
-          Making my way
-          <br />
-          into the software development
-          <br />
-          industry.
-        </h2>
+        <h2>Making my way into the software development industry.</h2>
         <div className="text">
           <p>
             My name is Isaac and I'm a work in progress. While I'm still
-            <br /> gathering more experiences into my stash, I'm proud of my
-            <br />
-            skills in C, C++, HTML, CSS &amp; JavaScript
+            gathering more experiences into my stash, I'm proud of my skills in
+            C, C++, HTML, CSS &amp; JavaScript
           </p>
           <p id="note">Continue scrolling to see what I'm made of</p>
         </div>

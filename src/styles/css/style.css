@@ -58,25 +58,26 @@ body {
 .about-cont #note {
   font-family: "Cardo", serif;
   font-weight: bold;
-  font-size: 1.2vw;
+  margin-top: 5vh;
 }
 .about-cont #one {
   position: relative;
+  padding-top: 16vh;
 }
 .about-cont #one h2 {
-  margin: 0 18vw 0 18vw;
-  padding-top: 24vh;
-  font-size: 4vw;
+  margin-left: 21vw;
+  font-size: 4.5vw;
+  max-width: 60vw;
 }
 .about-cont #one .text {
-  margin: 0 18vw 0 18vw;
+  margin-right: 21vw;
+  max-width: 25vw;
   position: absolute;
-  top: 40vh;
   right: 0px;
 }
 .about-cont #one img {
-  margin: 0 18vw 0 18vw;
-  max-width: 40vw;
+  margin-left: 21vw;
+  max-width: 35vw;
   height: auto;
 }
 .about-cont #three {
