@@ -60,37 +60,76 @@ body {
   font-weight: bold;
   margin-top: 5vh;
 }
-.about-cont #one {
+.about-cont #sec1 {
   position: relative;
   padding-top: 16vh;
 }
-.about-cont #one h2 {
+.about-cont #sec1 h2 {
   margin-left: 21vw;
   font-size: 4.5vw;
   max-width: 60vw;
 }
-.about-cont #one .text {
+.about-cont #sec1 .text {
   margin-right: 21vw;
   max-width: 25vw;
   position: absolute;
   right: 0px;
 }
-.about-cont #one img {
+.about-cont #sec1 img {
   margin-left: 21vw;
   max-width: 35vw;
   height: auto;
 }
-.about-cont #three {
+.about-cont #sec2 {
+  position: relative;
+}
+.about-cont #sec2 #img1 {
+  position: absolute;
+  max-width: 18vw;
+  left: 25vw;
+  top: -4vw;
+}
+.about-cont #sec2 #head1 {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 21vw;
+  margin-bottom: 5vh;
+}
+.about-cont #sec2 #head2 {
+  margin-left: 21vw;
+  margin-bottom: 8vh;
+}
+.about-cont #sec2 #head2 h2 {
+  max-width: 40vw;
+}
+.about-cont #sec2 #img2 {
+  position: absolute;
+  max-width: 26vw;
+  right: 13vw;
+  top: 20vh;
+}
+.about-cont #sec2 .group1 {
+  display: flex;
+  align-items: center;
+  margin-left: 14vw;
+}
+.about-cont #sec2 .group1 #img3 {
+  max-width: 15vw;
+}
+.about-cont #sec2 .group1 .text {
+  max-width: 30vw;
+}
+.about-cont #sec3 {
   display: flex;
 }
-.about-cont #three img {
+.about-cont #sec3 img {
   max-width: 50vw;
   height: auto;
 }
-.about-cont #three h2 {
+.about-cont #sec3 h2 {
   max-width: 20vw;
 }
-.about-cont #three p {
+.about-cont #sec3 p {
   max-width: 20vw;
 }
 

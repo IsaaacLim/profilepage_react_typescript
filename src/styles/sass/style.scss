@@ -1,6 +1,8 @@
 @use "abstracts/colors" as c;
 @use "abstracts/fonts" as f;
 
+$margin-LR: 21vw;
+
 @mixin flexCenter($direction) {
   height: 100vh;
   display: flex;
@@ -81,7 +83,7 @@ body {
     margin-top: 5vh;
   }
 
-  #one {
+  #sec1 {
     position: relative;
     padding-top: 16vh;
     h2 {
@@ -90,21 +92,58 @@ body {
       max-width: 60vw;
     }
     .text {
-      margin-right: 21vw;
+      margin-right: $margin-LR;
       max-width: 25vw;
       position: absolute;
       right: 0px;
     }
-
     img {
-      margin-left: 21vw;
+      margin-left: $margin-LR;
       max-width: 35vw;
       height: auto;
     }
   }
-  #two {
+
+  #sec2 {
+    position: relative;
+    #img1 {
+      position: absolute;
+      max-width: 18vw;
+      left: 25vw;
+      top: -4vw;
+    }
+    #head1 {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: $margin-LR;
+      margin-bottom: 5vh;
+    }
+    #head2 {
+      margin-left: $margin-LR;
+      margin-bottom: 8vh;
+      h2 {
+        max-width: 40vw;
+      }
+    }
+    #img2 {
+      position: absolute;
+      max-width: 26vw;
+      right: 13vw;
+      top: 20vh;
+    }
+    .group1 {
+      display: flex;
+      align-items: center;
+      margin-left: 14vw;
+      #img3 {
+        max-width: 15vw;
+      }
+      .text {
+        max-width: 30vw;
+      }
+    }
   }
-  #three {
+  #sec3 {
     display: flex;
     img {
       max-width: 50vw;
