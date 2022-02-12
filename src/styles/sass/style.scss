@@ -77,6 +77,9 @@ body {
     height: auto;
     object-fit: contain;
   }
+  p {
+    font-size: 1.15vw;
+  }
   #note {
     font-family: f.$accent;
     font-weight: bold;
@@ -164,7 +167,7 @@ body {
       margin-left: 6vw;
     }
     p {
-      max-width: 20vw;
+      max-width: 21vw;
     }
   }
 }
