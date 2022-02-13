@@ -3,6 +3,7 @@
 * {
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
+  font-size: 1.15vw;
   color: white;
 }
 
@@ -36,6 +37,39 @@ body {
   text-align: center;
 }
 
+#navbar {
+  overflow: hidden;
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+#navbar a {
+  color: white;
+  text-decoration: none;
+}
+#navbar a:hover {
+  color: #cffff3;
+}
+#navbar a:active {
+  color: #ffc1f3;
+}
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+#navbar a {
+  margin-top: 3vh;
+}
+#navbar a:last-child {
+  margin-right: 10vw;
+}
+
 .about-cont {
   background-color: black;
 }
@@ -55,9 +89,6 @@ body {
   height: auto;
   object-fit: contain;
 }
-.about-cont p {
-  font-size: 1.15vw;
-}
 .about-cont #note {
   font-family: "Cardo", serif;
   font-weight: bold;
@@ -65,7 +96,7 @@ body {
 }
 .about-cont #sec1 {
   position: relative;
-  padding-top: 16vh;
+  padding-top: 10vh;
 }
 .about-cont #sec1 h2 {
   margin-left: 21vw;

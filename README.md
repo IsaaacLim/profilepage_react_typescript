@@ -56,3 +56,50 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - [React Scroll Motion](https://www.npmjs.com/package/react-scroll-motion)
 - [React Router in Typescript](https://www.pluralsight.com/guides/react-router-typescript)
 - Illustration [source](https://themeisle.com/illustrations/)
+- Sticky navbar. Issue with not being able to click the links after scroll is the `z-index`
+
+  - Before that, found default method to make a sticky-navbar using `position: fixed`, and translated the syntax for typescript
+
+  ```
+  /* --- JavaScript --- */
+  // When the user scrolls the page, execute myFunction
+  window.onscroll = function() {myFunction()};
+
+  // Get the navbar
+  var navbar = document.getElementById("navbar");
+
+  // Get the offset position of the navbar
+  var sticky = navbar.offsetTop;
+
+  // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+
+  /* --- TypeScript --- */
+  window.onscroll = function () {
+    myFunction();
+  };
+  var navbar = document.getElementById("navbar");
+  var element = document.querySelector("#navbar");
+  if (element !== null) {
+    if (element instanceof HTMLElement) var sticky = element.offsetTop;
+  }
+  function myFunction() {
+    if (navbar !== null) {
+      if (window.scrollY >= sticky) {
+        navbar.classList.add("sticky");
+        console.log("added");
+      } else {
+        navbar.classList.remove("sticky");
+        console.log("removed");
+      }
+    }
+  }
+  ```
+
+  Sources: [Using fixed](https://www.w3schools.com/howto/howto_js_navbar_sticky.asp), [TypeScript for .offsetTop](https://github.com/microsoft/TypeScript/issues/34694)

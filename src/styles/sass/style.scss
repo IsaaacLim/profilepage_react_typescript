@@ -3,6 +3,13 @@
 
 $margin-LR: 21vw;
 
+* {
+  margin: 0;
+  font-family: f.$default;
+  font-size: 1.15vw;
+  color: c.$white;
+}
+
 @mixin flexCenter($direction) {
   height: 100vh;
   display: flex;
@@ -30,10 +37,17 @@ $margin-LR: 21vw;
   margin: 0 18vw 0 18vw;
 }
 
-* {
-  margin: 0;
-  font-family: f.$default;
-  color: c.$white;
+@mixin links($link: c.$white, $hover: c.$arctic, $active: c.$lavender-pink) {
+  a {
+    color: $link;
+    text-decoration: none;
+    &:hover {
+      color: $hover;
+    }
+    &:active {
+      color: $active;
+    }
+  }
 }
 
 body {
@@ -61,6 +75,41 @@ body {
   }
 }
 
+#navbar {
+  @include links();
+  overflow: hidden;
+  a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  a {
+    margin-top: 3vh;
+  }
+  a:last-child {
+    margin-right: 10vw;
+  }
+}
+
+// .sticky {
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   z-index: 50;
+// }
+
+// .sticky + .navbar {
+//   padding-top: 60px;
+// }
+
 .about-cont {
   background-color: c.$black;
   .section {
@@ -77,9 +126,7 @@ body {
     height: auto;
     object-fit: contain;
   }
-  p {
-    font-size: 1.15vw;
-  }
+
   #note {
     font-family: f.$accent;
     font-weight: bold;
@@ -88,7 +135,7 @@ body {
 
   #sec1 {
     position: relative;
-    padding-top: 16vh;
+    padding-top: 10vh;
     h2 {
       margin-left: 21vw;
       font-size: 4.5vw;
