@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
 * {
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
@@ -67,6 +68,7 @@ body {
   margin-right: 10vw;
 }
 
+/********************* About Page**********************************************/
 .about-cont {
   background-color: black;
 }
@@ -174,8 +176,9 @@ body {
   max-width: 21vw;
 }
 
+/********************* React-spring Deck *************************************/
 .works-cont {
-  background: #d885a3;
+  background: #7897ab;
   cursor: url("https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png") 39 39, auto;
   display: flex;
   align-items: center;
@@ -185,25 +188,19 @@ body {
 
 .deck {
   position: absolute;
-  width: 300px;
-  height: 200px;
   will-change: transform;
   display: flex;
   align-items: center;
   justify-content: center;
   touch-action: none;
 }
-
-.deck > div {
+.deck .content {
   background-color: white;
-  background-size: auto 85%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 45vh;
-  height: 85vh;
+  width: 55vw;
+  height: 80vh;
   will-change: transform;
-  border-radius: 10px;
-  box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+  border-radius: 0.5rem;
+  box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.7), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
 }
 
 html,
@@ -212,6 +209,48 @@ body,
 #root > div {
   max-width: 100%;
   height: 100%;
+  overflow-x: hidden;
+}
+
+.deck p,
+.deck li {
+  color: black;
+  font-family: "Cardo", serif;
+  font-size: 1vw;
+}
+.deck .content {
+  box-sizing: border-box;
+  user-select: none;
+  padding: 0.5vw;
+  display: flex;
+}
+.deck #title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 3vw;
+  margin: 3vh 0;
+  display: flex;
+  justify-content: center;
+  border-style: none none solid none;
+  border-color: #655d8a;
+  border-width: thin;
+}
+.deck #subtitle {
+  font-weight: bold;
+  margin-top: 1vh;
+}
+.deck ul {
+  padding-left: 2vw;
+}
+.deck .img-placeholder {
+  background-color: #cacaca;
+  display: flex;
+}
+.deck .img-placeholder img {
+  max-width: 30vw;
+  object-fit: cover;
+}
+.deck .txt-placeholder {
+  padding-left: 1vw;
 }
 
 /*# sourceMappingURL=style.css.map */

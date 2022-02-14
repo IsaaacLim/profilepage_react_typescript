@@ -2,21 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import { useSprings, animated, to as interpolate } from "@react-spring/web";
 import { useDrag } from "react-use-gesture";
-
-const cards = [
-  {
-    img: "../images/pear-dessert.jpg",
-    text: "text1",
-  },
-  {
-    img: "https://pbs.twimg.com/profile_images/1342768807891378178/8le-DzgC_400x400.jpg",
-    text: "text2",
-  },
-  {
-    img: "https://upload.wikimedia.org/wikipedia/en/5/53/RWS_Tarot_16_Tower.jpg",
-    text: "text3",
-  },
-];
+import cards from "../config/works";
 
 // HELPERS to curate spring data/values that are later being interpolated into css
 const to = (i: number) => ({
@@ -29,9 +15,7 @@ const to = (i: number) => ({
 const from = (_i: number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
 // Transforms the positions of the cards (remove rotateX for flat-view)
 const trans = (r: number, s: number) =>
-  `perspective(1500px) rotateX(30deg) rotateY(${
-    r / 10
-  }deg) rotateZ(${r}deg) scale(${s})`;
+  `perspective(1500px) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`; //rotateX(30deg)
 
 function Deck() {
   const [gone] = useState(() => new Set()); // Flag when all cards are flickered out
@@ -49,7 +33,7 @@ function Deck() {
         if (index !== i) return; // Only interested in changing spring-data for the current spring
         const isGone = gone.has(index);
         const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0; // When a card is 'gone' it flies out left or right, otherwise goes back to zero
-        const rot = mx / 100 + (isGone ? dir * 10 * velocity * 2 : 0); // How much the card tilts, flicking it harder makes it rotate faster
+        const rot = mx / 100 + (isGone ? dir * 10 * velocity : 0); // How much the card tilts, flicking it harder makes it rotate faster
         const scale = down ? 1.1 : 1; // Active cards lift up a bit
         return {
           x,
@@ -76,11 +60,42 @@ function Deck() {
               {...bind(i)}
               style={{
                 transform: interpolate([rot, scale], trans),
-                backgroundImage: `url(${cards[i].img})`,
+                // backgroundImage: `url(${cards[i].img})`,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
               }}
-            />
+            >
+              <div className="content">
+                <div className="img-placeholder">
+                  <img src={cards[i].img} alt="random" />
+                </div>
+                <div className="txt-placeholder">
+                  <p id="title">{cards[i].title}</p>
+                  <div>
+                    <p id="subtitle">Description:</p>
+                    <ul>
+                      {cards[i].description.map((text, index) => {
+                        return <li key={index}>{text}</li>;
+                      })}
+                    </ul>
+                  </div>
+                  <div>
+                    <p id="subtitle">Tech:</p>
+                    <p>{cards[i].tech}</p>
+                  </div>
+                  <div>
+                    <p id="subtitle">Example features:</p>
+                    <ul>
+                      {cards[i].features.map((text, index) => {
+                        return <li key={index}>{text}</li>;
+                      })}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </animated.div>
           }
-          <span>{cards[i].text}</span>
         </animated.div>
       ))}
     </>

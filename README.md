@@ -103,3 +103,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   ```
 
   Sources: [Using fixed](https://www.w3schools.com/howto/howto_js_navbar_sticky.asp), [TypeScript for .offsetTop](https://github.com/microsoft/TypeScript/issues/34694)
+
+### To fix
+
+- React spring image source location
