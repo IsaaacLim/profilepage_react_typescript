@@ -210,9 +210,7 @@ body {
 // --- Default deck style structure from Docs ---
 .works-cont {
   background: c.$air-force;
-  cursor: url("https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png")
-      39 39,
-    auto;
+  cursor: url(../../images/cursor.png) 39 39, auto;
   display: flex;
   align-items: center;
   height: 100%;
@@ -261,7 +259,7 @@ body,
   }
   .content {
     box-sizing: border-box;
-    user-select: none;
+    // user-select: none;
     padding: 0.5vw;
     display: flex;
   }
@@ -285,12 +283,17 @@ body,
   .img-placeholder {
     background-color: rgb(202, 202, 202);
     display: flex;
-
     img {
-      max-width: 30vw;
+      width: 30vw;
       // max-height: 60vh;
       object-fit: cover;
     }
+  }
+  .img-cover {
+    position: absolute;
+    width: 30vw;
+    height: 78vh;
+    z-index: 40;
   }
   .txt-placeholder {
     padding-left: 1vw;

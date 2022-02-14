@@ -1,12 +1,11 @@
 import IWork from "../interfaces/work"
-import IMG from "../../public/logo192.png";
-import IMG2 from "../images/pear-dessert.jpg";
+import TMP from "../images/pear-dessert.jpg";
 
 
 const cards: IWork[] = [
 	{
-		img: IMG2,
-		// img: "",
+		img: TMP,
+		alt: "Snapshot of game created",
 		title: "So_long",
 		description: [
 			"A small 2D game consisting of textures and sprites.",
@@ -19,14 +18,35 @@ const cards: IWork[] = [
 			"Randomized enemy patrol.",
 		],
 	},
-	// {
-	// 	// img :"https://pbs.twimg.com/profile_images/1342768807891378178/8le-DzgC_400x400.jpg",
-	// 	img: "",
-	// 	title: "Title",
-	// 	description: [],
-	// 	tech: "",
-	// 	features: [],
-	// },
+	{
+		img: "",
+		alt: "Snapshot of virtual machine created",
+		title: "Born2beRoot",
+		description: [
+			"Setup a virtual machine that functions as a remote server for a WordPress website, with lighttpd, MariaDB and PHP as its services",
+		],
+		tech: "Virtual machine, Debian, Bash, SSH",
+		features: [
+			"System administration, password policy and sudo group configuration",
+			"Setup server consisting of LVM partitions",
+			"Use only CLI",
+			"SSH service through specified port(s)",
+			"Firewall",
+			"Bash scripting to announce specified information to all logged-in users at designated time(s)",
+		],
+	},
+	{
+		img: "",
+		alt: "Snapshot of shell created",
+		title: "Minishell",
+		description: [
+			"sample text",
+		],
+		tech: "C, Shell(bash/zsh)",
+		features: [
+			"sample text",
+		],
+	},
 	// {
 	// 	img : "https://github.com/IsaaacLim/profilepage_react_typescript/blob/main/src/images/greens.png?raw=true",
 	// },

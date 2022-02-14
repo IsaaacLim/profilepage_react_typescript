@@ -178,7 +178,7 @@ body {
 /********************* React-spring Deck *************************************/
 .works-cont {
   background: #7897ab;
-  cursor: url("https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png") 39 39, auto;
+  cursor: url(../../images/cursor.png) 39 39, auto;
   display: flex;
   align-items: center;
   height: 100%;
@@ -219,7 +219,6 @@ body,
 }
 .deck .content {
   box-sizing: border-box;
-  user-select: none;
   padding: 0.5vw;
   display: flex;
 }
@@ -245,8 +244,14 @@ body,
   display: flex;
 }
 .deck .img-placeholder img {
-  max-width: 30vw;
+  width: 30vw;
   object-fit: cover;
+}
+.deck .img-cover {
+  position: absolute;
+  width: 30vw;
+  height: 78vh;
+  z-index: 40;
 }
 .deck .txt-placeholder {
   padding-left: 1vw;

@@ -60,7 +60,6 @@ function Deck() {
               {...bind(i)}
               style={{
                 transform: interpolate([rot, scale], trans),
-                // backgroundImage: `url(${cards[i].img})`,
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -68,8 +67,9 @@ function Deck() {
             >
               <div className="content">
                 <div className="img-placeholder">
-                  <img src={cards[i].img} alt="random" />
+                  <img src={cards[i].img} alt={cards[i].alt} />
                 </div>
+                <div className="img-cover" />
                 <div className="txt-placeholder">
                   <p id="title">{cards[i].title}</p>
                   <div>
