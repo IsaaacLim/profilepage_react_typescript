@@ -15,7 +15,7 @@ export const About = () => {
           <h2>Making my way into the software development industry.</h2>
           <div className="text">
             <p>
-              My name is Isaac and I'm a work in progress. While I'm still
+              My name is Isaac and I'm an upcoming Software Developer. While I'm still
               gathering more experiences into my stash, I'm proud of my skills
               in C, C++, HTML, CSS &amp; JavaScript
             </p>

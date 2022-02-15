@@ -221,16 +221,17 @@ body {
   // width: 300px;
   // height: 200px;
   will-change: transform;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; //test if needed
+  align-items: center; //test
+  justify-content: center; //test
   touch-action: none;
 
   .deck-cont {
     background-color: #fff;
+    border-radius: 0.5rem;
 
-    display: flex;
-    justify-content: center;
+    display: flex; //test
+    justify-content: center; //test
     align-items: center; //test if needed
 
     background-size: auto 85%; // test if needed
@@ -246,7 +247,7 @@ body {
     // background-repeat: no-repeat;
     // background-position: center center;
     will-change: transform;
-    border-radius: 0.5rem;
+    // border-radius: 0.5rem;
     box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.7),
       0 10px 10px -10px rgba(50, 50, 73, 0.3);
   }
@@ -301,7 +302,6 @@ body,
       width: 30vw; //need
       // max-height: 60vh;
       object-fit: cover;
-      // float: right; //test
     }
   }
   .img-cover {
