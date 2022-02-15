@@ -1,5 +1,13 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
+import Image1 from "../images/greens.png";
+import Image2 from "../images/hot-air-balloon.png";
+import Image3 from "../images/mountains.png";
+import Image4 from "../images/world-tree.png";
+import Image5 from "../images/hourglass.png";
+
+const posLeft = "21vw";
+const posRight = "55vw";
 
 // Little helpers ...
 const url = (name: string, wrap = false) =>
@@ -12,9 +20,17 @@ const url = (name: string, wrap = false) =>
 export default function Test() {
   const parallax = useRef<IParallax>(null!);
   return (
-    <div style={{ width: "100%", height: "100%", background: "#253237" }}>
+    <div
+      style={{ width: "100%", height: "100%", background: "#253237" }}
+      className="about-cont"
+    >
       <Parallax ref={parallax} pages={3}>
         {/******************* Background *************************************/}
+        <ParallaxLayer // bg 1
+          offset={0}
+          speed={1}
+          style={{ backgroundColor: "#000000" }}
+        />
         <ParallaxLayer // bg 2
           offset={1}
           speed={1}
@@ -25,7 +41,7 @@ export default function Test() {
           speed={1}
           style={{ backgroundColor: "#87BCDE" }}
         />
-        <ParallaxLayer // bg 1, placed here to overlap
+        <ParallaxLayer // bg main, placed here to overlap
           offset={0}
           speed={0}
           factor={3}
@@ -36,16 +52,18 @@ export default function Test() {
         />
         {/******************* Filler pg2 *************************************/}
         <ParallaxLayer
-          offset={1.3} // pushes it higher on pg 2
-          speed={-0.3} // -ve goes from top down
+          offset={1.1} // pushes it higher on pg 2
+          speed={-0.5} // -ve goes from top down
           style={{ pointerEvents: "none" }}
         >
           <img
-            src={url("satellite4")}
-            style={{ width: "15%", marginLeft: "70%" }}
-            alt="nothing"
+            // src={url("satellite4")}
+            src={Image2}
+            style={{ width: "25%", marginLeft: "20%" }}
+            alt="Hot air balloon"
           />
         </ParallaxLayer>
+
         {/* cloud 3, top*/}
         <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
           <img
@@ -135,54 +153,144 @@ export default function Test() {
         </ParallaxLayer>
 
         <ParallaxLayer //clients
-          offset={2}
+          offset={2.3}
           speed={-0.3}
-          style={{
-            backgroundSize: "80%",
-            backgroundPosition: "center",
-            backgroundImage: url("clients", true),
-          }}
-        />
+          style={{ marginLeft: posLeft }}
+        >
+          <img src={Image5} alt="Hourglass" style={{ width: "30%" }} />
+        </ParallaxLayer>
+
         {/******************* Main Content ***********************************/}
-        <ParallaxLayer // Main 1
+        {/* --- Page 1 --- */}
+        {/* <ParallaxLayer // Image
           offset={0}
           speed={0.1}
+          style={
+            {
+              // display: "flex",
+              // alignItems: "center",
+              // justifyContent: "center",
+            }
+          }
+          className="section"
+          id="sec1"
+        >
+          <img src={Image1} alt="Winter greens" />
+          // <img src={url("server")} style={{ width: "20%" }} alt="nothing" />
+          
+        </ParallaxLayer> */}
+
+        <ParallaxLayer
+          offset={0.4}
+          speed={0.1}
+          style={{ marginLeft: posRight }}
+          className="section"
+          id="sec1"
+        >
+          <div className="text">
+            <p>
+              My name is Isaac and I'm an upcoming Software Developer. While I'm
+              still gathering more experiences into my stash, I'm proud of my
+              skills in C, C++, HTML, CSS &amp; JavaScript
+            </p>
+            <p id="note">Continue scrolling to see what I'm made of</p>
+          </div>
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={0}
+          speed={-0.1}
           onClick={() => parallax.current.scrollTo(1)}
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            paddingLeft: posLeft,
+            paddingTop: "8vw",
+          }}
+          className="section"
+          id="sec1"
+        >
+          <h2>Making my way into the software development industry.</h2>
+        </ParallaxLayer>
+
+        {/* --- Page 2 --- */}
+        <ParallaxLayer
+          offset={1.7}
+          speed={0.1}
+          style={{
+            marginLeft: posLeft,
+            paddingLeft: "8vw",
+            maxWidth: "30vw",
           }}
         >
-          <img src={url("server")} style={{ width: "20%" }} alt="nothing" />
+          <div>
+            <p>
+              My talent lies within my ability to think critically.
+              <br />
+              My passion is in creating aesthetically pleasing work. Technology
+              sector? Yes please!
+            </p>
+            <p id="note">Don't forget to check out my 'Works'</p>
+          </div>
         </ParallaxLayer>
-        <ParallaxLayer // Main 2
+
+        <ParallaxLayer
+          offset={1.45}
+          speed={0.1}
+          style={{ marginLeft: posLeft, maxWidth: "40vw" }}
+          // className="section"
+          // id="sec2"
+        >
+          {/* <div id="head2"> */}
+          <h2>Something tells me I'm on the right path.</h2>
+          {/* </div> */}
+        </ParallaxLayer>
+
+        <ParallaxLayer
           offset={1}
           speed={0.1}
           onClick={() => parallax.current.scrollTo(2)}
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            paddingLeft: posRight,
+            paddingTop: "8vw",
           }}
         >
-          <img src={url("bash")} style={{ width: "40%" }} alt="nothing" />
+          <h2>
+            Chemical engineer,
+            <br />
+            Artist,
+            <br />
+            Gen Y/Z
+          </h2>
         </ParallaxLayer>
-        <ParallaxLayer // Main 3
+
+        {/* --- Page 3 --- */}
+        <ParallaxLayer
+          offset={2.6}
+          speed={-0}
+          style={{
+            marginLeft: posLeft,
+            paddingLeft: "35vw",
+            maxWidth: "21vw",
+          }}
+        >
+          <p>
+            Badminton, volleyball, taekwondo, skateboarding, snowboarding, rock
+            climbing; hand crafting, hair cutting; roller coasters, sky diving;
+            &amp;
+            <br /> pet pug called PuiPui (a.k.a Fatty)
+          </p>
+          <p id="note">If I'm reborn, let me be a gymnast. Tq</p>
+        </ParallaxLayer>
+
+        <ParallaxLayer
           offset={2}
           speed={-0}
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            paddingLeft: "50vw",
+            paddingTop: "10vw",
           }}
           onClick={() => parallax.current.scrollTo(0)}
         >
-          <img
-            src={url("clients-main")}
-            style={{ width: "40%" }}
-            alt="nothing"
-          />
+          <h2 style={{ maxWidth: "20vw" }}>Facts my friends know about me</h2>
         </ParallaxLayer>
       </Parallax>
     </div>

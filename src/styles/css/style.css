@@ -97,15 +97,11 @@ body {
   padding-top: 10vh;
 }
 .about-cont #sec1 h2 {
-  margin-left: 21vw;
   font-size: 4.5vw;
   max-width: 60vw;
 }
 .about-cont #sec1 .text {
-  margin-right: 21vw;
   max-width: 25vw;
-  position: absolute;
-  right: 0px;
 }
 .about-cont #sec1 img {
   margin-left: 21vw;

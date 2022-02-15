@@ -100,13 +100,13 @@ body {
 .about-cont {
   background-color: c.$black;
   .section {
-    min-height: 100vh;
-    width: auto;
+    min-height: 100vh; // not needed
+    width: auto; //not needed
   }
   h2 {
-    @include gradient(left);
-    display: inline-block;
-    font-size: 3vw;
+    @include gradient(left); // need
+    display: inline-block; // need
+    font-size: 3vw; // need
   }
   img {
     max-width: 40vw;
@@ -124,20 +124,20 @@ body {
     position: relative;
     padding-top: 10vh;
     h2 {
-      margin-left: 21vw;
-      font-size: 4.5vw;
-      max-width: 60vw;
+      // margin-left: 21vw; // NO
+      font-size: 4.5vw; //yes
+      max-width: 60vw; //yes
     }
     .text {
-      margin-right: $margin-LR;
-      max-width: 25vw;
-      position: absolute;
-      right: 0px;
+      // margin-right: $margin-LR; //not needed
+      max-width: 25vw; // need
+      // position: absolute; //not needed
+      // right: 0px; // not needed
     }
     img {
-      margin-left: $margin-LR;
-      max-width: 35vw;
-      height: auto;
+      margin-left: $margin-LR; // NO
+      max-width: 35vw; // maybe
+      height: auto; // NO
     }
   }
 
@@ -146,23 +146,25 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    // Remove. hot air balloon, not needed
     #img1 {
       position: absolute;
       max-width: 18vw;
       left: 25vw;
       top: 2vw;
     }
+    // Remove
     #head1 {
-      display: flex;
-      justify-content: flex-end;
-      margin-right: $margin-LR;
-      margin-bottom: 5vh;
+      display: flex; //NO
+      justify-content: flex-end; // NO
+      margin-right: $margin-LR; // NO
+      margin-bottom: 5vh; //NO
     }
     #head2 {
-      margin-left: $margin-LR;
-      margin-bottom: 8vh;
+      margin-left: $margin-LR; // No
+      margin-bottom: 8vh; //No
       h2 {
-        max-width: 40vw;
+        max-width: 40vw; //Yes
       }
     }
     #img2 {
