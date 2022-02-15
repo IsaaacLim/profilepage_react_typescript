@@ -5,4 +5,9 @@ export default interface IWork {
 	description: string[];
 	tech: string;
 	features: string[];
+	css: { //to override default css (used for Deck Cover)
+		backgroundImage: string,  
+		color: string, 
+		listStyle: string,
+	};
 }

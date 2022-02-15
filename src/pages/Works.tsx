@@ -60,10 +60,13 @@ function Deck() {
               {...bind(i)}
               style={{
                 transform: interpolate([rot, scale], trans),
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
+                // display: "flex",
+                // justifyContent: "center",
+                // alignItems: "center", // moved to .deck > div
+                backgroundImage: `url(${cards[i].css.backgroundImage})`,
               }}
+              className="deck-cont"
+              // style={cards[i].css}
             >
               <div className="content">
                 <div className="img-placeholder">
@@ -71,22 +74,33 @@ function Deck() {
                 </div>
                 <div className="img-cover" />
                 <div className="txt-placeholder">
-                  <p id="title">{cards[i].title}</p>
+                  <p
+                    id="title"
+                    style={{ borderColor: `${cards[i].css.color}` }}
+                  >
+                    {cards[i].title}
+                  </p>
                   <div>
-                    <p id="subtitle">Description:</p>
-                    <ul>
+                    <p id="subtitle" style={{ color: `${cards[i].css.color}` }}>
+                      Description:
+                    </p>
+                    <ul style={{ listStyle: `${cards[i].css.listStyle}` }}>
                       {cards[i].description.map((text, index) => {
                         return <li key={index}>{text}</li>;
                       })}
                     </ul>
                   </div>
                   <div>
-                    <p id="subtitle">Tech:</p>
+                    <p id="subtitle" style={{ color: `${cards[i].css.color}` }}>
+                      Tech:
+                    </p>
                     <p>{cards[i].tech}</p>
                   </div>
                   <div>
-                    <p id="subtitle">Example features:</p>
-                    <ul>
+                    <p id="subtitle" style={{ color: `${cards[i].css.color}` }}>
+                      Example Features:
+                    </p>
+                    <ul style={{ listStyle: `${cards[i].css.listStyle}` }}>
                       {cards[i].features.map((text, index) => {
                         return <li key={index}>{text}</li>;
                       })}
@@ -104,9 +118,12 @@ function Deck() {
 
 const Works = () => {
   return (
-    <div className="works-cont">
-      <Deck />
-      {/* <NavBar /> */}
+    <div>
+      {/* <p>hello</p> */}
+      <div className="works-cont">
+        <Deck />
+        {/* <NavBar /> */}
+      </div>
     </div>
   );
 };
