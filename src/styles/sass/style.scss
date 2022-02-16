@@ -124,15 +124,15 @@ body {
     position: relative;
     padding-top: 10vh;
     h2 {
-      // margin-left: 21vw; // NO
+      margin-left: 21vw; // NO
       font-size: 4.5vw; //yes
       max-width: 60vw; //yes
     }
     .text {
-      // margin-right: $margin-LR; //not needed
+      margin-right: $margin-LR; //not needed
       max-width: 25vw; // need
-      // position: absolute; //not needed
-      // right: 0px; // not needed
+      position: absolute; //not needed
+      right: 0px; // not needed
     }
     img {
       margin-left: $margin-LR; // NO
