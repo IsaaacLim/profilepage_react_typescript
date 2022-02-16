@@ -1,6 +1,9 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import NavBar from "../components/NavBar";
+import Slider from "../components/NavSlider";
+import routes from "../config/routes";
+import INav from "../interfaces/navbar";
 import Image1 from "../images/greens.png";
 import Image2 from "../images/hot-air-balloon.png";
 import Image3 from "../images/mountains.png";
@@ -23,6 +26,20 @@ import Cloud from "../images/cloud.svg";
  * Speed: -ve val for up-down motion, +ve val for down-up motion
  */
 
+const home = routes[0];
+const works = routes[2];
+
+const NavItems: INav[] = [
+  {
+    navName: home.name,
+    navLink: home.path,
+  },
+  {
+    navName: works.name,
+    navLink: works.path,
+  },
+];
+
 const posLeft = "21vw";
 const posRight = "55vw";
 
@@ -41,7 +58,12 @@ export default function Test() {
           sticky={{ start: 0, end: 2 }}
           style={{ inset: "1.5vw 65vw", width: "25vw", height: "0" }}
         >
-          <NavBar />
+          {/* <NavBar /> */}
+          <div className="navbar" id="small">
+            <Slider navItems={NavItems} navSize="small">
+              Slide.
+            </Slider>
+          </div>
         </ParallaxLayer>
 
         {/******************* Background *************************************/}
