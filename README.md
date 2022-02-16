@@ -109,9 +109,12 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### To fix
 
-- css `vh` to `vw`
+- css
+  - `vh` to `vw`
+  - kebab case or camel case
 - About page
   - arrange About pages together, use Z axis to arrange
   - no text, image highlight
   - modularize padding/margin values
 - test on other browsers, eg: -webkit-user-select & user-select
+- change config file name

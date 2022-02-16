@@ -4,8 +4,6 @@ import { useDrag } from "react-use-gesture";
 import { useNavigate } from "react-router-dom";
 import INav from "../interfaces/navbar";
 
-import styles from "./styles.module.css"; // tmp
-
 const dst = 310;
 const left = {
   bg: `linear-gradient(120deg, #f093fb 0%, #f5576c 100%)`,

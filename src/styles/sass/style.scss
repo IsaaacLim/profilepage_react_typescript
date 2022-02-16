@@ -76,6 +76,14 @@ body {
 }
 
 /********************* Nav Bar*************************************************/
+// Nav Slider parent div
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 100%; //change
+  justify-content: center; //change
+}
+
 // Nav Slider, may have 2 sizes, #big or #small
 .nav-cont {
   position: relative; // test
