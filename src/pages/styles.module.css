@@ -50,6 +50,11 @@
   background-color: white;
 }
 
+.text {
+  position: absolute;
+  justify-self: center;
+  font-size: 3vw;
+}
 .container {
   display: flex;
   align-items: center;

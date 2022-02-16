@@ -6,28 +6,35 @@ import styles from "./styles.module.css";
 
 const left = {
   bg: `linear-gradient(120deg, #f093fb 0%, #f5576c 100%)`,
-  justifySelf: "end",
+  justifySelf: "end", // pos white circle to right
+  content: "About", // background text
 };
 const right = {
   bg: `linear-gradient(120deg, #96fbc4 0%, #f9f586 100%)`,
-  justifySelf: "start",
+  justifySelf: "start", // pos white circle to left
+  content: "Works", //background text
 };
 
 const Slider: React.FC = ({ children }) => {
-  const [{ x, bg, scale, justifySelf }, api] = useSpring(() => ({
-    x: 0,
-    scale: 1,
-    ...left,
+  const [{ x, bg, scale, justifySelf, content }, api] = useSpring(() => ({
+    x: 0, // Render position, default for both left and right
+    scale: 1, // Render size, default for both left and right
+    // content: "not yet", // testing
+    ...left, // Render with const Left first
+    // ...text,
   }));
   const bind = useDrag(({ active, movement: [x] }) =>
     api.start({
-      x: active ? x : 0,
-      scale: active ? 1.1 : 1,
-      ...(x < 0 ? left : right),
+      x: active ? x : 0, // Cover position
+      scale: active ? 1.1 : 1, // Cover size
+      // content: active ? "Yes" : "no",
+      ...(x < 0 ? left : right), // Drag direction, calls the const
+      // add State here
       immediate: (name) => active && name === "x",
     })
   );
 
+  // White circle animation
   const avSize = x.to({
     map: Math.abs,
     range: [50, 300],
@@ -39,15 +46,28 @@ const Slider: React.FC = ({ children }) => {
     <animated.div
       {...bind()}
       className={styles.item}
-      style={{ background: bg }}
+      style={{
+        background: bg, // Green / Red background
+      }}
     >
+      {/* Menu Words */}
+      <animated.div className={styles.text}>{content}</animated.div>
+      {/* White circle */}
       <animated.div
         className={styles.av}
         style={{ scale: avSize, justifySelf }}
       />
-      <animated.div className={styles.fg} style={{ x, scale }}>
-        {children}
-      </animated.div>
+
+      {/* Cover image */}
+      {/* <animated.div
+        className={styles.fg}
+        style={{
+          x, //enable drag animation
+          scale, // enable scale animation
+        }}
+      >
+        {children} Display text passed from Slider element
+      </animated.div> */}
     </animated.div>
   );
 };
@@ -55,7 +75,7 @@ const Slider: React.FC = ({ children }) => {
 export default function Test() {
   return (
     <div className={styles.container}>
-      <Slider>Slide.</Slider>
+      <Slider>Menu.</Slider>
     </div>
   );
 }
