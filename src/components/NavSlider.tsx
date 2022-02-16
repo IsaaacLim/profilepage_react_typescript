@@ -2,56 +2,41 @@ import React from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { useDrag } from "react-use-gesture";
 import { useNavigate } from "react-router-dom";
+import INav from "../interfaces/navbar";
 
 import styles from "./styles.module.css"; // tmp
 
-// interface NavItems {
-//   name: string;
-//   link: string;
-// }
-
-// const Navs: NavItems[] = [
-//   {
-//     name: "About",
-//     link: "/about",
-//   },
-//   {
-//     name: "Works",
-//     link: "/works",
-//   },
-// ];
-
+const dst = 310;
 const left = {
   bg: `linear-gradient(120deg, #f093fb 0%, #f5576c 100%)`,
   justifySelf: "end", // pos white circle to right
-  content: "About", // background text
 };
 const right = {
   bg: `linear-gradient(120deg, #96fbc4 0%, #f9f586 100%)`,
   justifySelf: "start", // pos white circle to left
-  content: "Works", //background text
 };
 
-const dst = 310;
-
-// const Slider: React.FC<{Inter: NavItems}> = ({ children, Inter }) => {
-const Slider: React.FC = ({ children }) => {
+// const Slider: React.FC = ({ children }) => {
+const Slider: React.FC<{ NavItems: INav[] }> = ({ children, NavItems }) => {
   let navigate = useNavigate();
-  const [{ x, scale, bg, justifySelf, content }, api] = useSpring(() => ({
+  let rightNav = NavItems[0];
+  let leftNav = NavItems[1];
+  const [{ x, scale, navText, bg, justifySelf }, api] = useSpring(() => ({
     x: 0, // Render position, default for both left and right
     scale: 1, // Render size, default for both left and right
+    navText: leftNav.navName,
     ...left, // Render with const Left first
   }));
   const bind = useDrag(({ active, movement: [x], down }) => {
-    if (!down && (x <= -dst || x >= dst)) {
-      return navigate("/works"); // trigger redirections
-      // return navigate(`${Inter[0].link}`);
+    if (!down) {
+      if (x <= -dst) return navigate(leftNav.navLink);
+      else if (x >= dst) return navigate(rightNav.navLink);
     }
     api.start({
       x: !active ? 0 : x < 0 ? (x <= -dst ? -dst : x) : x >= dst ? dst : x, // Cover position, with drag limits
       scale: active ? 1.1 : 1, // Cover size
-      ...(x < 0 ? left : right), // Drag direction, calls the const
-      // add State here
+      navText: x < 0 ? leftNav.navName : rightNav.navName,
+      ...(x < 0 ? left : right), // !!!!Drag direction, calls the const!!!!!!!!
       immediate: (name) => active && name === "x",
     });
   });
@@ -73,7 +58,7 @@ const Slider: React.FC = ({ children }) => {
       }}
     >
       {/* Menu Words */}
-      <animated.div className={styles.text}>{content}</animated.div>
+      <animated.div className={styles.text}>{navText}</animated.div>
       {/* White circle */}
       <animated.div
         className={styles.av}

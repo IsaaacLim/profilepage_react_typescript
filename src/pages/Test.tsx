@@ -1,14 +1,24 @@
 import React from "react";
 import Slider from "../components/NavSlider";
+import INav from "../interfaces/navbar";
 
 import styles from "./styles.module.css"; // tmp
 
-// export default function Test(props: NavItems) {
+const NavItems: INav[] = [
+  {
+    navName: "About",
+    navLink: "/about",
+  },
+  {
+    navName: "Works",
+    navLink: "/works",
+  },
+];
+
 export default function Test() {
   return (
     <div className={styles.container}>
-      {/* <Slider Inter={Navs}>Slide.</Slider> */}
-      <Slider>Slide.</Slider>
+      <Slider NavItems={NavItems}>Slide.</Slider>
     </div>
   );
 }
