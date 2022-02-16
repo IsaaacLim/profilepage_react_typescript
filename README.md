@@ -110,6 +110,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ### To fix
 
 - css `vh` to `vw`
-- arrange About pages together, use Z axis to arrange
-- no text, image highlight
-- modulize padding/margin values
+- About page
+  - arrange About pages together, use Z axis to arrange
+  - no text, image highlight
+  - modularize padding/margin values
+- test on other browsers, eg: -webkit-user-select & user-select

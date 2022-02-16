@@ -1,9 +1,10 @@
+/* nav-cont */
 .item {
   position: relative;
   width: 300px;
   height: 100px;
   pointer-events: auto;
-  transform-origin: 50% 50% 0px;
+  /* transform-origin: 50% 50% 0px; */
   padding-left: 32px;
   padding-right: 32px;
   box-sizing: border-box;
@@ -16,6 +17,7 @@
   user-select: none;
 }
 
+/* cover */
 .fg {
   cursor: -webkit-grab;
   background-color: #272727;
@@ -43,6 +45,7 @@
   pointer-events: none;
 }
 
+/* circle */
 .av {
   width: 60px;
   height: 60px;

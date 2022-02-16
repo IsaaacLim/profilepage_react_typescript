@@ -75,6 +75,78 @@ body {
   }
 }
 
+/********************* Nav Bar*************************************************/
+// Nav Slider, may have 2 sizes, #big or #small
+.nav-cont {
+  position: relative; // test
+  pointer-events: auto; //test
+  transform-origin: 50% 50% 0px; //test
+  box-sizing: border-box;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2); //can see?, might need to change for big and small
+  -webkit-user-select: none;
+  user-select: none;
+
+  .cover {
+    position: absolute;
+    cursor: -webkit-grab;
+    background-color: c.$royal; //change
+    color: c.$white; // change
+    height: 100%;
+    width: 100%; //test
+    display: grid;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.2); // can see?
+
+    &:active {
+      cursor: -webkit-grabbing;
+      box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.4); // can see?
+    }
+
+    * {
+      // change to specific element
+      pointer-events: none;
+    }
+  }
+
+  .circle {
+    border-radius: 50%;
+    background-color: c.$white;
+  }
+
+  .text {
+    position: absolute;
+    justify-self: center;
+  }
+  // change to vw
+  &#big {
+    width: 300px;
+    height: 100px;
+    padding: 0 32px 0 32px;
+
+    .cover {
+      font-size: 3em; // test
+      font-weight: 600; // change
+      transition: box-shadow 0.75s; //test
+    }
+
+    .circle {
+      width: 60px;
+      height: 60px;
+    }
+
+    .text {
+      font-size: 3vw;
+    }
+  }
+}
+
+// Old
 #navbar {
   @include links();
   position: sticky;

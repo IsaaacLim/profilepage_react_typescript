@@ -16,7 +16,6 @@ const right = {
   justifySelf: "start", // pos white circle to left
 };
 
-// const Slider: React.FC = ({ children }) => {
 const Slider: React.FC<{ NavItems: INav[] }> = ({ children, NavItems }) => {
   let navigate = useNavigate();
   let rightNav = NavItems[0];
@@ -52,29 +51,38 @@ const Slider: React.FC<{ NavItems: INav[] }> = ({ children, NavItems }) => {
   return (
     <animated.div
       {...bind()}
-      className={styles.item}
+      //   className={styles.item}
+      className="nav-cont"
+      id="big"
       style={{
         background: bg, // Green / Red background
       }}
     >
       {/* Menu Words */}
-      <animated.div className={styles.text}>{navText}</animated.div>
+      <animated.div
+        //   className={styles.text}
+        className="text"
+      >
+        {navText}
+      </animated.div>
       {/* White circle */}
       <animated.div
-        className={styles.av}
+        // className={styles.av}
+        className="circle"
         style={{ scale: avSize, justifySelf }}
       />
 
       {/* Cover image */}
       <animated.div
-        className={styles.fg}
+        // className={styles.fg}
+        className="cover"
         style={{
           x, //enable drag animation
           scale, // enable scale animation
         }}
       >
         {children}
-        {/*  Display text passed from Slider element */}
+        {/* Display text passed from Slider element */}
       </animated.div>
     </animated.div>
   );
