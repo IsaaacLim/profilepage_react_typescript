@@ -18,22 +18,21 @@ const right = {
 const dst = 315;
 
 const Slider: React.FC = ({ children }) => {
-  const [{ x, bg, scale, justifySelf, content }, api] = useSpring(() => ({
+  const [{ x, scale, bg, justifySelf, content }, api] = useSpring(() => ({
     x: 0, // Render position, default for both left and right
     scale: 1, // Render size, default for both left and right
-    // content: "not yet", // testing
     ...left, // Render with const Left first
-    // ...text,
   }));
-  const bind = useDrag(({ active, movement: [x] }) =>
+  const bind = useDrag(({ active, movement: [x], down }) => {
+    if (!down && (x <= dst || x >= dst)) console.log("fire");
     api.start({
       x: !active ? 0 : x < 0 ? (x <= -dst ? -dst : x) : x >= dst ? dst : x, // Cover position
       scale: active ? 1.1 : 1, // Cover size
       ...(x < 0 ? left : right), // Drag direction, calls the const
       // add State here
       immediate: (name) => active && name === "x",
-    })
-  );
+    });
+  });
 
   // White circle animation
   const avSize = x.to({
