@@ -29,36 +29,30 @@ export default function Test() {
   const parallax = useRef<IParallax>(null!);
   return (
     <div
-      style={{ width: "100%", height: "100%", background: "#1d2325" }}
+      style={{
+        width: "100%",
+        height: "100%",
+        // background: "#1d2325"
+      }}
       className="about-cont"
     >
       <Parallax ref={parallax} pages={3}>
         {/******************* Background *************************************/}
         <ParallaxLayer // bg 1
           offset={0}
-          speed={1}
+          speed={0}
           style={{ backgroundColor: "#000000" }}
         />
         <ParallaxLayer // bg 2
           offset={1}
           speed={1}
-          style={{ backgroundColor: "#000000" }}
+          style={{ backgroundColor: "#121516" }}
         />
         <ParallaxLayer // bg 3
           offset={2}
-          speed={1}
+          speed={0}
           style={{ backgroundColor: "#000000" }}
         />
-        {/* <ParallaxLayer // bg main, placed here for overlapping effect
-          offset={0}
-          speed={0}
-          factor={3}
-          style={{
-            backgroundImage: url("stars", true),
-            backgroundSize: "cover",
-          }}
-        /> */}
-
         {/*********************** Page 1 *************************************/}
         {/* --- Title --- */}
         <ParallaxLayer
