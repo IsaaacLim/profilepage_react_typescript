@@ -33,12 +33,14 @@ export default function Test() {
       style={{
         width: "100%",
         height: "100%",
-        // background: "#1d2325"
       }}
       className="about-cont"
     >
       <Parallax ref={parallax} pages={3}>
-        <ParallaxLayer sticky={{ start: 0, end: 2 }}>
+        <ParallaxLayer
+          sticky={{ start: 0, end: 2 }}
+          style={{ inset: "1.5vw 65vw", width: "25vw", height: "0" }}
+        >
           <NavBar />
         </ParallaxLayer>
 
