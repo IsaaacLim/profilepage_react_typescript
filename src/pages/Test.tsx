@@ -1,6 +1,7 @@
 import React from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { useDrag } from "react-use-gesture";
+import { useNavigate } from "react-router-dom";
 
 import styles from "./styles.module.css";
 
@@ -15,18 +16,21 @@ const right = {
   content: "Works", //background text
 };
 
-const dst = 315;
+const dst = 310;
 
 const Slider: React.FC = ({ children }) => {
+  let navigate = useNavigate();
   const [{ x, scale, bg, justifySelf, content }, api] = useSpring(() => ({
     x: 0, // Render position, default for both left and right
     scale: 1, // Render size, default for both left and right
     ...left, // Render with const Left first
   }));
   const bind = useDrag(({ active, movement: [x], down }) => {
-    if (!down && (x <= dst || x >= dst)) console.log("fire");
+    if (!down && (x <= -dst || x >= dst)) {
+      return navigate("/works"); // trigger redirections
+    }
     api.start({
-      x: !active ? 0 : x < 0 ? (x <= -dst ? -dst : x) : x >= dst ? dst : x, // Cover position
+      x: !active ? 0 : x < 0 ? (x <= -dst ? -dst : x) : x >= dst ? dst : x, // Cover position, with drag limits
       scale: active ? 1.1 : 1, // Cover size
       ...(x < 0 ? left : right), // Drag direction, calls the const
       // add State here

@@ -105,6 +105,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   Sources: [Using fixed](https://www.w3schools.com/howto/howto_js_navbar_sticky.asp), [TypeScript for .offsetTop](https://github.com/microsoft/TypeScript/issues/34694)
 
 - Customized styling for element in array [example](https://stackoverflow.com/questions/56859756/reactjs-styling-each-element-of-array-with-different-styles)
+- Programmatically Navigate with React Router, using [useNavigate](https://stackoverflow.com/questions/69868956/how-to-redirect-in-react-router-v6#:~:text=I%20found%20another%20way%20to%20do%20this%3A), also a good read about [other methods](https://www.telerik.com/blogs/programmatically-navigate-with-react-router)
 
 ### To fix
 
