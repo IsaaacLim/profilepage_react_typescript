@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
+import NavBar from "../components/NavBar";
 import Image1 from "../images/greens.png";
 import Image2 from "../images/hot-air-balloon.png";
 import Image3 from "../images/mountains.png";
@@ -37,18 +38,22 @@ export default function Test() {
       className="about-cont"
     >
       <Parallax ref={parallax} pages={3}>
+        <ParallaxLayer sticky={{ start: 0, end: 2 }}>
+          <NavBar />
+        </ParallaxLayer>
+
         {/******************* Background *************************************/}
-        <ParallaxLayer // bg 1
+        <ParallaxLayer // Page 1
           offset={0}
           speed={0}
           style={{ backgroundColor: "#000000" }}
         />
-        <ParallaxLayer // bg 2
+        <ParallaxLayer // Page 2
           offset={1}
           speed={1}
           style={{ backgroundColor: "#121516" }}
         />
-        <ParallaxLayer // bg 3
+        <ParallaxLayer // Page 3
           offset={2}
           speed={0}
           style={{ backgroundColor: "#000000" }}
@@ -73,7 +78,7 @@ export default function Test() {
         <ParallaxLayer
           offset={0.4}
           speed={0.1}
-          style={{ marginLeft: posRight, zIndex: "10" }}
+          style={{ marginLeft: "49vw", zIndex: "10" }}
         >
           <div style={{ maxWidth: "25vw" }}>
             <p>
@@ -85,30 +90,11 @@ export default function Test() {
           </div>
         </ParallaxLayer>
         {/* --- Decor --- */}
-
-        {/* <ParallaxLayer // Image
-          offset={0}
-          speed={0.1}
-          style={
-            {
-              // display: "flex",
-              // alignItems: "center",
-              // justifyContent: "center",
-            }
-          }
-          className="section"
-          id="sec1"
-        >
-          <img src={Image1} alt="Winter greens" />
-          // <img src={url("server")} style={{ width: "20%" }} alt="nothing" />
-          
-        </ParallaxLayer> */}
-
         {/* - from current to next page - */}
-        <ParallaxLayer offset={1.1} speed={-0.5} style={{ zIndex: "9" }}>
+        <ParallaxLayer offset={1.05} speed={-0.5} style={{ zIndex: "9" }}>
           <img
             src={Image2}
-            style={{ width: "25%", marginLeft: "20%" }}
+            style={{ width: "25%", marginLeft: "22vw" }}
             alt="Hot air balloon"
           />
         </ParallaxLayer>
@@ -116,7 +102,7 @@ export default function Test() {
         {/* --- Title --- */}
         <ParallaxLayer
           offset={1}
-          speed={0.1}
+          speed={0.2}
           onClick={() => parallax.current.scrollTo(2)}
           style={{
             paddingLeft: "50vw",
@@ -134,7 +120,7 @@ export default function Test() {
         </ParallaxLayer>
         <ParallaxLayer
           offset={1.45}
-          speed={0.1}
+          speed={0.15}
           style={{ marginLeft: posLeft, maxWidth: "40vw", zIndex: "20" }}
         >
           <h2>Something tells me I'm on the right path.</h2>
@@ -145,7 +131,7 @@ export default function Test() {
           speed={0.1}
           style={{
             marginLeft: posLeft,
-            paddingLeft: "8vw",
+            paddingLeft: "10vw",
             maxWidth: "30vw",
             zIndex: "10",
           }}
@@ -173,7 +159,7 @@ export default function Test() {
             alt="nothing"
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={1.68} speed={0.8} style={{ opacity: 0.8 }}>
+        <ParallaxLayer offset={1.68} speed={0.8}>
           <img
             src={Image4}
             style={{ display: "block", width: "15vw", marginLeft: "15vw" }}
@@ -188,7 +174,7 @@ export default function Test() {
               display: "block",
               width: "25vw",
               marginLeft: "60vw",
-              opacity: "0.8",
+              opacity: "0.9",
             }}
             alt="nothing"
           />
