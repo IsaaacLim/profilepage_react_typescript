@@ -15,6 +15,8 @@ const right = {
   content: "Works", //background text
 };
 
+const dst = 310;
+
 const Slider: React.FC = ({ children }) => {
   const [{ x, bg, scale, justifySelf, content }, api] = useSpring(() => ({
     x: 0, // Render position, default for both left and right
@@ -25,9 +27,8 @@ const Slider: React.FC = ({ children }) => {
   }));
   const bind = useDrag(({ active, movement: [x] }) =>
     api.start({
-      x: active ? x : 0, // Cover position
+      x: !active ? 0 : x < 0 ? (x <= -dst ? -dst : x) : x >= dst ? dst : x, // Cover position
       scale: active ? 1.1 : 1, // Cover size
-      // content: active ? "Yes" : "no",
       ...(x < 0 ? left : right), // Drag direction, calls the const
       // add State here
       immediate: (name) => active && name === "x",
@@ -37,9 +38,9 @@ const Slider: React.FC = ({ children }) => {
   // White circle animation
   const avSize = x.to({
     map: Math.abs,
-    range: [50, 300],
-    output: [0.5, 1],
-    extrapolate: "clamp",
+    range: [0, dst], // animation start - end range from Cover drag range
+    output: [0.5, 1], // Growth speed
+    extrapolate: "clamp", // Limit max size
   });
 
   return (
@@ -59,15 +60,16 @@ const Slider: React.FC = ({ children }) => {
       />
 
       {/* Cover image */}
-      {/* <animated.div
+      <animated.div
         className={styles.fg}
         style={{
           x, //enable drag animation
           scale, // enable scale animation
         }}
       >
-        {children} Display text passed from Slider element
-      </animated.div> */}
+        {children}
+        {/*  Display text passed from Slider element */}
+      </animated.div>
     </animated.div>
   );
 };
