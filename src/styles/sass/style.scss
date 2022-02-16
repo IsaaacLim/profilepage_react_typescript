@@ -129,8 +129,6 @@ body {
 
   .text {
     position: absolute;
-    margin-right: 10vw;
-    margin-left: 10vw;
   }
 }
 
@@ -141,13 +139,7 @@ body {
     .nav-cont {
       width: 24vw;
       height: 8vw;
-      padding: 0 32px 0 32px;
-
-      .cover {
-        font-size: 3.5vw;
-        font-weight: bold;
-        transition: box-shadow 0.75s; //test
-      }
+      padding: 0 2.6vw 0 2.6vw;
 
       .circle {
         width: 5vw;
@@ -156,28 +148,36 @@ body {
 
       .text {
         font-size: 3vw;
+        margin: 0 10vw 0 10vw;
+      }
+
+      .cover {
+        font-size: 3.5vw;
+        font-weight: bold;
+        transition: box-shadow 0.75s; //test
       }
     }
   }
   &#small {
     .nav-cont {
-      width: 8vw;
+      width: 12vw;
       height: 4vw;
-      padding: 0 1vw 0 1vw;
-
-      .cover {
-        font-size: 3em; // test
-        font-weight: 600; // change
-        transition: box-shadow 0.75s; //test
-      }
+      padding: 0 1.3vw 0 1.3vw;
 
       .circle {
-        width: 60px;
-        height: 60px;
+        width: 2.5vw;
+        height: 2.5vw;
       }
 
       .text {
-        font-size: 3vw;
+        font-size: 1.5vw;
+        margin: 0 5vw 0 5vw;
+      }
+
+      .cover {
+        font-size: 1.75vw;
+        font-weight: bold;
+        transition: box-shadow 0.75s; //test
       }
     }
   }

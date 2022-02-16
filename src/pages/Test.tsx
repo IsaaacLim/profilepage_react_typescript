@@ -15,7 +15,7 @@ const NavItems: INav[] = [
 
 export default function Test() {
   return (
-    <div className="navbar" id="big">
+    <div className="navbar" id="small">
       <Slider NavItems={NavItems}>Slide.</Slider>
     </div>
   );

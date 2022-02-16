@@ -84,19 +84,12 @@ body {
 }
 .nav-cont .text {
   position: absolute;
-  margin-right: 10vw;
-  margin-left: 10vw;
 }
 
 .navbar#big .nav-cont {
   width: 24vw;
   height: 8vw;
-  padding: 0 32px 0 32px;
-}
-.navbar#big .nav-cont .cover {
-  font-size: 3.5vw;
-  font-weight: bold;
-  transition: box-shadow 0.75s;
+  padding: 0 2.6vw 0 2.6vw;
 }
 .navbar#big .nav-cont .circle {
   width: 5vw;
@@ -104,23 +97,30 @@ body {
 }
 .navbar#big .nav-cont .text {
   font-size: 3vw;
+  margin: 0 10vw 0 10vw;
 }
-.navbar#small .nav-cont {
-  width: 8vw;
-  height: 4vw;
-  padding: 0 1vw 0 1vw;
-}
-.navbar#small .nav-cont .cover {
-  font-size: 3em;
-  font-weight: 600;
+.navbar#big .nav-cont .cover {
+  font-size: 3.5vw;
+  font-weight: bold;
   transition: box-shadow 0.75s;
 }
+.navbar#small .nav-cont {
+  width: 12vw;
+  height: 4vw;
+  padding: 0 1.3vw 0 1.3vw;
+}
 .navbar#small .nav-cont .circle {
-  width: 60px;
-  height: 60px;
+  width: 2.5vw;
+  height: 2.5vw;
 }
 .navbar#small .nav-cont .text {
-  font-size: 3vw;
+  font-size: 1.5vw;
+  margin: 0 5vw 0 5vw;
+}
+.navbar#small .nav-cont .cover {
+  font-size: 1.75vw;
+  font-weight: bold;
+  transition: box-shadow 0.75s;
 }
 
 #navbar {
