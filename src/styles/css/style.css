@@ -84,7 +84,8 @@ body {
 }
 .nav-cont .text {
   position: absolute;
-  justify-self: center;
+  margin-right: 10vw;
+  margin-left: 10vw;
 }
 
 .navbar#big .nav-cont {
@@ -93,13 +94,13 @@ body {
   padding: 0 32px 0 32px;
 }
 .navbar#big .nav-cont .cover {
-  font-size: 3em;
-  font-weight: 600;
+  font-size: 3.5vw;
+  font-weight: bold;
   transition: box-shadow 0.75s;
 }
 .navbar#big .nav-cont .circle {
-  width: 60px;
-  height: 60px;
+  width: 5vw;
+  height: 5vw;
 }
 .navbar#big .nav-cont .text {
   font-size: 3vw;

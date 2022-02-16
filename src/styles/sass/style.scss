@@ -129,7 +129,8 @@ body {
 
   .text {
     position: absolute;
-    justify-self: center;
+    margin-right: 10vw;
+    margin-left: 10vw;
   }
 }
 
@@ -143,14 +144,14 @@ body {
       padding: 0 32px 0 32px;
 
       .cover {
-        font-size: 3em; // test
-        font-weight: 600; // change
+        font-size: 3.5vw;
+        font-weight: bold;
         transition: box-shadow 0.75s; //test
       }
 
       .circle {
-        width: 60px;
-        height: 60px;
+        width: 5vw;
+        height: 5vw;
       }
 
       .text {

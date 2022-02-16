@@ -49,29 +49,20 @@ const Slider: React.FC<{ NavItems: INav[] }> = ({ children, NavItems }) => {
   return (
     <animated.div
       {...bind()}
-      //   className={styles.item}
       className="nav-cont"
       style={{
         background: bg, // Green / Red background
       }}
     >
       {/* Menu Words */}
-      <animated.div
-        //   className={styles.text}
-        className="text"
-      >
+      <animated.div className="text" style={{ justifySelf }}>
         {navText}
       </animated.div>
       {/* White circle */}
-      <animated.div
-        // className={styles.av}
-        className="circle"
-        style={{ scale: avSize, justifySelf }}
-      />
+      <animated.div className="circle" style={{ scale: avSize, justifySelf }} />
 
       {/* Cover image */}
       <animated.div
-        // className={styles.fg}
         className="cover"
         style={{
           x, //enable drag animation
