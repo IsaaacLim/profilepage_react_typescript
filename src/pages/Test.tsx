@@ -15,7 +15,7 @@ const right = {
   content: "Works", //background text
 };
 
-const dst = 310;
+const dst = 315;
 
 const Slider: React.FC = ({ children }) => {
   const [{ x, bg, scale, justifySelf, content }, api] = useSpring(() => ({
