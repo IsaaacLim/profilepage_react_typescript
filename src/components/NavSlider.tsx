@@ -51,7 +51,6 @@ const Slider: React.FC<{ NavItems: INav[] }> = ({ children, NavItems }) => {
       {...bind()}
       //   className={styles.item}
       className="nav-cont"
-      id="big"
       style={{
         background: bg, // Green / Red background
       }}

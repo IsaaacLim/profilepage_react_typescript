@@ -84,7 +84,7 @@ body {
   justify-content: center; //change
 }
 
-// Nav Slider, may have 2 sizes, #big or #small
+// Nav Slider const design
 .nav-cont {
   position: relative; // test
   pointer-events: auto; //test
@@ -131,29 +131,56 @@ body {
     position: absolute;
     justify-self: center;
   }
-  // change to vw
+}
+
+// NavSlider may have 2 sizes, #big or #small
+// change to vw
+.navbar {
   &#big {
-    width: 300px;
-    height: 100px;
-    padding: 0 32px 0 32px;
+    .nav-cont {
+      width: 24vw;
+      height: 8vw;
+      padding: 0 32px 0 32px;
 
-    .cover {
-      font-size: 3em; // test
-      font-weight: 600; // change
-      transition: box-shadow 0.75s; //test
+      .cover {
+        font-size: 3em; // test
+        font-weight: 600; // change
+        transition: box-shadow 0.75s; //test
+      }
+
+      .circle {
+        width: 60px;
+        height: 60px;
+      }
+
+      .text {
+        font-size: 3vw;
+      }
     }
+  }
+  &#small {
+    .nav-cont {
+      width: 8vw;
+      height: 4vw;
+      padding: 0 1vw 0 1vw;
 
-    .circle {
-      width: 60px;
-      height: 60px;
-    }
+      .cover {
+        font-size: 3em; // test
+        font-weight: 600; // change
+        transition: box-shadow 0.75s; //test
+      }
 
-    .text {
-      font-size: 3vw;
+      .circle {
+        width: 60px;
+        height: 60px;
+      }
+
+      .text {
+        font-size: 3vw;
+      }
     }
   }
 }
-
 // Old
 #navbar {
   @include links();

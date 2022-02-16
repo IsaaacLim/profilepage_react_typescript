@@ -86,21 +86,39 @@ body {
   position: absolute;
   justify-self: center;
 }
-.nav-cont#big {
-  width: 300px;
-  height: 100px;
+
+.navbar#big .nav-cont {
+  width: 24vw;
+  height: 8vw;
   padding: 0 32px 0 32px;
 }
-.nav-cont#big .cover {
+.navbar#big .nav-cont .cover {
   font-size: 3em;
   font-weight: 600;
   transition: box-shadow 0.75s;
 }
-.nav-cont#big .circle {
+.navbar#big .nav-cont .circle {
   width: 60px;
   height: 60px;
 }
-.nav-cont#big .text {
+.navbar#big .nav-cont .text {
+  font-size: 3vw;
+}
+.navbar#small .nav-cont {
+  width: 8vw;
+  height: 4vw;
+  padding: 0 1vw 0 1vw;
+}
+.navbar#small .nav-cont .cover {
+  font-size: 3em;
+  font-weight: 600;
+  transition: box-shadow 0.75s;
+}
+.navbar#small .nav-cont .circle {
+  width: 60px;
+  height: 60px;
+}
+.navbar#small .nav-cont .text {
   font-size: 3vw;
 }
 
