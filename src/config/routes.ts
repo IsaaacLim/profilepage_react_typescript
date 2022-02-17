@@ -1,28 +1,35 @@
 import IRoute from "../interfaces/route";
+import navLists from "./navLists";
 import AboutPage from "../pages/About";
 import HomePage from "../pages/Home";
 import WorksPage from "../pages/Works";
-import TestPage from "../pages/Test"; // temporary
+import TestPage from "../pages/Test";
 
-const routes: IRoute[] =[
+/**
+ * Used only in App.tsx
+ * To configure available routes
+ */
+
+const home = navLists[0]
+const about = navLists[1]
+const works = navLists[2]
+const test = navLists[3]
+
+const routes: IRoute[] = [
 	{
-		path: '/',
-		name: "Home",
-		component: HomePage,
+		path: home.path,
+		component: HomePage, 
 	},
 	{
-		path: '/about',
-		name: "About",
+		path: about.path,
 		component: AboutPage,
 	},
 	{
-		path: '/works',
-		name: "Works",
+		path: works.path,
 		component: WorksPage,
 	},
 	{
-		path: '/test',
-		name: "Test",
+		path: test.path,
 		component: TestPage,
 	},
 ]

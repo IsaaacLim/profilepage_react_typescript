@@ -1,5 +1,5 @@
 import React from "react";
-import routes from "../config/routes";
+import navLists from "../config/navLists";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
       </p>
       <nav>
         <ul>
-          {routes.map((routes, index) => (
+          {navLists.map((routes, index) => (
             <li key={index}>
               <Link to={routes.path}>
                 <span>{routes.name}</span>
