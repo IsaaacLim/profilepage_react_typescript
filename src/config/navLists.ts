@@ -1,5 +1,9 @@
 import INav from "../interfaces/navList";
 
+/**
+ * To create NavBar
+ * Also imported by `routes`
+ */
 const navLists: INav[] = [
 	{
 		path: "/",

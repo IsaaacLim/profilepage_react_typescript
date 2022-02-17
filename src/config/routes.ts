@@ -8,6 +8,9 @@ import TestPage from "../pages/Test";
 /**
  * Used only in App.tsx
  * To configure available routes
+ * 
+ * Didn't combine `routes` with `navLists` because reusing this variable in Pages
+ * 	will cause "circular dependencies"
  */
 
 const home = navLists[0]
