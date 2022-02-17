@@ -27,11 +27,13 @@ const Home = () => {
       <div className="section1">
         <div className="text">
           <div className="name-cont">
-            <h1 id="林">林</h1>
-            <animated.div style={styles} className="mid">
+            <animated.div style={styles} id="林">
+              {/* <h1 id="林">林</h1> */}林
+            </animated.div>
+            <div className="mid">
               <h1>Isaac</h1>
               <h1 id="敬佳">敬佳</h1>
-            </animated.div>
+            </div>
             <h1 className="right" id="lim">
               Lim
             </h1>

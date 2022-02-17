@@ -123,3 +123,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - change config file name
 - NavSlider BIG slide distance to match screen width
 - have Home & about render with slight animation
+- split Deck as cardDeck component
