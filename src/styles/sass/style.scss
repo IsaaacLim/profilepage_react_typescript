@@ -10,6 +10,7 @@ $margin-LR: 21vw;
   color: c.$white;
 }
 
+// not needed maybe
 @mixin flexCenter($direction) {
   height: 100vh;
   display: flex;
@@ -24,6 +25,7 @@ $margin-LR: 21vw;
   -webkit-text-fill-color: transparent;
 }
 
+//not needed
 @mixin background($img-path, $position: 0 0) {
   background: {
     image: url($img-path);
@@ -33,10 +35,12 @@ $margin-LR: 21vw;
   }
 }
 
+//not needed maybe
 @mixin pageTemplate() {
   margin: 0 18vw 0 18vw;
 }
 
+//not needed
 @mixin links($link: c.$white, $hover: c.$arctic, $active: c.$lavender-pink) {
   a {
     color: $link;
@@ -52,20 +56,6 @@ $margin-LR: 21vw;
 
 body {
   background-color: c.$black;
-}
-
-.main {
-  @include flexCenter(column);
-  @include background("../../images/pear-dessert.jpg", 0 -5rem);
-  color: c.$white;
-  h1 {
-    font-family: f.$accent;
-    font-size: 8vw;
-  }
-  p {
-    font-size: 2vw;
-    text-align: center;
-  }
 }
 
 /** 
@@ -184,8 +174,23 @@ $nav-sm: $nav-base-size / 4;
 
 /** 
  * *********** Home Page *********************************************************
- * React-card
+ * .home-cont: Home container
+ * .card-cont: Picture container
  */
+.home-cont {
+  @include flexCenter(column);
+  // @include background("../../images/pear-dessert.jpg", 0 -5rem);
+  color: c.$white;
+  h1 {
+    font-family: f.$accent;
+    font-size: 8vw;
+  }
+  p {
+    font-size: 2vw;
+    text-align: center;
+  }
+}
+
 .card-cont {
   width: 40vw;
   height: 40vw;

@@ -121,3 +121,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - test on other browsers, eg: -webkit-user-select & user-select
 - change config file name
 - NavSlider BIG slide distance to match screen width
+- have Home & about render with slight animation

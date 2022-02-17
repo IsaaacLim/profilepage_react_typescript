@@ -11,27 +11,6 @@ body {
   background-color: black;
 }
 
-.main {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-image: url("../../images/pear-dessert.jpg");
-  background-position: 0 -5rem;
-  background-size: cover;
-  background-background-repeat: no-repeat;
-  color: white;
-}
-.main h1 {
-  font-family: "Cardo", serif;
-  font-size: 8vw;
-}
-.main p {
-  font-size: 2vw;
-  text-align: center;
-}
-
 /** 
  * *********** Nav Bar *********************************************************
  * NavSlider have 2 sizes, #big & #small
@@ -128,8 +107,26 @@ body {
 
 /** 
  * *********** Home Page *********************************************************
- * React-card
+ * .home-cont: Home container
+ * .card-cont: Picture container
  */
+.home-cont {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.home-cont h1 {
+  font-family: "Cardo", serif;
+  font-size: 8vw;
+}
+.home-cont p {
+  font-size: 2vw;
+  text-align: center;
+}
+
 .card-cont {
   width: 40vw;
   height: 40vw;
