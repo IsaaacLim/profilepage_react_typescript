@@ -50,7 +50,7 @@ body {
 }
 .navbar#small {
   position: absolute;
-  inset: 1vw 80vw;
+  inset: 1vw 85vw;
   width: 6vw;
   height: 2vw;
 }
