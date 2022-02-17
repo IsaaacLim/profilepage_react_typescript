@@ -166,8 +166,9 @@ body {
   // align-items: center;
   background-color: c.$semi-black;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   .section1 {
+    padding-left: 12vw;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -211,7 +212,8 @@ body {
 
 $card-size: 25vw;
 .card-cont {
-  width: $card-size * 1.8;
+  // padding-left: 10vw;
+  width: $card-size * 2.3;
   height: 100%;
   display: flex;
   align-items: center;
