@@ -51,12 +51,7 @@ export default function About() {
       <Parallax ref={parallax} pages={3}>
         <ParallaxLayer
           sticky={{ start: 0, end: 2 }}
-          style={{
-            //   // make class & put to sass , connect
-            inset: "1vw 80vw",
-            maxWidth: "13vw",
-            height: "5vw",
-          }}
+          style={{ width: "0", height: "0" }} //prevent layer from overlapping other pages
           className="nav-sticky"
         >
           <div className="navbar" id="small">

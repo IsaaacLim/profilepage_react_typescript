@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import NavBar from "../components/NavBar";
 import { useSprings, animated, to as interpolate } from "@react-spring/web";
 import { useDrag } from "react-use-gesture";
 import cards from "../data/works";
+import NavSlider from "../components/NavSlider";
+import INav from "../interfaces/navList";
+import navLists from "../data/navLists";
 
 // HELPERS to curate spring data/values that are later being interpolated into css
 const to = (i: number) => ({
@@ -116,13 +118,18 @@ function Deck() {
   );
 }
 
+const navListSmall: INav[] = [navLists[0], navLists[1]]; // home & about
+
 const Works = () => {
   return (
     <div>
-      {/* <p>hello</p> */}
       <div className="works-cont">
+        <div className="navbar" id="small">
+          <NavSlider navItems={navListSmall} navSize="small">
+            Slide.
+          </NavSlider>
+        </div>
         <Deck />
-        {/* <NavBar /> */}
       </div>
     </div>
   );
