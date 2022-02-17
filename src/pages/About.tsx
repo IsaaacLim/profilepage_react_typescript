@@ -52,11 +52,12 @@ export default function About() {
         <ParallaxLayer
           sticky={{ start: 0, end: 2 }}
           style={{
-            // make class & put to sass , connect
-            inset: "0vw 80vw",
+            //   // make class & put to sass , connect
+            inset: "1vw 80vw",
             maxWidth: "13vw",
             height: "5vw",
           }}
+          className="nav-sticky"
         >
           <div className="navbar" id="small">
             <NavSlider navItems={navListSmall} navSize="small">

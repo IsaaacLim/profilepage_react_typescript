@@ -63,7 +63,6 @@ function useWindowWidth() {
 }
 
 /* -------- Slider Function --------------------------------------------------*/
-
 let dst: number;
 
 const left = {

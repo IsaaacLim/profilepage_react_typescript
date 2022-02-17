@@ -76,11 +76,17 @@ body {
 }
 
 /********************* Nav Bar*************************************************/
+// div for Nav Slider parent div (used by ParallaxLayer sticky)
+.nav-sticky {
+  // inset: 0vw 80vw;
+  // max-width: 13vw; // change to dynamic
+  // height: 5vw;
+  // display: inline-block;
+}
 // Nav Slider parent div
 .navbar {
   display: flex;
   align-items: center;
-  height: 100%; //change
   justify-content: center; //change
 }
 
