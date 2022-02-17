@@ -3,7 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/css/style.css";
 import routes from "./data/routes";
 
-const Home: React.FunctionComponent<{}> = (props) => {
+/**
+ * @param props None
+ * @returns Structure of routes to render each pages
+ */
+const Home: React.FunctionComponent = () => {
   return (
     <div>
       <BrowserRouter>
