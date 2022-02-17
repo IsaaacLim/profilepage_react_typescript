@@ -1,5 +1,9 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Long+Cang&display=swap");
 * {
   margin: 0;
   font-family: "Josefin Sans", sans-serif;
@@ -18,27 +22,30 @@ body {
  * .nav-cont: NavSlider item itself
  */
 .navbar#big {
-  position: absolute;
+  z-index: 50;
   bottom: 0;
-  width: 24vw;
-  height: 8vw;
+  padding-bottom: 30px;
+  width: 18vw;
+  height: 6vw;
 }
 .navbar#big .nav-cont {
-  width: 24vw;
-  height: 8vw;
-  padding: 0 2.6vw 0 2.6vw;
+  width: 18vw;
+  height: 6vw;
+  padding: 0 1.9501625135vw 0 1.9501625135vw;
+  border-radius: 3.6vw;
 }
 .navbar#big .nav-cont .circle {
-  width: 5vw;
-  height: 5vw;
+  width: 3.75vw;
+  height: 3.75vw;
 }
 .navbar#big .nav-cont .text {
-  font-size: 3vw;
-  margin: 0 10vw 0 10vw;
+  font-size: 2.25vw;
+  margin: 0 7.5vw 0 7.5vw;
 }
 .navbar#big .nav-cont .cover {
-  font-size: 3.5vw;
+  font-size: 2.6470588235vw;
   font-weight: bold;
+  border-radius: 3.6vw;
   transition: box-shadow 0.75s;
 }
 .navbar#small {
@@ -51,6 +58,7 @@ body {
   width: 6vw;
   height: 2vw;
   padding: 0 0.6500541712vw 0 0.6500541712vw;
+  border-radius: 1.2vw;
 }
 .navbar#small .nav-cont .circle {
   width: 1.25vw;
@@ -63,6 +71,7 @@ body {
 .navbar#small .nav-cont .cover {
   font-size: 0.8823529412vw;
   font-weight: bold;
+  border-radius: 1.2vw;
   transition: box-shadow 0.75s;
 }
 
@@ -74,7 +83,6 @@ body {
   display: grid;
   align-items: center;
   text-align: center;
-  border-radius: 5px;
   box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2);
   -webkit-user-select: none;
   user-select: none;
@@ -89,7 +97,6 @@ body {
   display: grid;
   align-items: center;
   text-align: center;
-  border-radius: 5px;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.2);
 }
 .nav-cont .cover:active {
@@ -114,28 +121,58 @@ body {
  */
 .home-cont {
   display: flex;
+  justify-content: center;
+}
+.home-cont .section1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.home-cont .text {
+  align-self: center;
+}
+.home-cont .text .name-cont {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 2vw;
+}
+.home-cont .text .name-cont #林,
+.home-cont .text .name-cont #敬佳 {
+  font-family: "Zhi Mang Xing", cursive;
+}
+.home-cont .text .name-cont .mid > h1 {
+  font-size: 5vw;
+}
+.home-cont #林 {
+  font-size: 7vw;
+}
+.home-cont #敬佳 {
+  font-size: 4vw;
+}
+.home-cont #lim {
+  font-size: 7vw;
+  align-self: baseline;
 }
 .home-cont h1 {
   font-family: "Cardo", serif;
-  font-size: 8vw;
+  font-size: 10vw;
 }
 .home-cont p {
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 
 .card-cont {
-  width: 40vw;
-  height: 40vw;
+  width: 45vw;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 7px;
-  background: white;
 }
 .card-cont .card {
-  width: 20vw;
-  height: 20vw;
+  width: 25vw;
+  height: 25vw;
   background: #655d8a;
   border-radius: 5px;
   transition: box-shadow 0.5s;

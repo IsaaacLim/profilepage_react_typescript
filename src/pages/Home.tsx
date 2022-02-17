@@ -11,20 +11,34 @@ const navListSmall: INav[] = [about, works];
 const Home = () => {
   return (
     <div className="home-cont">
-      <div className="text">
-        <h1>Isaac Lim</h1>
-        <p>
-          On a mission to becoming a Software Developer, <br />
-          with an interest in tasteful designs
-        </p>
+      <div className="section1">
+        <div className="text">
+          <div className="name-cont">
+            <h1 id="林">林</h1>
+            <div className="mid">
+              <h1>Isaac</h1>
+              <h1 id="敬佳">敬佳</h1>
+            </div>
+            <h1 className="right" id="lim">
+              Lim
+            </h1>
+          </div>
+          <p>
+            On a mission to becoming a Software Developer, <br />
+            with an interest in tasteful designs
+          </p>
+        </div>
+        <div className="navbar" id="big">
+          <NavSlider navItems={navListSmall} navSize="big">
+            Slide.
+          </NavSlider>
+        </div>
       </div>
       <div>
-        <Card>Hello</Card>
-      </div>
-      <div className="navbar" id="big">
-        <NavSlider navItems={navListSmall} navSize="big">
-          Slide.
-        </NavSlider>
+        <Card>
+          <img src="../images/forkey.jpg" alt="sample pic" />
+          <p>Text</p>
+        </Card>
       </div>
     </div>
   );

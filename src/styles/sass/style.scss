@@ -65,64 +65,46 @@ body {
  * .nav-cont: NavSlider item itself
  */
 // Variables for #big & #small
-$nav-base-size: 24vw;
-$nav-sm: $nav-base-size / 4;
+@mixin slider-comp-size($base-size) {
+  width: $base-size;
+  height: $base-size / 3;
+  .nav-cont {
+    width: $base-size;
+    height: $base-size / 3;
+    padding: 0 ($base-size / 9.23) 0 ($base-size / 9.23);
+    border-radius: $base-size / 5;
+
+    .circle {
+      width: $base-size / 4.8;
+      height: $base-size / 4.8;
+    }
+
+    .text {
+      font-size: $base-size / 8;
+      margin: 0 ($base-size / 2.4) 0 ($base-size / 2.4);
+    }
+
+    .cover {
+      font-size: $base-size / 6.8;
+      font-weight: bold;
+      border-radius: $base-size / 5;
+      transition: box-shadow 0.75s; //test & move out of here?
+    }
+  }
+}
+
 .navbar {
   &#big {
-    position: absolute;
-    // inset: 0vw 0vw;
+    z-index: 50;
     bottom: 0;
-    width: 24vw;
-    height: 8vw;
-    .nav-cont {
-      width: 24vw;
-      height: 8vw;
-      padding: 0 2.6vw 0 2.6vw;
-
-      .circle {
-        width: 5vw;
-        height: 5vw;
-      }
-
-      .text {
-        font-size: 3vw;
-        margin: 0 10vw 0 10vw;
-      }
-
-      .cover {
-        font-size: 3.5vw;
-        font-weight: bold;
-        transition: box-shadow 0.75s; //test
-      }
-    }
+    padding-bottom: 30px;
+    @include slider-comp-size(18vw);
   }
 
   &#small {
     position: absolute;
     inset: 1vw 80vw;
-    width: $nav-sm;
-    height: $nav-sm / 3;
-    .nav-cont {
-      width: $nav-sm;
-      height: $nav-sm / 3;
-      padding: 0 ($nav-sm / 9.23) 0 ($nav-sm / 9.23);
-
-      .circle {
-        width: $nav-sm / 4.8;
-        height: $nav-sm / 4.8;
-      }
-
-      .text {
-        font-size: $nav-sm / 8;
-        margin: 0 ($nav-sm / 2.4) 0 ($nav-sm / 2.4);
-      }
-
-      .cover {
-        font-size: $nav-sm / 6.8;
-        font-weight: bold;
-        transition: box-shadow 0.75s; //test
-      }
-    }
+    @include slider-comp-size(6vw);
   }
 }
 
@@ -135,7 +117,6 @@ $nav-sm: $nav-base-size / 4;
   display: grid;
   align-items: center;
   text-align: center;
-  border-radius: 5px;
   box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2); //can see?, might need to change for big and small
   -webkit-user-select: none;
   user-select: none;
@@ -150,7 +131,6 @@ $nav-sm: $nav-base-size / 4;
     display: grid;
     align-items: center;
     text-align: center;
-    border-radius: 5px;
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.2); // can see?
 
     &:active {
@@ -182,32 +162,69 @@ $nav-sm: $nav-base-size / 4;
 .home-cont {
   // @include flexCenter(column);
   // @include background("../../images/pear-dessert.jpg", 0 -5rem);
+  // padding: 0 10vw 0 10vw;
+  // align-items: center;
   display: flex;
+  justify-content: center;
+  .section1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .text {
+    align-self: center;
+    .name-cont {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 2vw;
+      #林,
+      #敬佳 {
+        font-family: f.$chinese2;
+        // align-self: baseline;
+      }
+      .mid > h1 {
+        font-size: 5vw;
+      }
+    }
+  }
+  #林 {
+    font-size: 7vw;
+  }
+  #敬佳 {
+    font-size: 4vw;
+  }
+  #lim {
+    font-size: 7vw;
+    align-self: baseline;
+  }
   h1 {
     font-family: f.$accent;
-    font-size: 8vw;
+    font-size: 10vw;
   }
   p {
-    font-size: 2vw;
+    font-size: 1.5vw;
     // text-align: center;
   }
 }
 
+$card-size: 25vw;
 .card-cont {
-  width: 40vw;
-  height: 40vw;
+  width: $card-size * 1.8;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden; //change
-  border-radius: 7px;
-  background: c.$white;
+  // border-radius: 7px;
+  // background: rgb(46, 45, 45);
 
   .card {
-    width: 20vw;
-    height: 20vw; //change
+    width: $card-size;
+    height: $card-size;
     background: c.$royal;
     border-radius: 5px;
+    // border-radius: $card-size / 2;
     transition: box-shadow 0.5s; // ??
     will-change: transform;
   }
