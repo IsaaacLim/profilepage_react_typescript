@@ -107,6 +107,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - Customized styling for element in array [example](https://stackoverflow.com/questions/56859756/reactjs-styling-each-element-of-array-with-different-styles)
 - Programmatically Navigate with React Router, using [useNavigate](https://stackoverflow.com/questions/69868956/how-to-redirect-in-react-router-v6#:~:text=I%20found%20another%20way%20to%20do%20this%3A), also a good read about [other methods](https://www.telerik.com/blogs/programmatically-navigate-with-react-router)
 - Hints that helped figure out how to pass props to functional components [main](https://stackoverflow.com/questions/39963565/react-passing-down-props-to-functional-components#:~:text=You%20would%20need%20to%20pass%20down%20each%20prop%20individually%20for%20each%20function%20that%20you%20needed%20to%20call), [getting the basics](https://www.freecodecamp.org/news/react-components-jsx-props-for-beginners/)
+- Finding Window width to be used as a dynamic variable [stackoverflow](https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs#:~:text=Using%20Hooks%20(React,a%20useWindowDimensions%20hook.)
 
 ### To fix
 
