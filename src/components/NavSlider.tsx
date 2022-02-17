@@ -85,7 +85,7 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   let navigate = useNavigate();
   const rightNav = navItems[0];
   const leftNav = navItems[1];
-  navSize === "small" ? (dst = width / 17) : (dst = width); // change for big slider
+  navSize === "small" ? (dst = width / 17) : (dst = width / 6); // change for big slider
   const [{ x, scale, navText, bg, justifySelf }, api] = useSpring(() => ({
     x: 0,
     scale: 1,
@@ -99,7 +99,7 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
     }
     api.start({
       x: !active ? 0 : x < 0 ? (x <= -dst ? -dst : x) : x >= dst ? dst : x,
-      scale: active ? 1.1 : 1,
+      scale: active ? 1.15 : 1.05,
       navText: x < 0 ? leftNav.name : rightNav.name,
       ...(x < 0 ? left : right),
       immediate: (name) => active && name === "x",

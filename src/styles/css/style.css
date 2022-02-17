@@ -83,7 +83,7 @@ body {
   display: grid;
   align-items: center;
   text-align: center;
-  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
   -webkit-user-select: none;
   user-select: none;
 }
@@ -120,6 +120,7 @@ body {
  * .card-cont: Picture container
  */
 .home-cont {
+  background-color: #655d8a;
   display: flex;
   justify-content: center;
 }

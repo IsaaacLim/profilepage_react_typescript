@@ -112,12 +112,12 @@ body {
 .nav-cont {
   position: relative; // test
   pointer-events: auto; //test
-  transform-origin: 50% 50% 0px; //test
+  transform-origin: 50% 50% 0px; //???
   box-sizing: border-box;
   display: grid;
   align-items: center;
   text-align: center;
-  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2); //can see?, might need to change for big and small
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
   -webkit-user-select: none;
   user-select: none;
 
@@ -127,15 +127,15 @@ body {
     background-color: c.$royal; //change
     color: c.$white; // change
     height: 100%;
-    width: 100%; //test
+    width: 100%;
     display: grid;
     align-items: center;
     text-align: center;
-    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.2); // can see?
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.2);
 
     &:active {
       cursor: -webkit-grabbing;
-      box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.4); // can see?
+      box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.4);
     }
 
     * {
@@ -164,6 +164,7 @@ body {
   // @include background("../../images/pear-dessert.jpg", 0 -5rem);
   // padding: 0 10vw 0 10vw;
   // align-items: center;
+  background-color: c.$royal;
   display: flex;
   justify-content: center;
   .section1 {
