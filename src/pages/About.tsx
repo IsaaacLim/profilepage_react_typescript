@@ -2,8 +2,8 @@ import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import NavBar from "../components/NavBar";
 import NavSlider from "../components/NavSlider";
-import navLists from "../config/navLists";
 import INav from "../interfaces/navList";
+import navLists from "../config/navLists";
 import Image1 from "../images/greens.png";
 import Image2 from "../images/hot-air-balloon.png";
 import Image3 from "../images/mountains.png";
@@ -28,7 +28,7 @@ import Cloud from "../images/cloud.svg";
 
 const home = navLists[0];
 const works = navLists[2];
-const navList_small: INav[] = [home, works]; //passed as props to NavSlider
+const navListSmall: INav[] = [home, works]; //passed as props to NavSlider
 const posLeft = "21vw";
 const posRight = "55vw";
 
@@ -49,7 +49,7 @@ export default function About() {
         >
           {/* <NavBar /> */}
           <div className="navbar" id="small">
-            <NavSlider navItems={navList_small} navSize="small">
+            <NavSlider navItems={navListSmall} navSize="small">
               Slide.
             </NavSlider>
           </div>

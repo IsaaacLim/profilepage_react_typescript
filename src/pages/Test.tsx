@@ -1,39 +1,19 @@
 import React from "react";
-import Slider from "../components/NavSlider";
-import routes from "../config/routes";
+import NavSlider from "../components/NavSlider";
 import INav from "../interfaces/navList";
+import navLists from "../config/navLists";
 
-// const about = routes[1];
-// const works = routes[2];
+const about = navLists[1];
+const works = navLists[2];
 
-// const NavItems: INav[] = [
-//   {
-//     name: about.name,
-//     path: about.path,
-//   },
-//   {
-//     name: works.name,
-//     path: works.path,
-//   },
-// ];
-
-const NavItems: INav[] = [
-  {
-    name: "About",
-    path: "/about",
-  },
-  {
-    name: "Works",
-    path: "/works",
-  },
-];
+const navListSmall: INav[] = [about, works];
 
 export default function Test() {
   return (
     <div className="navbar" id="small">
-      <Slider navItems={NavItems} navSize="small">
+      <NavSlider navItems={navListSmall} navSize="small">
         Slide.
-      </Slider>
+      </NavSlider>
     </div>
   );
 }
