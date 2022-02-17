@@ -1,7 +1,7 @@
 import React from "react";
 import NavSlider from "../components/NavSlider";
 import INav from "../interfaces/navList";
-import navLists from "../config/navLists";
+import navLists from "../data/navLists";
 
 const about = navLists[1];
 const works = navLists[2];

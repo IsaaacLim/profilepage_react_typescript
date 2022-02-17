@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import { useSprings, animated, to as interpolate } from "@react-spring/web";
 import { useDrag } from "react-use-gesture";
-import cards from "../config/works";
+import cards from "../data/works";
 
 // HELPERS to curate spring data/values that are later being interpolated into css
 const to = (i: number) => ({

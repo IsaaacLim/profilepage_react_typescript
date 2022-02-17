@@ -1,5 +1,5 @@
 import React from "react";
-import navLists from "../config/navLists";
+import navLists from "../data/navLists";
 import { Link } from "react-router-dom";
 
 const Home = () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/css/style.css";
-import routes from "./config/routes";
+import routes from "./data/routes";
 
 const Home: React.FunctionComponent<{}> = (props) => {
   return (
