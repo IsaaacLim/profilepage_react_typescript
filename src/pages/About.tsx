@@ -243,7 +243,7 @@ export default function About() {
         {/* --- Title --- */}
         <ParallaxLayer
           offset={2}
-          speed={0.1}
+          speed={-0.1}
           style={{
             paddingLeft: "52vw",
             paddingTop: "12vw",
@@ -275,7 +275,7 @@ export default function About() {
         {/* --- Decor --- */}
         <ParallaxLayer
           offset={2}
-          speed={-0.2}
+          speed={0.2}
           style={{
             display: "flex",
             alignItems: "center",
