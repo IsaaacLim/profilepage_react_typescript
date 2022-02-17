@@ -10,8 +10,8 @@ const navListSmall: INav[] = [about, works];
 
 export default function Test() {
   return (
-    <div className="navbar" id="small">
-      <NavSlider navItems={navListSmall} navSize="small">
+    <div className="navbar" id="big">
+      <NavSlider navItems={navListSmall} navSize="big">
         Slide.
       </NavSlider>
     </div>

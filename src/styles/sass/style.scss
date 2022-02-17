@@ -75,14 +75,73 @@ body {
   }
 }
 
-/********************* Nav Bar*************************************************/
-// Nav Slider parent div
+/** 
+ * *********** Nav Bar *********************************************************
+ * NavSlider have 2 sizes, #big & #small
+ * .navbar: Parent div of the NavSlider (child)
+ * .nav-cont: NavSlider item itself
+ */
+// Variables for #big & #small
+$nav-base-size: 24vw;
+$nav-sm: $nav-base-size / 4;
 .navbar {
-  position: absolute;
-  inset: 1vw 80vw;
+  // &#big .nav-cont{
+  &#big {
+    width: 24vw;
+    height: 8vw;
+    .nav-cont {
+      width: 24vw;
+      height: 8vw;
+      padding: 0 2.6vw 0 2.6vw;
+
+      .circle {
+        width: 5vw;
+        height: 5vw;
+      }
+
+      .text {
+        font-size: 3vw;
+        margin: 0 10vw 0 10vw;
+      }
+
+      .cover {
+        font-size: 3.5vw;
+        font-weight: bold;
+        transition: box-shadow 0.75s; //test
+      }
+    }
+  }
+
+  &#small {
+    position: absolute;
+    inset: 1vw 80vw;
+    width: $nav-sm;
+    height: $nav-sm / 3;
+    .nav-cont {
+      width: $nav-sm;
+      height: $nav-sm / 3;
+      padding: 0 ($nav-sm / 9.23) 0 ($nav-sm / 9.23);
+
+      .circle {
+        width: $nav-sm / 4.8;
+        height: $nav-sm / 4.8;
+      }
+
+      .text {
+        font-size: $nav-sm / 8;
+        margin: 0 ($nav-sm / 2.4) 0 ($nav-sm / 2.4);
+      }
+
+      .cover {
+        font-size: $nav-sm / 6.8;
+        font-weight: bold;
+        transition: box-shadow 0.75s; //test
+      }
+    }
+  }
 }
 
-// Nav Slider constant design between both sizes
+// Constant NavSlider design between both sizes
 .nav-cont {
   position: relative; // test
   pointer-events: auto; //test
@@ -127,59 +186,6 @@ body {
 
   .text {
     position: absolute;
-  }
-}
-
-// NavSlider have 2 sizes, #big & #small
-.navbar {
-  // &#big .nav-cont{
-  &#big {
-    .nav-cont {
-      width: 24vw;
-      height: 8vw;
-      padding: 0 2.6vw 0 2.6vw;
-
-      .circle {
-        width: 5vw;
-        height: 5vw;
-      }
-
-      .text {
-        font-size: 3vw;
-        margin: 0 10vw 0 10vw;
-      }
-
-      .cover {
-        font-size: 3.5vw;
-        font-weight: bold;
-        transition: box-shadow 0.75s; //test
-      }
-    }
-  }
-  $nav-base-size: 24vw;
-  $nav-sm: $nav-base-size / 4;
-  &#small {
-    .nav-cont {
-      width: $nav-sm;
-      height: $nav-sm / 3;
-      padding: 0 ($nav-sm / 9.23) 0 ($nav-sm / 9.23);
-
-      .circle {
-        width: $nav-sm / 4.8;
-        height: $nav-sm / 4.8;
-      }
-
-      .text {
-        font-size: $nav-sm / 8;
-        margin: 0 ($nav-sm / 2.4) 0 ($nav-sm / 2.4);
-      }
-
-      .cover {
-        font-size: $nav-sm / 6.8;
-        font-weight: bold;
-        transition: box-shadow 0.75s; //test
-      }
-    }
   }
 }
 

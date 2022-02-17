@@ -37,10 +37,57 @@ body {
   text-align: center;
 }
 
-/********************* Nav Bar*************************************************/
-.navbar {
+/** 
+ * *********** Nav Bar *********************************************************
+ * NavSlider have 2 sizes, #big & #small
+ * .navbar: Parent div of the NavSlider (child)
+ * .nav-cont: NavSlider item itself
+ */
+.navbar#big {
+  width: 24vw;
+  height: 8vw;
+}
+.navbar#big .nav-cont {
+  width: 24vw;
+  height: 8vw;
+  padding: 0 2.6vw 0 2.6vw;
+}
+.navbar#big .nav-cont .circle {
+  width: 5vw;
+  height: 5vw;
+}
+.navbar#big .nav-cont .text {
+  font-size: 3vw;
+  margin: 0 10vw 0 10vw;
+}
+.navbar#big .nav-cont .cover {
+  font-size: 3.5vw;
+  font-weight: bold;
+  transition: box-shadow 0.75s;
+}
+.navbar#small {
   position: absolute;
   inset: 1vw 80vw;
+  width: 6vw;
+  height: 2vw;
+}
+.navbar#small .nav-cont {
+  width: 6vw;
+  height: 2vw;
+  padding: 0 0.6500541712vw 0 0.6500541712vw;
+}
+.navbar#small .nav-cont .circle {
+  width: 1.25vw;
+  height: 1.25vw;
+}
+.navbar#small .nav-cont .text {
+  font-size: 0.75vw;
+  margin: 0 2.5vw 0 2.5vw;
+}
+.navbar#small .nav-cont .cover {
+  font-size: 0.8823529412vw;
+  font-weight: bold;
+  transition: box-shadow 0.75s;
 }
 
 .nav-cont {
@@ -82,43 +129,6 @@ body {
 }
 .nav-cont .text {
   position: absolute;
-}
-
-.navbar#big .nav-cont {
-  width: 24vw;
-  height: 8vw;
-  padding: 0 2.6vw 0 2.6vw;
-}
-.navbar#big .nav-cont .circle {
-  width: 5vw;
-  height: 5vw;
-}
-.navbar#big .nav-cont .text {
-  font-size: 3vw;
-  margin: 0 10vw 0 10vw;
-}
-.navbar#big .nav-cont .cover {
-  font-size: 3.5vw;
-  font-weight: bold;
-  transition: box-shadow 0.75s;
-}
-.navbar#small .nav-cont {
-  width: 6vw;
-  height: 2vw;
-  padding: 0 0.6500541712vw 0 0.6500541712vw;
-}
-.navbar#small .nav-cont .circle {
-  width: 1.25vw;
-  height: 1.25vw;
-}
-.navbar#small .nav-cont .text {
-  font-size: 0.75vw;
-  margin: 0 2.5vw 0 2.5vw;
-}
-.navbar#small .nav-cont .cover {
-  font-size: 0.8823529412vw;
-  font-weight: bold;
-  transition: box-shadow 0.75s;
 }
 
 #navbar {
