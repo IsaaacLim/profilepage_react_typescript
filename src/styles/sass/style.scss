@@ -189,28 +189,6 @@ $nav-sm: $nav-base-size / 4;
   }
 }
 
-// Old
-#navbar {
-  @include links();
-  position: sticky;
-  z-index: 50;
-  top: 0;
-  display: flex;
-  justify-content: flex-end;
-  a {
-    text-shadow: 0px 0px 10px rgba(0, 0, 0);
-    float: left;
-    display: block;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-    // margin-top: 3vh; //No
-  }
-  a:last-child {
-    // margin-right: 10vw; // No
-  }
-}
-
 /** 
  * *********** Home Page *********************************************************
  * React-card
