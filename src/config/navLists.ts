@@ -14,7 +14,7 @@ const navLists: INav[] = [
 		name: "About",
 	},
 	{
-		path: 'works',
+		path: '/works',
 		name: "Works",
 	},
 	{
