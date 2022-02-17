@@ -60,8 +60,8 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   navSize,
 }) => {
   let navigate = useNavigate();
-  let rightNav = navItems[0]; //change to const
-  let leftNav = navItems[1]; // change to const
+  const rightNav = navItems[0];
+  const leftNav = navItems[1];
   if (navSize === "small") dst = 150;
   const [{ x, scale, navText, bg, justifySelf }, api] = useSpring(() => ({
     x: 0,
