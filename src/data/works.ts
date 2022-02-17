@@ -1,6 +1,4 @@
 import IWork from "../interfaces/work"
-import TMP from "../images/pear-dessert.jpg";
-
 
 const cards: IWork[] = [
 	{
@@ -43,7 +41,7 @@ const cards: IWork[] = [
 	},
 	{
 		title: "So_long",
-		img: TMP,
+		img: "", //img: TMP;
 		alt: "Snapshot of game created",
 		description: [
 			"A small 2D game consisting of textures and sprites.",
