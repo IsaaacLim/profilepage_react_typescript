@@ -84,7 +84,7 @@ body {
   justify-content: center; //change
 }
 
-// Nav Slider const design
+// Nav Slider constant design between both sizes
 .nav-cont {
   position: relative; // test
   pointer-events: auto; //test
@@ -132,9 +132,9 @@ body {
   }
 }
 
-// NavSlider may have 2 sizes, #big or #small
-// change to vw
+// NavSlider have 2 sizes, #big & #small
 .navbar {
+  // &#big .nav-cont{
   &#big {
     .nav-cont {
       width: 24vw;
@@ -182,6 +182,7 @@ body {
     }
   }
 }
+
 // Old
 #navbar {
   @include links();

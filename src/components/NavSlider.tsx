@@ -2,7 +2,7 @@ import React from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { useDrag } from "react-use-gesture";
 import { useNavigate } from "react-router-dom";
-import INav from "../interfaces/navbar";
+import INav from "../interfaces/navList";
 
 /**
  * --- VARIABLES & their FUNCTIONS ---
@@ -60,24 +60,24 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   navSize,
 }) => {
   let navigate = useNavigate();
-  let rightNav = navItems[0];
-  let leftNav = navItems[1];
+  let rightNav = navItems[0]; //change to const
+  let leftNav = navItems[1]; // change to const
   if (navSize === "small") dst = 150;
   const [{ x, scale, navText, bg, justifySelf }, api] = useSpring(() => ({
     x: 0,
     scale: 1,
-    navText: leftNav.navName,
+    navText: leftNav.name,
     ...left,
   }));
   const bind = useDrag(({ active, movement: [x], down }) => {
     if (!down) {
-      if (x <= -dst) return navigate(leftNav.navLink);
-      else if (x >= dst) return navigate(rightNav.navLink);
+      if (x <= -dst) return navigate(leftNav.path);
+      else if (x >= dst) return navigate(rightNav.path);
     }
     api.start({
       x: !active ? 0 : x < 0 ? (x <= -dst ? -dst : x) : x >= dst ? dst : x,
       scale: active ? 1.1 : 1,
-      navText: x < 0 ? leftNav.navName : rightNav.navName,
+      navText: x < 0 ? leftNav.name : rightNav.name,
       ...(x < 0 ? left : right),
       immediate: (name) => active && name === "x",
     });

@@ -6,7 +6,7 @@ import Image3 from "../images/mountains.png";
 import Image4 from "../images/world-tree.png";
 import Image5 from "../images/hourglass.png";
 
-export const About = () => {
+export const AboutOld = () => {
   return (
     <div>
       <NavBar />
@@ -71,4 +71,4 @@ export const About = () => {
   );
 };
 
-export default About;
+export default AboutOld;

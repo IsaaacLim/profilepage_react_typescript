@@ -3,7 +3,7 @@ import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import NavBar from "../components/NavBar";
 import Slider from "../components/NavSlider";
 import routes from "../config/routes";
-import INav from "../interfaces/navbar";
+import INav from "../interfaces/navList";
 import Image1 from "../images/greens.png";
 import Image2 from "../images/hot-air-balloon.png";
 import Image3 from "../images/mountains.png";
@@ -26,24 +26,37 @@ import Cloud from "../images/cloud.svg";
  * Speed: -ve val for up-down motion, +ve val for down-up motion
  */
 
-const home = routes[0];
-const works = routes[2];
+// const home = routes[0];
+// const works = routes[2];
+
+// const NavItems: INav[] = [
+//   {
+//     name: home.name,
+//     path: home.path,
+//   },
+//   {
+//     name: works.name,
+//     path: works.path,
+//   },
+// ];
 
 const NavItems: INav[] = [
   {
-    navName: home.name,
-    navLink: home.path,
+    name: "Home",
+    path: "/",
+    // name: home.name,
+    // path: home.path,
   },
   {
-    navName: works.name,
-    navLink: works.path,
+    name: "Works",
+    path: "/works",
   },
 ];
 
 const posLeft = "21vw";
 const posRight = "55vw";
 
-export default function Test() {
+export default function About() {
   const parallax = useRef<IParallax>(null!);
   return (
     <div
