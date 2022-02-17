@@ -24,7 +24,7 @@ const Card: React.FC = ({ children }) => {
   const ref = useRef<HTMLInputElement>(null);
   const [xys, set] = useState([0, 0, 1]);
 
-  const props = useSpring({ xys, config: config["default"] });
+  const props = useSpring({ xys, config: config["gentle"] });
 
   return (
     <div className="card-cont" ref={ref}>
