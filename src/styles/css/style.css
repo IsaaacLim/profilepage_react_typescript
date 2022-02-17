@@ -11,11 +11,6 @@ body {
   background-color: black;
 }
 
-.bg img {
-  width: 100vw;
-  height: auto;
-}
-
 .main {
   height: 100vh;
   display: flex;

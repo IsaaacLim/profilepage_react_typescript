@@ -54,13 +54,6 @@ body {
   background-color: c.$black;
 }
 
-.bg {
-  img {
-    width: 100vw;
-    height: auto;
-  }
-}
-
 .main {
   @include flexCenter(column);
   @include background("../../images/pear-dessert.jpg", 0 -5rem);
