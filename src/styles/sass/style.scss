@@ -55,7 +55,7 @@ $margin-LR: 21vw;
 }
 
 body {
-  background-color: c.$black;
+  background-color: c.$semi-black;
 }
 
 /** 
@@ -164,7 +164,7 @@ body {
   // @include background("../../images/pear-dessert.jpg", 0 -5rem);
   // padding: 0 10vw 0 10vw;
   // align-items: center;
-  background-color: c.$royal;
+  background-color: c.$semi-black;
   display: flex;
   justify-content: center;
   .section1 {
@@ -233,7 +233,7 @@ $card-size: 25vw;
 
 /********************* About Page**********************************************/
 .about-cont {
-  background-color: c.$black;
+  background-color: c.$black; //needed?
   .section {
     min-height: 100vh; // not needed
     width: auto; //not needed
