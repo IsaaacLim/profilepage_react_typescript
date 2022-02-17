@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { useDrag } from "react-use-gesture";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +6,7 @@ import INav from "../interfaces/navList";
 
 /**
  * --- VARIABLES & their FUNCTIONS ---
- * dst: Sliding distance max/min
+ * dst: Sliding distance max/min, initialize within Slider
  * left: css (bg & element pos) when slider slide to left
  * right: css (bg & element pos) when slider slide to right
  *
@@ -42,7 +42,29 @@ import INav from "../interfaces/navList";
  * }
  */
 
-let dst = 310; //change to match screen width
+/* -------- Helper func. Calc window width for Slide dst----------------------*/
+function getWindowWidth() {
+  const { innerWidth: width } = window;
+  return { width };
+}
+
+function useWindowWidth() {
+  const [windowWidth, setWindowWidth] = useState(getWindowWidth());
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(getWindowWidth());
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  });
+
+  return windowWidth;
+}
+
+/* -------- Slider Function --------------------------------------------------*/
+
+let dst: number;
 
 const left = {
   bg: `linear-gradient(120deg, #f093fb 0%, #f5576c 100%)`,
@@ -59,10 +81,12 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   navItems,
   navSize,
 }) => {
+  const { width } = useWindowWidth();
+
   let navigate = useNavigate();
   const rightNav = navItems[0];
   const leftNav = navItems[1];
-  if (navSize === "small") dst = 75;
+  navSize === "small" ? (dst = width / 17) : (dst = width); // change for big slider
   const [{ x, scale, navText, bg, justifySelf }, api] = useSpring(() => ({
     x: 0,
     scale: 1,
