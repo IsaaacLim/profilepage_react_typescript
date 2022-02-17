@@ -119,3 +119,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   - modularize padding/margin values
 - test on other browsers, eg: -webkit-user-select & user-select
 - change config file name
+- NavSlider slide distance to match screen width

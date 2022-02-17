@@ -158,24 +158,26 @@ body {
       }
     }
   }
+  $nav-base-size: 24vw;
+  $nav-sm: $nav-base-size / 4;
   &#small {
     .nav-cont {
-      width: 12vw;
-      height: 4vw;
-      padding: 0 1.3vw 0 1.3vw;
+      width: $nav-sm;
+      height: $nav-sm / 3;
+      padding: 0 ($nav-sm / 9.23) 0 ($nav-sm / 9.23);
 
       .circle {
-        width: 2.5vw;
-        height: 2.5vw;
+        width: $nav-sm / 4.8;
+        height: $nav-sm / 4.8;
       }
 
       .text {
-        font-size: 1.5vw;
-        margin: 0 5vw 0 5vw;
+        font-size: $nav-sm / 8;
+        margin: 0 ($nav-sm / 2.4) 0 ($nav-sm / 2.4);
       }
 
       .cover {
-        font-size: 1.75vw;
+        font-size: $nav-sm / 6.8;
         font-weight: bold;
         transition: box-shadow 0.75s; //test
       }

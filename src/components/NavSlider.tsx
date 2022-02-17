@@ -42,7 +42,7 @@ import INav from "../interfaces/navList";
  * }
  */
 
-let dst = 310;
+let dst = 310; //change to match screen width
 
 const left = {
   bg: `linear-gradient(120deg, #f093fb 0%, #f5576c 100%)`,
@@ -62,7 +62,7 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   let navigate = useNavigate();
   const rightNav = navItems[0];
   const leftNav = navItems[1];
-  if (navSize === "small") dst = 150;
+  if (navSize === "small") dst = 75;
   const [{ x, scale, navText, bg, justifySelf }, api] = useSpring(() => ({
     x: 0,
     scale: 1,

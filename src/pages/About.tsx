@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import NavBar from "../components/NavBar";
 import NavSlider from "../components/NavSlider";
 import INav from "../interfaces/navList";
-import navLists from "../config/navLists";
+import navLists from "../data/navLists";
 import Image1 from "../images/greens.png";
 import Image2 from "../images/hot-air-balloon.png";
 import Image3 from "../images/mountains.png";
@@ -12,7 +11,9 @@ import Image5 from "../images/hourglass.png";
 import Cloud from "../images/cloud.svg";
 
 /**
- * --- STRUCTURE ---
+ * @param navListSmall: navLists with only 2 items. Props for NavSlider
+ *
+ * --- PAGE STRUCTURE ---
  * Sectioned into 3 pages (offset 0, 1, 2)
  * Each page has a Title, Description, & Decoration section
  * z-index:
@@ -21,16 +22,21 @@ import Cloud from "../images/cloud.svg";
  *  - Description: >= 10 && < 20
  *  - Decoration: >= 0 && < 10
  *
- * --- PARALLAX LIB ---
- * Offset for end positioning, may use speed for starting position
- * Speed: -ve val for up-down motion, +ve val for down-up motion
+ * --- PARALLAX LIB VARIABLES ---
+ * @param offset: div end positioning
+ * @param speed: animation speed (-ve for up-down, +ve for down up motion)
+ *                may be used for div starting position
+ *
+ * --- CSS STRUCTURE ---
+ * Modular styling for font size, color & div container size
+ * Inline styling for positioning
  */
 
 const home = navLists[0];
 const works = navLists[2];
-const navListSmall: INav[] = [home, works]; //passed as props to NavSlider
-const posLeft = "21vw";
-const posRight = "55vw";
+const navListSmall: INav[] = [home, works];
+const posLeft = "21vw"; //fix
+const posRight = "55vw"; //fix
 
 export default function About() {
   const parallax = useRef<IParallax>(null!);
@@ -45,9 +51,13 @@ export default function About() {
       <Parallax ref={parallax} pages={3}>
         <ParallaxLayer
           sticky={{ start: 0, end: 2 }}
-          style={{ inset: "1.5vw 65vw", width: "25vw", height: "0" }}
+          style={{
+            // make class & put to sass , connect
+            inset: "0vw 80vw",
+            maxWidth: "13vw",
+            height: "5vw",
+          }}
         >
-          {/* <NavBar /> */}
           <div className="navbar" id="small">
             <NavSlider navItems={navListSmall} navSize="small">
               Slide.
