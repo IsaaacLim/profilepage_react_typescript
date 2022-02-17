@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useRef, useState } from "react";
 import { useSpring, animated, config } from "@react-spring/web";
 
@@ -21,7 +20,7 @@ const calc = (
 const trans = (x: number, y: number, s: number) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-export default function Card() {
+const Card: React.FC = ({ children }) => {
   const ref = useRef<HTMLInputElement>(null);
   const [xys, set] = useState([0, 0, 1]);
 
@@ -41,8 +40,10 @@ export default function Card() {
           set(calc(e.clientX, e.clientY, rect));
         }}
       >
-        <p>hello</p>
+        <p>{children}</p>
       </animated.div>
     </div>
   );
-}
+};
+
+export default Card;

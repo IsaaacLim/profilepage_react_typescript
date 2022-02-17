@@ -18,6 +18,8 @@ body {
  * .nav-cont: NavSlider item itself
  */
 .navbar#big {
+  position: absolute;
+  bottom: 0;
   width: 24vw;
   height: 8vw;
 }
@@ -111,12 +113,7 @@ body {
  * .card-cont: Picture container
  */
 .home-cont {
-  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
 }
 .home-cont h1 {
   font-family: "Cardo", serif;
@@ -124,7 +121,6 @@ body {
 }
 .home-cont p {
   font-size: 2vw;
-  text-align: center;
 }
 
 .card-cont {

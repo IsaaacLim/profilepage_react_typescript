@@ -68,8 +68,10 @@ body {
 $nav-base-size: 24vw;
 $nav-sm: $nav-base-size / 4;
 .navbar {
-  // &#big .nav-cont{
   &#big {
+    position: absolute;
+    // inset: 0vw 0vw;
+    bottom: 0;
     width: 24vw;
     height: 8vw;
     .nav-cont {
@@ -178,16 +180,16 @@ $nav-sm: $nav-base-size / 4;
  * .card-cont: Picture container
  */
 .home-cont {
-  @include flexCenter(column);
+  // @include flexCenter(column);
   // @include background("../../images/pear-dessert.jpg", 0 -5rem);
-  color: c.$white;
+  display: flex;
   h1 {
     font-family: f.$accent;
     font-size: 8vw;
   }
   p {
     font-size: 2vw;
-    text-align: center;
+    // text-align: center;
   }
 }
 
