@@ -156,6 +156,29 @@ body {
   padding: 14px;
   text-decoration: none;
 }
+/** 
+ * *********** Home Page *********************************************************
+ * React-card
+ */
+.card-cont {
+  width: 40vw;
+  height: 40vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 7px;
+  background: white;
+}
+.card-cont .card {
+  width: 20vw;
+  height: 20vw;
+  background: #655d8a;
+  border-radius: 5px;
+  transition: box-shadow 0.5s;
+  will-change: transform;
+}
+
 /********************* About Page**********************************************/
 .about-cont {
   background-color: black;

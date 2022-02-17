@@ -6,8 +6,12 @@ import navLists from "../data/navLists";
 import { useRef, useState } from "react";
 import { useSpring, animated, config } from "@react-spring/web";
 
-import "./styles.css";
-
+//default
+// gentle
+// wobbly
+// stiff
+// slow
+// molasses
 const calc = (
   x: number,
   y: number,
@@ -24,12 +28,12 @@ export default function Card() {
   const ref = useRef<HTMLInputElement>(null);
   const [xys, set] = useState([0, 0, 1]);
 
-  const props = useSpring({ xys, config: config["wobbly"] });
+  const props = useSpring({ xys, config: config["slow"] });
 
   return (
-    <div className="ccard-main" ref={ref}>
+    <div className="card-cont" ref={ref}>
       <animated.div
-        className="ccard"
+        className="card"
         style={{ transform: props.xys.to(trans) }}
         onMouseLeave={() => set([0, 0, 1])}
         onMouseMove={(e) => {
@@ -39,7 +43,9 @@ export default function Card() {
           }
           set(calc(e.clientX, e.clientY, rect));
         }}
-      />
+      >
+        <p>hello</p>
+      </animated.div>
     </div>
   );
 }
