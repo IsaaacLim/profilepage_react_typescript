@@ -11,9 +11,7 @@ const navListSmall: INav[] = [about, works];
 
 const Home = () => {
   const styles = useSpring({
-    loop: {
-      reverse: true,
-    },
+    loop: true,
     config: config.molasses,
     to: [
       { opacity: 1, color: `#cffffe` },
@@ -21,7 +19,7 @@ const Home = () => {
       { opacity: 1, color: `#fce2ce` },
       { opacity: 1, color: `#ffc1f3` },
     ],
-    from: { opacity: 0, color: `white` },
+    from: { opacity: 1, color: `#ffc1f3` },
   });
 
   return (
@@ -38,7 +36,7 @@ const Home = () => {
               Lim
             </h1>
           </div>
-          <animated.div style={styles}>
+          <animated.div style={{ ...styles }}>
             On a mission to becoming a Software Developer, <br />
             with an interest in tasteful designs
           </animated.div>
