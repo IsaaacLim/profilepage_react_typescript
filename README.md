@@ -114,6 +114,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - css
   - `vh` to `vw`
   - kebab case or camel case
+  - remove extra chinese fonts
 - About page
   - arrange About pages together, use Z axis to arrange
   - no text, image highlight
