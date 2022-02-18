@@ -120,18 +120,36 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   )
   ```
 
-### To fix
+### Checklist
 
-- css
+- components
+  - ImgCard:
+  - NavBar:
+  - NavSlider:
+  - SocialsBar: Completed
+- data (others are Completed)
+  - works: Add in image
+- images
+  - removed unused images
+- interfaces (Completed)
+- pages
+  - About_old: Delete
+  - About:
+    - no text, image highlight
+    - modularize padding/margin values
+  - Home:
+  - Test: Give a "no testing in progress sign"
+  - Works:
+    - complete data
+    - maybe change background color
+    - split Deck as cardDeck component
+- styles:
+  - remove unused chinese character
+  - organize styles
   - `vh` to `vw`
   - kebab case or camel case
-  - remove extra chinese fonts
-- About page
-  - arrange About pages together, use Z axis to arrange
-  - no text, image highlight
-  - modularize padding/margin values
-- test on other browsers, eg: -webkit-user-select & user-select
-- change config file name
-- NavSlider BIG slide distance to match screen width
-- have Home & about render with slight animation
-- split Deck as cardDeck component
+- Others
+  - Remove extra default files?
+  - Clean this README
+  - test on other browsers, eg: -webkit-user-select & user-select
+  - have Home & about render with slight animation
