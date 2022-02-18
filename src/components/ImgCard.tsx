@@ -2,12 +2,21 @@ import React from "react";
 import { useRef, useState } from "react";
 import { useSpring, animated, config } from "@react-spring/web";
 
-//default
-// gentle
-// wobbly
-// stiff
-// slow
-// molasses
+/**
+ * @function Card
+ * @param NOT DONE YETTTTTTTTTTTTTTTT!!!!!!!
+ * @returns Image card that wobbles
+ * other config options: gentle, wobbly, stiff, slow, molasses
+ *
+ * --- HELPER FUNCTION ---
+ * @function calc
+ * @returns Mouse contact points
+ *
+ * @function trans
+ * @returns Card transformation style
+ */
+
+/* -------- Helper functions -------------------------------------------------*/
 const calc = (
   x: number,
   y: number,
@@ -17,9 +26,11 @@ const calc = (
   (x - rect.left - rect.width / 2) / 5,
   1.4,
 ];
+
 const trans = (x: number, y: number, s: number) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
+/* -------- Main function  ---------------------------------------------------*/
 const Card: React.FC = ({ children }) => {
   const ref = useRef<HTMLInputElement>(null);
   const [xys, set] = useState([0, 0, 1]);

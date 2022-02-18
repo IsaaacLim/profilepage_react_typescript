@@ -123,7 +123,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ### Checklist
 
 - components
-  - ImgCard:
+  - ImgCard: Add in image, remove {children} if not needed, finalize comment section
   - NavBar:
   - NavSlider:
   - SocialsBar: Completed
