@@ -5,10 +5,11 @@ import socials from "../data/socials";
 
 /**
  * bounce in and out
- * mass: 5
+ * mass: 3
  * tension: 340
- * friction: 13
- * scale: x
+ * friction: 15
+ * scale: 0.5 to 1
+ * delay: 0, 100, 200
  *
  * swing in
  * mass: 3
@@ -20,29 +21,29 @@ import socials from "../data/socials";
  * wobble for deck
  * friction: 2
  * distance diff 1vw
- * delay: 0, 100, 400
+ * delay: 0, 100, 200
+ * from: 1, -1, 1
  * @param param0
  * @returns
  */
 const InheritedProps: React.FC<{
   social: ISocial;
-  mass?: number;
-  tension?: number;
   friction?: number;
   delay?: number;
-}> = ({ social, mass = 3, tension = 340, friction = 2, delay = 0 }) => {
+  xFrom?: number;
+  scaleFrom?: number;
+}> = ({ social, friction = 15, delay = 0, xFrom = 0, scaleFrom = 1 }) => {
+  const xEnd = 0;
+  const xStart = xEnd + xFrom;
   const styles = useSpring({
-    from: { x: "46vw", scale: 1 },
+    from: { x: `${xStart}vw`, scale: scaleFrom },
     config: {
-      mass: mass, // how heavy it feels
-      tension: tension, //how much power
+      mass: 3, // how heavy it feels
+      tension: 340, //how much power
       friction: friction, //how long the frequency last
-      // bounce: 1,
     },
-    // config: { config: config.molasses, mass: speed },
-    // config: config.wobbly,
     delay: 100 + delay,
-    to: { x: "45vw", scale: 1 },
+    to: { x: `${xEnd}vw`, scale: 1 },
   });
 
   return (
@@ -50,10 +51,8 @@ const InheritedProps: React.FC<{
       <animated.div
         style={{
           marginTop: "2vw",
-          width: "2vw",
-          height: "2vw",
-          // backgroundColor: "#46e891",
-          borderRadius: 16,
+          width: "1.5vw",
+          height: "1.5vw",
           ...styles,
         }}
       >
@@ -84,10 +83,10 @@ export default function Test() {
 
   return (
     <div>
-      <div style={{ position: "absolute" }}>
+      <div style={{ position: "absolute", right: "2vw", top: "6vw" }}>
         <InheritedProps social={socials[0]} delay={0} />
         <InheritedProps social={socials[1]} delay={100} />
-        <InheritedProps social={socials[2]} delay={400} />
+        <InheritedProps social={socials[2]} delay={200} />
       </div>
       <div
         style={{
