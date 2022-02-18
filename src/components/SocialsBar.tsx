@@ -3,6 +3,23 @@ import { useSpring, animated } from "@react-spring/web";
 import ISocial from "../interfaces/social";
 import socials from "../data/socials";
 
+/**
+ * @function SocialsBar
+ * @param: styleType: 1(spring entry), 2(wave in/out), or 3(wobble left/right)
+ * @returns My LinkedIn, GitHub and email with 3 different react-spring styles
+ *
+ * --- HELPER FUNCTION ---
+ * @function Spring
+ * @param:
+ * 	social: Interface with my social accounts
+ * 	friction: Modify Spring friction coefficient
+ * 	xFrom: Div starting position
+ * 	scaleFrom: Div initial size
+ * 	delay: Delays animation execution
+ * @returns A single unique animated social div
+ */
+
+/* -------- Helper function --------------------------------------------------*/
 const Spring: React.FC<{
   social: ISocial;
   friction?: number;
@@ -23,14 +40,7 @@ const Spring: React.FC<{
 
   return (
     <div>
-      <animated.div
-        style={{
-          margin: "2vw 0 2vw 0", //move to sass?
-          width: "1.5vw",
-          height: "1.5vw",
-          ...movement,
-        }}
-      >
+      <animated.div style={movement} className="social-icon">
         <a href={social.url} target="_blank" rel="noopener noreferrer">
           <svg xmlns={social.xmlns} viewBox={social.viewBox}>
             <path d={social.d} fill={social.fill} />
@@ -41,10 +51,11 @@ const Spring: React.FC<{
   );
 };
 
+/* -------- Main function  ---------------------------------------------------*/
 const SocialsBar: React.FC<{ styleType: number }> = ({ styleType }) => {
   if (styleType === 1) {
     return (
-      <div style={{ position: "absolute", right: "2vw", top: "6vw" }}>
+      <div className="socials-bar">
         <Spring social={socials[0]} xFrom={15} delay={600} />
         <Spring social={socials[1]} xFrom={15} delay={500} />
         <Spring social={socials[2]} xFrom={15} delay={700} />
@@ -52,7 +63,7 @@ const SocialsBar: React.FC<{ styleType: number }> = ({ styleType }) => {
     );
   } else if (styleType === 2) {
     return (
-      <div style={{ position: "absolute", right: "2vw", top: "6vw" }}>
+      <div className="socials-bar">
         <Spring social={socials[0]} friction={15} scaleFrom={0.5} delay={0} />
         <Spring social={socials[1]} friction={15} scaleFrom={0.5} delay={100} />
         <Spring social={socials[2]} friction={15} scaleFrom={0.5} delay={200} />
@@ -60,7 +71,7 @@ const SocialsBar: React.FC<{ styleType: number }> = ({ styleType }) => {
     );
   } else if (styleType === 3) {
     return (
-      <div style={{ position: "absolute", right: "2vw", top: "6vw" }}>
+      <div className="socials-bar">
         <Spring social={socials[0]} friction={4} xFrom={0.5} delay={0} />
         <Spring social={socials[1]} friction={4} xFrom={-0.5} delay={100} />
         <Spring social={socials[2]} friction={4} xFrom={0.5} delay={200} />
@@ -68,9 +79,7 @@ const SocialsBar: React.FC<{ styleType: number }> = ({ styleType }) => {
     );
   } else {
     return (
-      <div style={{ position: "absolute", right: "2vw", top: "6vw" }}>
-        Invalid SocialsBar styleType number
-      </div>
+      <div className="socials-bar">Invalid SocialsBar styleType number</div>
     );
   }
 };
