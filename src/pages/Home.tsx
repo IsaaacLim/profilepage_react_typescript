@@ -4,6 +4,7 @@ import NavSlider from "../components/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
 import Card from "../components/ImgCard";
+import SocialsBar from "../components/SocialsBar";
 
 const about = navLists[1];
 const works = navLists[2];
@@ -24,6 +25,7 @@ const Home = () => {
 
   return (
     <div className="home-cont">
+      <SocialsBar styleType={1} />
       <div className="section1">
         <div className="text">
           <div className="name-cont">
