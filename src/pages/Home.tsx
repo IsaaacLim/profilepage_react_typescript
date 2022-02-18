@@ -42,7 +42,7 @@ const Home = () => {
           </div>
           <animated.div style={{ ...styles }}>
             On a mission to becoming a Software Developer, <br />
-            with an interest in tasteful designs
+            with an interest in tasteful designs.
           </animated.div>
         </div>
         <div className="navbar" id="big">
