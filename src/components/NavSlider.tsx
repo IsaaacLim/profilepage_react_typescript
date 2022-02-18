@@ -8,36 +8,40 @@ import INav from "../interfaces/navList";
  * @function Slider
  * @returns A slider navbar
  * --- VARIABLES & their FUNCTIONS ---
- * @const dst: Sliding distance max/min, initialize within Slider
- * @const left: css (bg & element pos) when slider slide to left
- * @const right: css (bg & element pos) when slider slide to right
- * @const Slider{
- * 	@param:
- * 		children: Elements contained within the calling <Slider></Slider> element
- * 		navItems: An interface array containing navbar name & url link (max of 2)
- * 		navSize: A string used to change dst
- * 	@const navigate: used to Programmatically navigate React-router-dom
- * 	@const rightNav: 1st navItems[] element
- * 	@const leftNav: 2nd navItems[] element
- * 	@function useSpring {
- *		@var x: Sliding distance actual (initiate with 0) *lib var*
- *		@var scale: Cover size when active/inactive (initiate with 1) *lib var*
- *		@var navText: To display navbar names (initiate render with Left val)
- *		@css ...left:  Initiate render with Left `bg` & `justifySelf` css
- * 	}
- * 	@function useDrag {
- *    - Re-navigate user to other pages
- * 		- changes `x`, limited to `dst` (-ve & +ve)
- *		- changes `scale`
- *		- changes `navText` based on left/right slide
- *		- changes `left` or `right` css based of left/right slide
- * 	}
- *	@const crSize
-      - Circle animation (scale-up upon slider slide)
- *		@param range: Animation affected within this Slider range
- *		@param output: Animation speed
- *		@param extrapolate: "clamp": Limit scale size
- * }
+ * @const
+ *  dst: Sliding distance max/min, initialize within Slider
+ *  left: css (bg & element pos) when slider slide to left
+ *  right: css (bg & element pos) when slider slide to right
+ *  Slider{
+ *   	@param:
+ *   		children: Elements contained within the calling <Slider></Slider> element
+ *   		navItems: An interface array containing navbar name & url link (max of 2)
+ *   		navSize: A string used to change dst
+ *   	@const
+ *      navigate: used to Programmatically navigate React-router-dom
+ *   	  rightNav: 1st navItems[] element
+ *   	  leftNav: 2nd navItems[] element
+ *   	@function useSpring {
+ *  		@var
+ *        x: Sliding distance actual (initiate with 0) *lib var*
+ *  		  scale: Cover size when active/inactive (initiate with 1) * lib var*
+ *  		  navText: To display navbar names (initiate render with Left val)
+ *  		@css ...left:  Initiate render with Left `bg` & `justifySelf` css
+ *   	}
+ *   	@function useDrag {
+ *      - Re-navigate user to other pages
+ *   		- changes `x`, limited to `dst` (-ve & +ve)
+ *  		- changes `scale`
+ *  		- changes `navText` based on left/right slide
+ *  		- changes `left` or `right` css based of left/right slide
+ *   	}
+ *  	@const crSize
+ *      - Circle animation (scale-up upon slider slide)
+ *  		@param
+ *        range: Animation affected within this Slider range
+ *  		  output: Animation speed
+ *  		  extrapolate: "clamp": Limit scale size
+ *   }
  *
  * --- HELPER FUNCTION ---
  * @function useWindowWidth
