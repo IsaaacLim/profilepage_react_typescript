@@ -132,11 +132,12 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   - removed unused images
 - interfaces (Completed)
 - pages
-  - About_old: Delete
   - About:
     - no text, image highlight
     - modularize padding/margin values
+    - Change navListSmall to match Works
   - Home:
+    - Change navListSmall to match Works
   - Test: Give a "no testing in progress sign"
   - Works:
     - complete data
