@@ -5,6 +5,7 @@ import cards from "../data/works";
 import NavSlider from "../components/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
+import SocialsBar from "../components/SocialsBar";
 
 // HELPERS to curate spring data/values that are later being interpolated into css
 const to = (i: number) => ({
@@ -129,6 +130,7 @@ const Works = () => {
             Slide.
           </NavSlider>
         </div>
+        <SocialsBar styleType={3} />
         <Deck />
       </div>
     </div>

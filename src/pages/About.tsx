@@ -3,6 +3,7 @@ import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import NavSlider from "../components/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
+import SocialsBar from "../components/SocialsBar";
 import Image1 from "../images/greens.png";
 import Image2 from "../images/hot-air-balloon.png";
 import Image3 from "../images/mountains.png";
@@ -51,9 +52,10 @@ export default function About() {
       <Parallax ref={parallax} pages={3}>
         <ParallaxLayer
           sticky={{ start: 0, end: 2 }}
-          style={{ width: "0", height: "0" }} //prevent layer from overlapping other pages
+          style={{ width: "5", height: "5" }} //prevent layer from overlapping other pages
           className="nav-sticky"
         >
+          <SocialsBar styleType={2} />
           <div className="navbar" id="small">
             <NavSlider navItems={navListSmall} navSize="small">
               Slide.
