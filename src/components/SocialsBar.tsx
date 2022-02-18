@@ -67,7 +67,11 @@ const SocialsBar: React.FC<{ styleType: number }> = ({ styleType }) => {
       </div>
     );
   } else {
-    return <div>Invalid SocialsBar styleType number</div>;
+    return (
+      <div style={{ position: "absolute", right: "2vw", top: "6vw" }}>
+        Invalid SocialsBar styleType number
+      </div>
+    );
   }
 };
 
