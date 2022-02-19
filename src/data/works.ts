@@ -1,4 +1,5 @@
 import IWork from "../interfaces/work"
+import Minishell from "../images/minishell.png";
 
 const cards: IWork[] = [
 	{
@@ -83,7 +84,7 @@ const cards: IWork[] = [
 	},
 	{
 		title: "Minishell",
-		img: "",
+		img: Minishell,
 		alt: "Snapshot of shell created",
 		description: [
 			"Recreate a (mini)shell",
