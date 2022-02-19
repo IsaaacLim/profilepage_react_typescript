@@ -16,7 +16,9 @@ import socials from "../data/socials";
  * 	xFrom: Div starting position
  * 	scaleFrom: Div initial size
  * 	delay: Delays animation execution
- * @returns A single unique animated social div
+ * @returns A single unique animated social div for:
+ *  1. @const render: Entry effects
+ *  2. @const hover:  Hover effects
  */
 
 /* -------- Helper function --------------------------------------------------*/
@@ -27,7 +29,7 @@ const Spring: React.FC<{
   scaleFrom?: number;
   delay?: number;
 }> = ({ social, friction = 20, xFrom = 0, scaleFrom = 1, delay = 0 }) => {
-  const movement = useSpring({
+  const render = useSpring({
     config: {
       mass: 3,
       tension: 340,
@@ -38,9 +40,35 @@ const Spring: React.FC<{
     delay: 100 + delay,
   });
 
+  const [isHovered, setIsHovered] = React.useState(false);
+  const hover = useSpring({
+    transform: isHovered ? `scale(1.5)` : `scale(1)`,
+    config: {
+      mass: 3,
+      tension: 340,
+      friction: 15,
+    },
+  });
+  React.useEffect(() => {
+    if (!isHovered) {
+      return;
+    }
+  }, [isHovered]);
+  const enter = () => {
+    setIsHovered(true);
+  };
+  const leave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <div>
-      <animated.div style={movement} className="social-icon">
+      <animated.div
+        style={{ ...render, ...hover }}
+        className="social-icon"
+        onMouseEnter={enter}
+        onMouseLeave={leave}
+      >
         <a href={social.url} target="_blank" rel="noopener noreferrer">
           <svg xmlns={social.xmlns} viewBox={social.viewBox}>
             <path d={social.d} fill={social.fill} />
