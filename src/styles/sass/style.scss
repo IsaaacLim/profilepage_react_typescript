@@ -444,11 +444,9 @@ $card-size: 25vw;
     padding-left: 2vw;
   }
   .img-placeholder {
-    // background-color: rgb(202, 202, 202); //if can
     display: flex;
     img {
-      width: 30vw; //need
-      // max-height: 60vh;
+      width: 30vw;
       object-fit: cover;
     }
   }
@@ -456,7 +454,11 @@ $card-size: 25vw;
     position: absolute;
     width: 30vw;
     height: 78vh;
-    z-index: 40;
+  }
+  #cover-full {
+    position: absolute;
+    width: 98%;
+    height: 97%;
   }
   .txt-placeholder {
     padding-left: 1vw;

@@ -397,7 +397,11 @@ body {
   position: absolute;
   width: 30vw;
   height: 78vh;
-  z-index: 40;
+}
+.deck #cover-full {
+  position: absolute;
+  width: 98%;
+  height: 97%;
 }
 .deck .txt-placeholder {
   padding-left: 1vw;

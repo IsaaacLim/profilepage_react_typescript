@@ -86,42 +86,43 @@ const Deck: React.FC<{ cards: IWork[] }> = ({ cards }) => {
         <animated.div className="deck" key={i} style={{ x, y }}>
           <animated.div
             {...bind(i)}
-            style={{
-              transform: interpolate([rot, scale], trans),
-              backgroundImage: `url(${cards[i].css.backgroundImage})`,
-            }}
+            style={{ transform: interpolate([rot, scale], trans) }}
             className="deck-cont"
           >
             <div className="content">
               <div className="img-placeholder">
-                <img src={cards[i].img} alt={cards[i].alt} />
+                {i === cards.length - 1 ? (
+                  <img
+                    src={cards[i].img}
+                    alt={cards[i].alt}
+                    id={"cover-full"}
+                  />
+                ) : (
+                  <img src={cards[i].img} alt={cards[i].alt} />
+                )}
               </div>
-              <div className="img-cover" />
+              {i === cards.length - 1 ? (
+                <div className="img-cover" id="cover-full" />
+              ) : (
+                <div className="img-cover" />
+              )}
               <div className="txt-placeholder">
-                <p id="title" style={{ borderColor: `${cards[i].css.color}` }}>
-                  {cards[i].title}
-                </p>
+                <p id="title">{cards[i].title}</p>
                 <div>
-                  <p id="subtitle" style={{ color: `${cards[i].css.color}` }}>
-                    Description:
-                  </p>
-                  <ul style={{ listStyle: `${cards[i].css.listStyle}` }}>
+                  <p id="subtitle">Description:</p>
+                  <ul>
                     {cards[i].description.map((text, index) => {
                       return <li key={index}>{text}</li>;
                     })}
                   </ul>
                 </div>
                 <div>
-                  <p id="subtitle" style={{ color: `${cards[i].css.color}` }}>
-                    Tech:
-                  </p>
+                  <p id="subtitle">Tech:</p>
                   <p>{cards[i].tech}</p>
                 </div>
                 <div>
-                  <p id="subtitle" style={{ color: `${cards[i].css.color}` }}>
-                    Example Features:
-                  </p>
-                  <ul style={{ listStyle: `${cards[i].css.listStyle}` }}>
+                  <p id="subtitle">Example Features:</p>
+                  <ul>
                     {cards[i].features.map((text, index) => {
                       return <li key={index}>{text}</li>;
                     })}

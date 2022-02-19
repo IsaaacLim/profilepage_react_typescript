@@ -1,6 +1,7 @@
 import IWork from "../interfaces/work"
 import Born2bRoot from "../images/born2broot.png";
 import Minishell from "../images/minishell.png";
+import SelectedWorks from "../images/selected_works.png";
 import SoLong from "../images/so_long.png";
 
 const cards: IWork[] = [
@@ -19,9 +20,9 @@ const cards: IWork[] = [
 			"Networking",
 		],
 		css: {
-			backgroundImage: "",
-			color: "",
-			listStyle: "",
+			position: "relative",
+			width: "",
+			height: "",
 		},
 	},
 	{
@@ -37,29 +38,9 @@ const cards: IWork[] = [
 			"Implement additional functions, such as, `iterator_traits`, `enable_if`, `is_integral`, `std::make_pair`, etc.."
 		],
 		css: {
-			backgroundImage: "",
-			color: "",
-			listStyle: "",
-		},
-	},
-	{
-		title: "So_long",
-		img: SoLong,
-		alt: "Snapshot of game created",
-		description: [
-			"A small 2D game consisting of textures and sprites.",
-			"Game objective is to collect all collectibles, avoid enemies and reach the exit."
-		],
-		tech: "C, MiniLibX(tiny graphics library)",
-		features: [
-			"Window management, event handling, colors, textures.",
-			"Rendering map inputs containing walls, collectibles, map exit, and player's starting position elements.",
-			"Randomized enemy patrol.",
-		],
-		css: {
-			backgroundImage: "",
-			color: "",
-			listStyle: "",
+			position: "relative",
+			width: "",
+			height: "",
 		},
 	},
 	{
@@ -79,9 +60,29 @@ const cards: IWork[] = [
 			"Bash script to announce specified information to all logged-in users at designated time(s)",
 		],
 		css: {
-			backgroundImage: "",
-			color: "",
-			listStyle: "",
+			position: "relative",
+			width: "",
+			height: "",
+		},
+	},
+	{
+		title: "So_long",
+		img: SoLong,
+		alt: "Snapshot of game created",
+		description: [
+			"A small 2D game consisting of textures and sprites.",
+			"Game objective is to collect all collectibles, avoid enemies and reach the exit."
+		],
+		tech: "C, MiniLibX(tiny graphics library)",
+		features: [
+			"Window management, event handling, colors, textures.",
+			"Rendering map inputs containing walls, collectibles, map exit, and player's starting position elements.",
+			"Randomized enemy patrol.",
+		],
+		css: {
+			position: "relative",
+			width: "",
+			height: "",
 		},
 	},
 	{
@@ -99,22 +100,25 @@ const cards: IWork[] = [
 			"Signal handling",
 		],
 		css: {
-			backgroundImage: "",
-			color: "",
-			listStyle: "",
+			position: "relative",
+			width: "",
+			height: "",
 		},
 	},
 	{
 		title: "",
-		img: "",
+		img: SelectedWorks,
 		alt: "",
 		description: [""],
 		tech: "",
 		features: [""],
 		css: {
-			backgroundImage: "https://github.com/IsaaacLim/profilepage_react_typescript/blob/main/src/images/greens.png?raw=true",
-			color: "#fff",
-			listStyle: "none",
+			// backgroundImage: "",
+			// color: "#fff",
+			// listStyle: "none",
+			position: "absolute",
+			width: "98%",
+			height: "97%",
 		},
 	},
 ]

@@ -6,8 +6,11 @@ export default interface IWork {
 	tech: string;
 	features: string[];
 	css: { //to override default css (used for Deck Cover)
-		backgroundImage: string,  
-		color: string, 
-		listStyle: string,
+		// backgroundImage: string,  
+		// color: string, 
+		// listStyle: string,
+		width: string;
+		height: string;
+		position: string | undefined,
 	};
 }

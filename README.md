@@ -120,6 +120,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   )
   ```
 
+- React-Spring hover over animation [guide](https://www.joshwcomeau.com/react/boop/)
+
 ### Checklist
 
 - components
