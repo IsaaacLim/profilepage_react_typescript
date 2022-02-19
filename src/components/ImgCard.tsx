@@ -1,6 +1,8 @@
 import React from "react";
 import { useRef, useState } from "react";
 import { useSpring, animated, config } from "@react-spring/web";
+import TMP from "../images/forkey.jpg";
+import Image1 from "../images/greens.png";
 
 /**
  * @function Card
@@ -31,7 +33,7 @@ const trans = (x: number, y: number, s: number) =>
   `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
 /* -------- Main function  ---------------------------------------------------*/
-const Card: React.FC = ({ children }) => {
+const Card: React.FC<{ image: string }> = ({ image }) => {
   const ref = useRef<HTMLInputElement>(null);
   const [xys, set] = useState([0, 0, 1]);
 
@@ -41,7 +43,10 @@ const Card: React.FC = ({ children }) => {
     <div className="card-cont" ref={ref}>
       <animated.div
         className="card"
-        style={{ transform: props.xys.to(trans) }}
+        style={{
+          transform: props.xys.to(trans),
+          backgroundImage: `url(${image})`,
+        }}
         onMouseLeave={() => set([0, 0, 1])}
         onMouseMove={(e) => {
           let rect: any;
@@ -50,9 +55,7 @@ const Card: React.FC = ({ children }) => {
           }
           set(calc(e.clientX, e.clientY, rect));
         }}
-      >
-        {children}
-      </animated.div>
+      />
     </div>
   );
 };

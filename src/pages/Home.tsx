@@ -1,10 +1,11 @@
 import React from "react";
-import { useSpring, animated, config } from "@react-spring/web";
+import { useSpring, animated } from "@react-spring/web";
 import NavSlider from "../components/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
 import Card from "../components/ImgCard";
 import SocialsBar from "../components/SocialsBar";
+import ProfilePic from "../images/forkey.jpg";
 
 const navListSmall: INav[] = [navLists[1], navLists[2]]; // about & works
 
@@ -55,9 +56,9 @@ const Home = () => {
         </div>
       </div>
       <div className="sec-right">
-        <Card>
-          <img src="../images/forkey.jpg" alt="sample pic" />
-          <p>Text</p>
+        <Card image={ProfilePic}>
+          {/* <img src="" alt="sample pic" /> */}
+          {/* <p>Text</p> */}
         </Card>
       </div>
     </div>

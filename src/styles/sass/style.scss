@@ -182,6 +182,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 40;
 }
 
 .social-icon {
@@ -249,7 +250,8 @@ $card-size: 25vw;
   .card {
     width: $card-size;
     height: $card-size;
-    background: c.$royal;
+    background-position: center;
+    background-size: cover;
     border-radius: 5px;
     will-change: transform;
   }
