@@ -123,7 +123,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ### Checklist
 
 - components
-  - ImgCard: Add in image, remove {children} if not needed, finalize comment section
+  - ImgCard: Change image
   - NavSlider: Change background and text color; add hover effect (color change)
   - SocialsBar: Completed
 - data (others are Completed)

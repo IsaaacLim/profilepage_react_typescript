@@ -1,12 +1,10 @@
 import React from "react";
 import { useRef, useState } from "react";
 import { useSpring, animated, config } from "@react-spring/web";
-import TMP from "../images/forkey.jpg";
-import Image1 from "../images/greens.png";
 
 /**
  * @function Card
- * @param NOT DONE YETTTTTTTTTTTTTTTT!!!!!!!
+ * @param image: Background image
  * @returns Image card that wobbles
  * other config options: gentle, wobbly, stiff, slow, molasses
  *
