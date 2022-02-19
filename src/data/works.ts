@@ -1,5 +1,6 @@
 import IWork from "../interfaces/work"
 import Minishell from "../images/minishell.png";
+import SoLong from "../images/so_long.png";
 
 const cards: IWork[] = [
 	{
@@ -42,7 +43,7 @@ const cards: IWork[] = [
 	},
 	{
 		title: "So_long",
-		img: "", //img: TMP;
+		img: SoLong,
 		alt: "Snapshot of game created",
 		description: [
 			"A small 2D game consisting of textures and sprites.",
