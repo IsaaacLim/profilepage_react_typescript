@@ -137,15 +137,15 @@ body {
 /** 
  * *********** Home Page *********************************************************
  * .home-cont: Home container
- * .card-cont: Picture container
+ * .card-cont: Picture container (at ImgCard.tsx)
  */
 .home-cont {
   background-color: #292929;
   display: flex;
   justify-content: space-between;
 }
-.home-cont .section1 {
-  padding-left: 12vw;
+.home-cont .sec-left {
+  padding-left: 15vw;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -159,29 +159,28 @@ body {
   align-items: flex-end;
   margin-bottom: 2vw;
 }
-.home-cont .text .name-cont #林,
+.home-cont .text .name-cont #林 {
+  font-family: "Zhi Mang Xing", cursive;
+  font-size: 7vw;
+}
 .home-cont .text .name-cont #敬佳 {
   font-family: "Zhi Mang Xing", cursive;
-}
-.home-cont .text .name-cont .mid > h1 {
-  font-size: 5vw;
-}
-.home-cont #林 {
-  font-size: 7vw;
-}
-.home-cont #敬佳 {
   font-size: 4vw;
 }
-.home-cont #lim {
+.home-cont .text .name-cont #isaac {
+  font-family: "Cardo", serif;
+  font-size: 5vw;
+}
+.home-cont .text .name-cont #lim {
   font-size: 7vw;
+  font-family: "Cardo", serif;
   align-self: baseline;
 }
-.home-cont h1 {
-  font-family: "Cardo", serif;
-  font-size: 10vw;
-}
-.home-cont p {
-  font-size: 1.5vw;
+
+.sec-right {
+  position: absolute;
+  height: 100%;
+  right: 0;
 }
 
 .card-cont {
@@ -190,14 +189,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 .card-cont .card {
   width: 25vw;
   height: 25vw;
   background: #655d8a;
   border-radius: 5px;
-  transition: box-shadow 0.5s;
   will-change: transform;
 }
 

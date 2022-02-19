@@ -6,44 +6,47 @@ import navLists from "../data/navLists";
 import Card from "../components/ImgCard";
 import SocialsBar from "../components/SocialsBar";
 
-const about = navLists[1];
-const works = navLists[2];
-const navListSmall: INav[] = [about, works];
+const navListSmall: INav[] = [navLists[1], navLists[2]]; // about & works
 
 const Home = () => {
-  const styles = useSpring({
+  const colorful = useSpring({
     loop: true,
-    config: config.molasses,
+    config: { duration: 5000 },
     to: [
       { opacity: 1, color: `#cffffe` },
       { opacity: 1, color: `#f9f7d9` },
       { opacity: 1, color: `#fce2ce` },
       { opacity: 1, color: `#ffc1f3` },
+      { opacity: 1, color: `#ffffff` },
     ],
-    from: { opacity: 1, color: `#ffc1f3` },
+    from: { opacity: 1, color: `#ffffff` },
   });
 
   return (
     <div className="home-cont">
       <SocialsBar styleType={1} />
-      <div className="section1">
+      <div className="sec-left">
         <div className="text">
           <div className="name-cont">
-            <animated.div style={styles} id="林">
-              {/* <h1 id="林">林</h1> */}林
-            </animated.div>
+            <animated.h1 style={colorful} id="林">
+              林
+            </animated.h1>
             <div className="mid">
-              <h1>Isaac</h1>
-              <h1 id="敬佳">敬佳</h1>
+              <animated.h1 style={colorful} id="isaac">
+                Isaac
+              </animated.h1>
+              <animated.h1 style={colorful} id="敬佳">
+                敬佳
+              </animated.h1>
             </div>
-            <h1 className="right" id="lim">
+            <animated.h1 style={colorful} className="right" id="lim">
               Lim
-            </h1>
+            </animated.h1>
           </div>
-          <animated.div style={{ ...styles }}>
+          <p>
             On a mission to becoming a Software Developer, <br />
             with an interest in tasteful designs.
-          </animated.div>
+          </p>
         </div>
         <div className="navbar" id="big">
           <NavSlider navItems={navListSmall} navSize="big">
@@ -51,7 +54,7 @@ const Home = () => {
           </NavSlider>
         </div>
       </div>
-      <div>
+      <div className="sec-right">
         <Card>
           <img src="../images/forkey.jpg" alt="sample pic" />
           <p>Text</p>

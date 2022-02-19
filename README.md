@@ -124,7 +124,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 - components
   - ImgCard: Add in image, remove {children} if not needed, finalize comment section
-  - NavSlider: Change background and text color
+  - NavSlider: Change background and text color; add hover effect (color change)
   - SocialsBar: Completed
 - data (others are Completed)
   - works: Add in image
