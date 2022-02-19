@@ -1,4 +1,5 @@
 import IWork from "../interfaces/work"
+import Born2bRoot from "../images/born2broot.png";
 import Minishell from "../images/minishell.png";
 import SoLong from "../images/so_long.png";
 
@@ -63,7 +64,7 @@ const cards: IWork[] = [
 	},
 	{
 		title: "Born2beRoot",
-		img: "",
+		img: Born2bRoot,
 		alt: "Snapshot of virtual machine created",
 		description: [
 			"Set up a virtual machine that functions as a remote server for a WordPress website, with lighttpd, MariaDB and PHP as its services.",
