@@ -3,11 +3,12 @@ import Born2bRoot from "../images/born2broot.png";
 import Minishell from "../images/minishell.png";
 import SelectedWorks from "../images/selected_works.png";
 import SoLong from "../images/so_long.png";
+import WIP from "../images/work-in-progress.png";
 
 const cards: IWork[] = [
 	{
 		title: "Inception",
-		img: "",
+		img: WIP,
 		alt: "Project currently in progress",
 		description: [
 			"Using Docker, set up a small infrastructure composed of different services under specific rules for a WordPress server.",
@@ -19,15 +20,10 @@ const cards: IWork[] = [
 			"System administration",
 			"Networking",
 		],
-		css: {
-			position: "relative",
-			width: "",
-			height: "",
-		},
 	},
 	{
 		title: "ft_containers",
-		img: "",
+		img: WIP,
 		alt: "Project currently in progress",
 		description: [
 			"Re-implementation of selected C++ containers.",
@@ -37,11 +33,6 @@ const cards: IWork[] = [
 			"Recreate the `vector`, `map`, `stack`, and `set` that is comparable to C++ Standard Template Library(STL).",
 			"Implement additional functions, such as, `iterator_traits`, `enable_if`, `is_integral`, `std::make_pair`, etc.."
 		],
-		css: {
-			position: "relative",
-			width: "",
-			height: "",
-		},
 	},
 	{
 		title: "Born2beRoot",
@@ -59,11 +50,6 @@ const cards: IWork[] = [
 			"Firewall",
 			"Bash script to announce specified information to all logged-in users at designated time(s)",
 		],
-		css: {
-			position: "relative",
-			width: "",
-			height: "",
-		},
 	},
 	{
 		title: "So_long",
@@ -79,11 +65,6 @@ const cards: IWork[] = [
 			"Rendering map inputs containing walls, collectibles, map exit, and player's starting position elements.",
 			"Randomized enemy patrol.",
 		],
-		css: {
-			position: "relative",
-			width: "",
-			height: "",
-		},
 	},
 	{
 		title: "Minishell",
@@ -99,11 +80,6 @@ const cards: IWork[] = [
 			"Execute commands, including piping and redirection",
 			"Signal handling",
 		],
-		css: {
-			position: "relative",
-			width: "",
-			height: "",
-		},
 	},
 	{
 		title: "",
@@ -112,14 +88,7 @@ const cards: IWork[] = [
 		description: [""],
 		tech: "",
 		features: [""],
-		css: {
-			// backgroundImage: "",
-			// color: "#fff",
-			// listStyle: "none",
-			position: "absolute",
-			width: "98%",
-			height: "97%",
-		},
+
 	},
 ]
 
