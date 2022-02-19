@@ -126,10 +126,9 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 - components
   - ImgCard: Change image
-  - NavSlider: Change background and text color; add hover effect (color change)
+  - NavSlider: Change background and text color
   - SocialsBar: Completed
-- data (others are Completed)
-  - works: Add in image
+- data (Completed)
 - images
   - removed unused images
 - interfaces (Completed)
@@ -140,11 +139,10 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     - Change navListSmall to match Works
   - Home:
     - Change navListSmall to match Works
+    - Slow fade in when render
   - Test: Give a "no testing in progress sign"
   - Works:
-    - complete data
     - maybe change background color
-    - split Deck as cardDeck component
 - styles:
   - remove unused chinese character
   - organize styles

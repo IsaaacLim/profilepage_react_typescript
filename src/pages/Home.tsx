@@ -56,10 +56,7 @@ const Home = () => {
         </div>
       </div>
       <div className="sec-right">
-        <Card image={ProfilePic}>
-          {/* <img src="" alt="sample pic" /> */}
-          {/* <p>Text</p> */}
-        </Card>
+        <Card image={ProfilePic}></Card>
       </div>
     </div>
   );
