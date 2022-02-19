@@ -11,6 +11,17 @@
   color: white;
 }
 
+html,
+body,
+#root,
+#root > div,
+#root > div > div {
+  max-width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 body {
   background-color: #292929;
 }
@@ -306,9 +317,9 @@ body {
   max-width: 21vw;
 }
 
-/********************* React-spring Deck *************************************/
+/********************* Works **************************************************/
 .works-cont {
-  background: #7897ab;
+  background: #464646;
   cursor: url(../../images/cursor.png) 39 39, auto;
   display: flex;
   align-items: center;
@@ -338,18 +349,7 @@ body {
   width: 55vw;
   height: 80vh;
   will-change: transform;
-  box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.7), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
-}
-
-html,
-body,
-#root,
-#root > div,
-#root > div > div {
-  max-width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  box-shadow: 0 0 100px -10px rgba(63, 63, 63, 0.7), 0 0 50px -10px rgba(43, 43, 43, 0.3);
 }
 
 .deck p,
