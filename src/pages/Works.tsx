@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import WorksDone from "../data/works";
 import NavSlider from "../components/NavSlider";
 import INav from "../interfaces/navList";

@@ -4,7 +4,7 @@ import NavSlider from "../components/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
 import SocialsBar from "../components/SocialsBar";
-import Image1 from "../images/greens.png";
+// import Image1 from "../images/greens.png";
 import Image2 from "../images/hot-air-balloon.png";
 import Image3 from "../images/mountains.png";
 import Image4 from "../images/world-tree.png";
@@ -37,7 +37,7 @@ const home = navLists[0];
 const works = navLists[2];
 const navListSmall: INav[] = [home, works];
 const posLeft = "21vw"; //fix
-const posRight = "55vw"; //fix
+// const posRight = "55vw"; //fix
 
 export default function About() {
   const parallax = useRef<IParallax>(null!);
