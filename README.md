@@ -127,7 +127,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - components
   - ImgCard: Change image
   - NavSlider: Change background and text color
-  - SocialsBar: Completed
+  - SocialsBar: Give padding to each icon div to make it easier to toggle
 - data (Completed)
 - images
   - removed unused images
@@ -143,6 +143,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   - Test: Give a "no testing in progress sign"
   - Works:
     - maybe change background color
+    - Selected Work?
 - styles:
   - remove unused chinese character
   - organize styles
@@ -153,3 +154,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   - Clean this README
   - test on other browsers, eg: -webkit-user-select & user-select
   - have Home & about render with slight animation
+  - Change my web icon

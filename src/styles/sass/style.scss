@@ -7,7 +7,12 @@ $margin-LR: 21vw;
   margin: 0;
   font-family: f.$default;
   font-size: 1.15vw;
-  color: c.$white;
+  color: c.$text;
+}
+
+body {
+  // background-color: c.$accs3;
+  background: -webkit-linear-gradient(275deg, c.$accs3 80%, c.$bg 80.08%);
 }
 
 // React-Spring Design Requirements
@@ -64,10 +69,6 @@ body,
       color: $active;
     }
   }
-}
-
-body {
-  background-color: c.$semi-black;
 }
 
 /** 
@@ -129,29 +130,31 @@ body {
   display: grid;
   align-items: center;
   text-align: center;
-  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 8px -0px rgba(0, 0, 0, 0.3);
   -webkit-user-select: none;
   user-select: none;
 
   .cover {
     position: absolute;
     cursor: -webkit-grab;
-    background-color: c.$royal; //change
+    background-color: c.$accs3; //change
     color: c.$white; // change
+    // color: c.$bg2;
+
     height: 100%;
     width: 100%;
     display: grid;
     align-items: center;
     text-align: center;
-    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 5px 30px -5px rgba(0, 0, 0, 0.2);
 
     &:active {
       cursor: -webkit-grabbing;
-      box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.4);
+      box-shadow: 8px 10px 30px -5px rgba(0, 0, 0, 0.4);
     }
 
     &:hover {
-      background-color: #716995;
+      background-color: #c44b5e;
     }
     * {
       // change to specific element
@@ -188,6 +191,10 @@ body {
 .social-icon {
   width: 1.5vw;
   height: 1.5vw;
+
+  path {
+    fill: c.$text;
+  }
 }
 
 /** 
@@ -196,11 +203,11 @@ body {
  * .card-cont: Picture container (at ImgCard.tsx)
  */
 .home-cont {
-  background-color: c.$semi-black;
+  // background-color: c.$semi-black;
   display: flex;
   justify-content: space-between;
   .sec-left {
-    padding-left: 15vw;
+    padding-left: 10vw;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -213,22 +220,34 @@ body {
       align-items: flex-end;
       margin-bottom: 2vw;
       #林 {
-        font-family: f.$chinese2;
+        font-family: f.$chinese3;
         font-size: 7vw;
       }
       #敬佳 {
-        font-family: f.$chinese2;
+        font-family: f.$chinese3;
         font-size: 4vw;
       }
       #isaac {
-        font-family: f.$accent;
+        // font-family: f.$accent;
         font-size: 5vw;
       }
       #lim {
         font-size: 7vw;
+        // font-weight: 400;
         font-family: f.$accent;
-        align-self: baseline;
+        // color: #be3f52;
+        align-self: baseline; //remove?
       }
+    }
+    p,
+    span {
+      font-size: 1.7vw;
+      // font-weight: bold;
+    }
+    #highlight {
+      color: c.$white;
+      // font-weight: bold;
+      // font-size: 1.7vw;
     }
   }
 }
@@ -239,14 +258,14 @@ body {
   right: 0;
 }
 
-$card-size: 25vw;
+$card-size: 30vw;
 .card-cont {
-  width: $card-size * 2.3;
+  width: $card-size * 1.8;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  // border-style: solid;
   .card {
     width: $card-size;
     height: $card-size;
@@ -254,18 +273,19 @@ $card-size: 25vw;
     background-size: cover;
     border-radius: 5px;
     will-change: transform;
+    box-shadow: 0px 0px 100px -30px rgba(36, 36, 36, 0.4);
   }
 }
 
 /********************* About Page**********************************************/
 .about-cont {
-  background-color: c.$black; //needed?
+  background-color: c.$white;
   .section {
     min-height: 100vh; // not needed
     width: auto; //not needed
   }
   h2 {
-    @include gradient(left); // need
+    // @include gradient(left); // need
     display: inline-block; // need
     font-size: 3vw; // need
   }
@@ -379,6 +399,7 @@ $card-size: 25vw;
   height: 100%;
   justify-content: center;
 }
+
 .deck {
   position: absolute;
   // width: 300px;
@@ -388,6 +409,7 @@ $card-size: 25vw;
   align-items: center; //test
   justify-content: center; //test
   touch-action: none;
+  z-index: 41;
 
   .deck-cont {
     background-color: #fff;

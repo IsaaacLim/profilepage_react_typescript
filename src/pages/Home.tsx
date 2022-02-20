@@ -5,7 +5,7 @@ import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
 import Card from "../components/ImgCard";
 import SocialsBar from "../components/SocialsBar";
-import ProfilePic from "../images/forkey.jpg";
+import ProfilePic from "../images/me2.jpg";
 
 const navListSmall: INav[] = [navLists[1], navLists[2]]; // about & works
 
@@ -29,23 +29,19 @@ const Home = () => {
       <div className="sec-left">
         <div className="text">
           <div className="name-cont">
-            <animated.h1 style={colorful} id="林">
-              林
-            </animated.h1>
+            {/* <animated.h1 style={colorful} id="林"> */}
+            {/* <animated.h1 id="林">林</animated.h1>
             <div className="mid">
-              <animated.h1 style={colorful} id="isaac">
-                Isaac
-              </animated.h1>
-              <animated.h1 style={colorful} id="敬佳">
-                敬佳
-              </animated.h1>
-            </div>
-            <animated.h1 style={colorful} className="right" id="lim">
-              Lim
+              <animated.h1 id="isaac">Isaac</animated.h1>
+              <animated.h1 id="敬佳">敬佳</animated.h1>
+            </div> */}
+            <animated.h1 className="right" id="lim">
+              Isaac Lim
             </animated.h1>
           </div>
           <p>
-            On a mission to becoming a Software Developer, <br />
+            On a mission to becoming a{" "}
+            <span id="highlight"> Software Developer</span>,<br />
             with an interest in tasteful designs.
           </p>
         </div>

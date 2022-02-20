@@ -67,17 +67,17 @@ export default function About() {
         <ParallaxLayer // Page 1
           offset={0}
           speed={0}
-          style={{ backgroundColor: "#000000" }}
+          style={{ backgroundColor: "#FFFFFF" }}
         />
         <ParallaxLayer // Page 2
           offset={1}
           speed={1}
-          style={{ backgroundColor: "#121516" }}
+          style={{ backgroundColor: "#f6f6f6" }}
         />
         <ParallaxLayer // Page 3
           offset={2}
           speed={0}
-          style={{ backgroundColor: "#000000" }}
+          style={{ backgroundColor: "#FFFFFF" }}
         />
         {/*********************** Page 1 *************************************/}
         {/* --- Title --- */}

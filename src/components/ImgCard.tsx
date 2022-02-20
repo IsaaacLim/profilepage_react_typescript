@@ -10,7 +10,7 @@ import { useSpring, animated, config } from "@react-spring/web";
  *
  * --- HELPER FUNCTION ---
  * @function calc
- * @returns Mouse contact points
+ * @returns Mouse contact points; 3rd variable is the scale factor
  *
  * @function trans
  * @returns Card transformation style
@@ -24,7 +24,7 @@ const calc = (
 ) => [
   -(y - rect.top - rect.height / 2) / 5,
   (x - rect.left - rect.width / 2) / 5,
-  1.4,
+  1.2,
 ];
 
 const trans = (x: number, y: number, s: number) =>

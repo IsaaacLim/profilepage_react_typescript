@@ -5,9 +5,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Long+Cang&display=swap");
 
-$accent: "Cardo", serif;
-$default: "Josefin Sans", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
+
+// $accent: "Cardo", serif;
+// $default: "Josefin Sans", sans-serif;
 $chinese: "Ma Shan Zheng", cursive;
 $chinese2: "Zhi Mang Xing", cursive;
 $chinese3: "Liu Jian Mao Cao", cursive;
 $chinese4: "Long Cang", cursive;
+
+$accent: "Lora", serif;
+$default: "Montserrat Alternates", sans-serif;
