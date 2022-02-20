@@ -5,12 +5,25 @@ import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
 import SocialsBar from "../components/SocialsBar";
 // import Image1 from "../images/greens.png";
-import Image2 from "../images/hot-air-balloon.png";
-import Image3 from "../images/mountains.png";
-import Image4 from "../images/world-tree.png";
-import Image5 from "../images/hourglass.png";
+import Image2 from "../images/hot-air-balloon.svg";
+import Image3 from "../images/mountains.svg";
+import Image4 from "../images/world-tree.svg";
+import Image5 from "../images/hourglass.svg";
+
 import Cloud from "../images/cloud.svg";
+import CirBlue from "../images/circles/blue.svg";
+import CirBrown from "../images/circles/brown.svg";
+import CirGrass from "../images/circles/green.svg";
+import CirGrey from "../images/circles/grey.svg";
+import CirLime from "../images/circles/lime.svg";
+import CirMaroon from "../images/circles/maroon.svg";
+import CirNavy from "../images/circles/navy.svg";
 import CirPeach from "../images/circles/peach.svg";
+import CirRed from "../images/circles/red.svg";
+import CirSkin from "../images/circles/skin.svg";
+import CirTea from "../images/circles/tea.svg";
+import CirTeal from "../images/circles/teal.svg";
+import CirYellow from "../images/circles/yellow.svg";
 
 /**
  * @param navListSmall: navLists with only 2 items. Props for NavSlider
@@ -169,15 +182,15 @@ export default function About() {
           </div>
         </ParallaxLayer>
         {/* --- Decor --- */}
-        <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.5 }}>
+        <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 1 }}>
           <img
             src={CirPeach}
             style={{ display: "block", width: "5%", marginLeft: "10%" }}
             alt="nothing"
           />
           <img
-            src={Cloud}
-            style={{ display: "block", width: "20%", marginLeft: "75%" }}
+            src={CirBlue}
+            style={{ display: "block", width: "2.6%", marginLeft: "75%" }}
             alt="nothing"
           />
         </ParallaxLayer>
@@ -201,22 +214,22 @@ export default function About() {
             alt="nothing"
           />
           <img
-            src={Cloud}
+            src={CirBrown}
             style={{
               display: "block",
-              width: "25%",
+              width: "2%",
               marginLeft: "30%",
-              opacity: "0.1",
+              // opacity: "0.1",
             }}
             alt="nothing"
           />
           <img
-            src={Cloud}
+            src={CirGrass}
             style={{
               display: "block",
-              width: "10%",
+              width: "3%",
               marginLeft: "80%",
-              opacity: "0.4",
+              // opacity: "0.4",
             }}
             alt="nothing"
           />
@@ -224,18 +237,18 @@ export default function About() {
         <ParallaxLayer
           offset={1.75}
           speed={0.5}
-          style={{ opacity: 0.35, zIndex: "0" }}
+          style={{ opacity: 1, zIndex: "0" }}
         >
           <img
-            src={Cloud}
-            style={{ display: "block", width: "15vw", marginLeft: "70vw" }}
+            src={CirGrey}
+            style={{ display: "block", width: "2%", marginLeft: "70vw" }}
             alt="nothing"
           />
           <img //gets pushed below page view from img element above
-            src={Cloud}
+            src={CirLime}
             style={{
               display: "block",
-              width: "17vw",
+              width: "3%",
               marginLeft: "40vw",
               marginTop: "10vw",
             }}
@@ -288,20 +301,20 @@ export default function About() {
         >
           <img src={Image5} alt="Hourglass" style={{ width: "30vw" }} />
         </ParallaxLayer>
-        <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.3 }}>
+        <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.7 }}>
           <img
-            src={Cloud}
+            src={CirNavy}
             style={{
               display: "block",
-              width: "20%",
+              width: "2.6%",
               marginLeft: "5%",
-              opacity: "0.3",
+              // opacity: "0.3",
             }}
             alt="nothing"
           />
           <img
-            src={Cloud}
-            style={{ display: "block", width: "15%", marginLeft: "75%" }}
+            src={CirMaroon}
+            style={{ display: "block", width: "2.5%", marginLeft: "75%" }}
             alt="nothing"
           />
         </ParallaxLayer>
