@@ -4,12 +4,10 @@ import NavSlider from "../components/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
 import SocialsBar from "../components/SocialsBar";
-// import Image1 from "../images/greens.png";
-import Image2 from "../images/hot-air-balloon.svg";
-import Image3 from "../images/mountains.svg";
-import Image4 from "../images/world-tree.svg";
-import Image5 from "../images/hourglass.svg";
-
+import HotAirBalloon from "../images/hot-air-balloon.svg";
+import Mountains from "../images/mountains.svg";
+import WorldTree from "../images/world-tree.svg";
+import HourGlass from "../images/hourglass.svg";
 import CirBlue from "../images/circles/blue.svg";
 import CirBrown from "../images/circles/brown.svg";
 import CirGrass from "../images/circles/green.svg";
@@ -177,7 +175,7 @@ export default function About() {
         </ParallaxLayer>
         <ParallaxLayer offset={1.05} speed={-0.5} style={{ zIndex: "9" }}>
           <img
-            src={Image2}
+            src={HotAirBalloon}
             style={{ width: "25%", marginLeft: "22%" }}
             alt="Hot air balloon"
           />
@@ -240,7 +238,7 @@ export default function About() {
         </ParallaxLayer>
         <ParallaxLayer offset={1.68} speed={0.8}>
           <img
-            src={Image4}
+            src={WorldTree}
             style={{ display: "block", width: "15%", marginLeft: "15%" }}
             alt="Tree on globe"
           />
@@ -248,7 +246,7 @@ export default function About() {
         {/* - from current to next page - */}
         <ParallaxLayer offset={1.4} speed={-0.1} style={{ zIndex: "1" }}>
           <img
-            src={Image3}
+            src={Mountains}
             style={{
               display: "block",
               width: "25vw",
@@ -263,11 +261,7 @@ export default function About() {
             alt="Brown dot"
           />
         </ParallaxLayer>
-        <ParallaxLayer
-          offset={1.9}
-          speed={0.5}
-          style={{ opacity: 1, zIndex: "0" }}
-        >
+        <ParallaxLayer offset={1.9} speed={0.8}>
           <img
             src={CirGrass}
             style={{ display: "block", width: "2%", marginLeft: "60%" }}
@@ -323,7 +317,7 @@ export default function About() {
             zIndex: "1",
           }}
         >
-          <img src={Image5} alt="Hourglass" style={{ width: "30%" }} />
+          <img src={HourGlass} alt="Hourglass" style={{ width: "30%" }} />
         </ParallaxLayer>
         <ParallaxLayer offset={2.1} speed={0.2}>
           <img
