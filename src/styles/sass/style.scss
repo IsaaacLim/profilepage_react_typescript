@@ -130,7 +130,7 @@ body,
   display: grid;
   align-items: center;
   text-align: center;
-  box-shadow: 5px 5px 8px -0px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 4px -0px rgba(0, 0, 0, 0.3);
   -webkit-user-select: none;
   user-select: none;
 
@@ -146,11 +146,11 @@ body,
     display: grid;
     align-items: center;
     text-align: center;
-    box-shadow: 4px 5px 30px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 10px -5px rgba(0, 0, 0, 0.3);
 
     &:active {
       cursor: -webkit-grabbing;
-      box-shadow: 8px 10px 30px -5px rgba(0, 0, 0, 0.4);
+      box-shadow: 2px 2px 20px -5px rgba(0, 0, 0, 0.7);
     }
 
     &:hover {
