@@ -111,11 +111,11 @@ export default function About() {
         </ParallaxLayer>
         {/* --- Description --- */}
         <ParallaxLayer
-          offset={0.4}
+          offset={0.45}
           speed={0.1}
           style={{ marginLeft: "49vw", zIndex: "10" }}
         >
-          <div style={{ maxWidth: "25vw" }}>
+          <div style={{ maxWidth: "28vw" }}>
             <p>
               My name is Isaac and I'm an upcoming Software Developer. While I'm
               still gathering more experiences into my stash, I'm proud of my
@@ -125,7 +125,58 @@ export default function About() {
           </div>
         </ParallaxLayer>
         {/* --- Decor --- */}
+        <ParallaxLayer offset={0.05} speed={0.8}>
+          <img
+            src={CirRed}
+            style={{ width: "2%", marginLeft: "12vw" }}
+            alt="Hot air balloon"
+          />
+        </ParallaxLayer>
+        <ParallaxLayer offset={0.05} speed={-0.2}>
+          <img
+            src={CirSkin}
+            style={{
+              width: "2.2%",
+              marginTop: "20vw",
+              marginLeft: "95vw",
+            }}
+            alt="Hot air balloon"
+          />
+          <img
+            src={CirTea}
+            style={{
+              width: "1.6%",
+              marginTop: "10vw",
+              marginLeft: "72vw",
+            }}
+            alt="Hot air balloon"
+          />
+        </ParallaxLayer>
+        <ParallaxLayer offset={0.1} speed={0.3}>
+          <img
+            src={CirTeal}
+            style={{ width: "2.6%", marginLeft: "52vw" }}
+            alt="Hot air balloon"
+          />
+        </ParallaxLayer>
         {/* - from current to next page - */}
+        <ParallaxLayer offset={0.8} speed={-0.1}>
+          <img
+            src={CirYellow}
+            style={{ width: "5%", marginLeft: "12vw" }}
+            alt="Hot air balloon"
+          />
+          <img
+            src={CirGrey}
+            style={{
+              position: "absolute",
+              width: "5.1%",
+              marginTop: "7vw",
+              marginLeft: "70vw",
+            }}
+            alt="Hot air balloon"
+          />
+        </ParallaxLayer>
         <ParallaxLayer offset={1.05} speed={-0.5} style={{ zIndex: "9" }}>
           <img
             src={Image2}
