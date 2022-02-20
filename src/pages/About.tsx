@@ -10,6 +10,7 @@ import Image3 from "../images/mountains.png";
 import Image4 from "../images/world-tree.png";
 import Image5 from "../images/hourglass.png";
 import Cloud from "../images/cloud.svg";
+import CirPeach from "../images/circles/peach.svg";
 
 /**
  * @param navListSmall: navLists with only 2 items. Props for NavSlider
@@ -168,10 +169,10 @@ export default function About() {
           </div>
         </ParallaxLayer>
         {/* --- Decor --- */}
-        <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
+        <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.5 }}>
           <img
-            src={Cloud}
-            style={{ display: "block", width: "10%", marginLeft: "10%" }}
+            src={CirPeach}
+            style={{ display: "block", width: "5%", marginLeft: "10%" }}
             alt="nothing"
           />
           <img
