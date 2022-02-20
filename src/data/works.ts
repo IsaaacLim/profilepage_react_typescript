@@ -1,7 +1,7 @@
 import IWork from "../interfaces/work"
 import Born2bRoot from "../images/born2broot.png";
 import Minishell from "../images/minishell.png";
-import SelectedWorks from "../images/selected_works.svg";
+import SelectedWorks from "../images/selected_work.svg";
 import SoLong from "../images/so_long.png";
 import WIP from "../images/work-in-progress.png";
 
