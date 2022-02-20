@@ -71,7 +71,7 @@ const Spring: React.FC<{
       >
         <a href={social.url} target="_blank" rel="noopener noreferrer">
           <svg xmlns={social.xmlns} viewBox={social.viewBox}>
-            <path d={social.d} fill={social.fill} />
+            <path d={social.d} />
           </svg>
         </a>
       </animated.div>

@@ -4,5 +4,4 @@ export default interface ISocial {
 	xmlns: string;
 	viewBox: string;
 	d: string;
-	fill: string;
 }
