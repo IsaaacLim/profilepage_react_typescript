@@ -35,7 +35,7 @@ const Card: React.FC<{ image: string }> = ({ image }) => {
   const ref = useRef<HTMLInputElement>(null);
   const [xys, set] = useState([0, 0, 1]);
 
-  const props = useSpring({ xys, config: config["gentle"] });
+  const props = useSpring({ xys, config: config["molasses"] });
 
   return (
     <div className="card-cont" ref={ref}>
