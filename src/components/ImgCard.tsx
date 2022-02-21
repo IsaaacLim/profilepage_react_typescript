@@ -22,13 +22,13 @@ const calc = (
   y: number,
   rect: { top: number; height: number; left: number; width: number }
 ) => [
-  -(y - rect.top - rect.height / 2) / 10,
-  (x - rect.left - rect.width / 2) / 10,
+  -(y - rect.top - rect.height / 2) / 5,
+  (x - rect.left - rect.width / 2) / 5,
   1.2,
 ];
 
 const trans = (x: number, y: number, s: number) =>
-  `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
+  `perspective(900px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
 /* -------- Main function  ---------------------------------------------------*/
 const Card: React.FC<{ image: string }> = ({ image }) => {
