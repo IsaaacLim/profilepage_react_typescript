@@ -84,9 +84,9 @@ const SocialsBar: React.FC<{ styleType: number }> = ({ styleType }) => {
   if (styleType === 1) {
     return (
       <div className="socials-bar">
-        <Spring social={socials[0]} xFrom={15} delay={600} />
-        <Spring social={socials[1]} xFrom={15} delay={500} />
-        <Spring social={socials[2]} xFrom={15} delay={700} />
+        <Spring social={socials[0]} xFrom={15} delay={1600} />
+        <Spring social={socials[1]} xFrom={15} delay={1500} />
+        <Spring social={socials[2]} xFrom={15} delay={1700} />
       </div>
     );
   } else if (styleType === 2) {
