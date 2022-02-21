@@ -126,7 +126,7 @@ body,
 .nav-cont .text {
   background: -webkit-linear-gradient(right, #84c7d0, #75dddd);
   -webkit-background-clip: text;
-  background-size: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   position: absolute;
 }

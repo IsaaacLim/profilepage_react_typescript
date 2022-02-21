@@ -177,7 +177,7 @@ body,
     // color: c.$accs3;
     background: -webkit-linear-gradient(right, c.$gradient2);
     -webkit-background-clip: text;
-    background-size: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     position: absolute;
   }
