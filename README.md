@@ -141,9 +141,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     - Change navListSmall to match Works
     - Slow fade in when render
   - Test: Give a "no testing in progress sign"
-  - Works:
-    - maybe change background color
-    - Selected Work?
+  - Works: Maybe add this project in
 - styles:
   - remove unused chinese character
   - organize styles

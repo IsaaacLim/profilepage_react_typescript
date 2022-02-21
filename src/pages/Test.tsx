@@ -1,9 +1,7 @@
-import React, { useRef, useEffect, useMemo } from "react";
+import React, { useRef } from "react";
 import { useSpring, animated, to } from "@react-spring/web";
 import { useGesture } from "react-use-gesture";
 import Forkey from "../images/forkey.jpg";
-
-import styles from "./styles.module.css";
 
 const calcX = (y: number, ly: number) =>
   -(y - ly - window.innerHeight / 2) / 20;
@@ -21,26 +19,23 @@ export default function App() {
       zoom: 0,
       x: 0,
       y: 0,
-      // config: { mass: 5, tension: 350, friction: 40 },
-      config: { mass: 5, tension: 700, friction: 80 },
+      config: { mass: 5, tension: 350, friction: 40 },
     })
   );
-  // React.useEffect(() => {
-  //   if (!isMoved) return;
-  //   const timeoutId = window.setTimeout(() => {
-  //     api({
-  //       x: 0,
-  //       y: 0,
-  //     });
-  //     setIsMoved(false);
-  //   }, 2000);
-  //   return () => {
-  //     window.clearTimeout(timeoutId);
-  //   };
-  // }, [isMoved, api]);
+  React.useEffect(() => {
+    if (!isMoved) return;
+    const timeoutId = window.setTimeout(() => {
+      api({
+        x: 0,
+        y: 0,
+      });
+      setIsMoved(false);
+    }, 2000);
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [isMoved, api]);
   const enter = () => {
-    api({ x, y });
-    console.log(x);
     setIsMoved(true);
   };
   const leave = () => {
@@ -49,9 +44,8 @@ export default function App() {
 
   useGesture(
     {
-      onDrag: ({ active, movement: [x, y] }) =>
+      onDrag: ({ active, offset: [x, y] }) =>
         api({ x, y, rotateX: 0, rotateY: 0, scale: active ? 1 : 1.1 }),
-      onDragEnd: ({ delta: [x, y] }) => api({ x, y }),
       onPinch: ({ offset: [d, a] }) => api({ zoom: d / 200, rotateZ: a }),
       onMove: ({ xy: [px, py], dragging }) =>
         !dragging &&
@@ -67,10 +61,10 @@ export default function App() {
   );
 
   return (
-    <div className={styles.container}>
+    <div className="test-cont">
       <animated.div
         ref={domTarget}
-        className={styles.card}
+        className="card"
         style={{
           transform: "perspective(600px)",
           x,
@@ -80,8 +74,8 @@ export default function App() {
           rotateY,
           rotateZ,
         }}
-        // onMouseUp={enter}
-        // onMouseDown={leave}
+        onMouseUp={enter}
+        onMouseDown={leave}
       >
         <animated.div>
           <div style={{ backgroundImage: `url(${Forkey})` }} />
