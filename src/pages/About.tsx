@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
+import FadeInDiv from "../components/FadeInDiv";
 import NavSlider from "../components/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
@@ -101,9 +102,11 @@ export default function About() {
             zIndex: "20",
           }}
         >
-          <h2 style={{ fontSize: "4.5vw", maxWidth: "62%" }}>
-            Making my way into the software development industry.
-          </h2>
+          <FadeInDiv>
+            <h2 style={{ fontSize: "4.5vw", maxWidth: "62%" }}>
+              Making my way into the software development industry.
+            </h2>
+          </FadeInDiv>
         </ParallaxLayer>
         {/* --- Description --- */}
         <ParallaxLayer
@@ -111,14 +114,16 @@ export default function About() {
           speed={0.1}
           style={{ left: "50%", zIndex: "10" }}
         >
-          <div style={{ maxWidth: "28%" }}>
-            <p>
-              My name is Isaac and I'm an upcoming Software Developer. While I'm
-              still gathering more experiences into my stash, I'm proud of my
-              skills in C, C++, HTML, CSS &amp; JavaScript
-            </p>
-            <p id="note">Continue scrolling to see what I'm made of</p>
-          </div>
+          <FadeInDiv yFrom="20px">
+            <div style={{ maxWidth: "28%" }}>
+              <p>
+                My name is Isaac and I'm an upcoming Software Developer. While
+                I'm still gathering more experiences into my stash, I'm proud of
+                my skills in C, C++, HTML, CSS &amp; JavaScript
+              </p>
+              <p id="note">Continue scrolling to see what I'm made of</p>
+            </div>
+          </FadeInDiv>
         </ParallaxLayer>
         {/* --- Decor --- */}
         <ParallaxLayer offset={0.05} speed={0.8}>
@@ -174,11 +179,13 @@ export default function About() {
           />
         </ParallaxLayer>
         <ParallaxLayer offset={1.05} speed={-0.5} style={{ zIndex: "9" }}>
-          <img
-            src={HotAirBalloon}
-            style={{ width: "25%", marginLeft: "22%" }}
-            alt="Hot air balloon"
-          />
+          <FadeInDiv yFrom="0" scaleFrom={0.8} delay={100}>
+            <img
+              src={HotAirBalloon}
+              style={{ width: "25%", marginLeft: "22%" }}
+              alt="Hot air balloon"
+            />
+          </FadeInDiv>
         </ParallaxLayer>
         {/*********************** Page 2 *************************************/}
         {/* --- Title --- */}

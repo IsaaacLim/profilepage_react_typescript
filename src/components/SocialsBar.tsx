@@ -42,7 +42,7 @@ const Spring: React.FC<{
 
   const [isHovered, setIsHovered] = React.useState(false);
   const hover = useSpring({
-    transform: isHovered ? `scale(1.5)` : `scale(1)`,
+    transform: isHovered ? `scale(1.7)` : `scale(1)`,
     config: {
       mass: 3,
       tension: 340,
@@ -92,9 +92,9 @@ const SocialsBar: React.FC<{ styleType: number }> = ({ styleType }) => {
   } else if (styleType === 2) {
     return (
       <div className="socials-bar">
-        <Spring social={socials[0]} friction={15} scaleFrom={0.5} delay={0} />
-        <Spring social={socials[1]} friction={15} scaleFrom={0.5} delay={100} />
-        <Spring social={socials[2]} friction={15} scaleFrom={0.5} delay={200} />
+        <Spring social={socials[0]} friction={10} scaleFrom={0.1} delay={0} />
+        <Spring social={socials[1]} friction={10} scaleFrom={0.1} delay={100} />
+        <Spring social={socials[2]} friction={10} scaleFrom={0.1} delay={200} />
       </div>
     );
   } else if (styleType === 3) {

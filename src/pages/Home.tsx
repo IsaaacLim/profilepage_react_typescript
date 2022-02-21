@@ -32,7 +32,7 @@ const Home = () => {
           </NavSlider>
         </div>
       </div>
-      <FadeInDiv className="sec-right" yFrom="0" delay={200}>
+      <FadeInDiv className="sec-right" yFrom="0" scaleFrom={1.2} delay={200}>
         <Card image={ProfilePic}></Card>
       </FadeInDiv>
     </div>
