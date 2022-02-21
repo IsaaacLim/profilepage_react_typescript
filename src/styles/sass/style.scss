@@ -158,9 +158,9 @@ body,
       box-shadow: 2px 2px 20px -5px rgba(0, 0, 0, 0.7);
     }
 
-    &:hover {
-      // background-color: #ccb3b3;
-    }
+    // &:hover {
+    //   // background-color: #ccb3b3;
+    // }
     * {
       // change to specific element
       pointer-events: none;
@@ -176,7 +176,7 @@ body,
     // color: c.$bg2;
     // color: c.$accs3;
     background: -webkit-linear-gradient(right, c.$gradient2);
-    -webkit-background-clip: text;
+    // -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: absolute;
   }
@@ -291,9 +291,9 @@ $card-size: 30vw;
  */
 .about-cont {
   background-color: c.$white;
-  p {
-    // font-family: f.$accent;
-  }
+  // p {
+  //   // font-family: f.$accent;
+  // }
   .section {
     min-height: 100vh; // not needed
     width: auto; //not needed
