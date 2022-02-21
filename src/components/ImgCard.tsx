@@ -14,6 +14,13 @@ import { useSpring, animated, config } from "@react-spring/web";
  *
  * @function trans
  * @returns Card transformation style
+ *
+ * --- NOTES ---
+ * @IMPORTANT
+ * Deployment through Netlify calculates `cals` and `trans` differently
+ * Original values:
+ *  - rect x & y: ( ... ) / 5;
+ *
  */
 
 /* -------- Helper functions -------------------------------------------------*/
@@ -28,7 +35,7 @@ const calc = (
 ];
 
 const trans = (x: number, y: number, s: number) =>
-  `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
+  `perspective(900px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
 /* -------- Main function  ---------------------------------------------------*/
 const Card: React.FC<{ image: string }> = ({ image }) => {
