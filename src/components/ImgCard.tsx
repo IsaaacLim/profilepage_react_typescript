@@ -20,7 +20,10 @@ import { useSpring, animated, config } from "@react-spring/web";
  * Deployment through Netlify calculates `cals` and `trans` differently
  * Original values:
  *  - rect x & y: ( ... ) / 5;
- *
+ *  - trans: perspective(600px)
+ * Netlify values:
+ *  - rect x & y: ( ... ) / 10;
+ *  - trans: perspective(900px)
  */
 
 /* -------- Helper functions -------------------------------------------------*/

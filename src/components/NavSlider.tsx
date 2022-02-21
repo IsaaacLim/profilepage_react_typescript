@@ -72,18 +72,21 @@ function useWindowWidth() {
 let dst: number;
 
 const left = {
-  bg: `linear-gradient(120deg, #f093fb 0%, #f5576c 100%)`,
+  // bg: `linear-gradient(120deg, #f093fb 0%, #f5576c 100%)`,
   // bg: `linear-gradient(120deg, #fbe893 0%, #f59657 100%)`,
+  bg: `linear-gradient(120deg, #FFFFFF 0%, #FFFFFF 100%)`,
   justifySelf: "end",
 };
 
 const right = {
   // bg: `linear-gradient(120deg, #45c939 0%, #f9f586 100%)`,
   // bg: `linear-gradient(120deg, #7fff00 0%, #dfff00 100%)`,
-  bg: `linear-gradient(120deg, #23b2d6 0%, #6addec 100%)`,
+  // bg: `linear-gradient(120deg, #23b2d6 0%, #6addec 100%)`,
   // bg: `linear-gradient(120deg, #00c4cf 0%, #5aeee2 100%)`,
   // bg: `linear-gradient(120deg, #7c00cf 0%, #f83ef8 100%)`,
   // bg: `linear-gradient(120deg, #b149f7 0%, #f36ff3 100%)`,
+  // bg: `linear-gradient(120deg, #84c7d0 0%, #75DDDD 100%)`,
+  bg: `linear-gradient(120deg, #FFFFFF 0%, #FFFFFF 100%)`,
   justifySelf: "start",
 };
 
