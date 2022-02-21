@@ -10,31 +10,12 @@ import ProfilePic from "../images/profile-pic.jpg";
 const navListSmall: INav[] = [navLists[1], navLists[2]]; // about & works
 
 const Home = () => {
-  const colorful = useSpring({
-    loop: true,
-    config: { duration: 5000 },
-    to: [
-      { opacity: 1, color: `#cffffe` },
-      { opacity: 1, color: `#f9f7d9` },
-      { opacity: 1, color: `#fce2ce` },
-      { opacity: 1, color: `#ffc1f3` },
-      { opacity: 1, color: `#ffffff` },
-    ],
-    from: { opacity: 1, color: `#ffffff` },
-  });
-
   return (
     <div className="home-cont">
       <SocialsBar styleType={1} />
       <div className="sec-left">
         <div className="text">
           <div className="name-cont">
-            {/* <animated.h1 style={colorful} id="林"> */}
-            {/* <animated.h1 id="林">林</animated.h1>
-            <div className="mid">
-              <animated.h1 id="isaac">Isaac</animated.h1>
-              <animated.h1 id="敬佳">敬佳</animated.h1>
-            </div> */}
             <animated.h1 className="right" id="lim">
               Isaac Lim
             </animated.h1>
