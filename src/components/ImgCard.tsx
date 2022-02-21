@@ -22,8 +22,8 @@ const calc = (
   y: number,
   rect: { top: number; height: number; left: number; width: number }
 ) => [
-  -(y - rect.top - rect.height / 2) / 5,
-  (x - rect.left - rect.width / 2) / 5,
+  -(y - rect.top - rect.height / 2) / 10,
+  (x - rect.left - rect.width / 2) / 10,
   1.2,
 ];
 
@@ -35,7 +35,7 @@ const Card: React.FC<{ image: string }> = ({ image }) => {
   const ref = useRef<HTMLInputElement>(null);
   const [xys, set] = useState([0, 0, 1]);
 
-  const props = useSpring({ xys, config: config["molasses"] });
+  const props = useSpring({ xys, config: config["gentle"] });
 
   return (
     <div className="card-cont" ref={ref}>
