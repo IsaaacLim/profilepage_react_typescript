@@ -124,9 +124,10 @@ body,
 }
 .nav-cont .circle {
   border-radius: 50%;
-  background-color: white;
+  background-color: #f6f6f6;
 }
 .nav-cont .text {
+  color: #f6f6f6;
   position: absolute;
 }
 
@@ -147,7 +148,7 @@ body,
 .social-icon {
   width: 1.5vw;
   height: 1.5vw;
-  padding: 1vw 0 1vw 0;
+  padding: 1vw 0vw 1vw 0vw;
 }
 .social-icon path {
   fill: #111111;

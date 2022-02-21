@@ -165,10 +165,11 @@ body,
 
   .circle {
     border-radius: 50%;
-    background-color: c.$white;
+    background-color: c.$bg2;
   }
 
   .text {
+    color: c.$bg2;
     position: absolute;
   }
 }
@@ -190,7 +191,7 @@ body,
 .social-icon {
   width: 1.5vw;
   height: 1.5vw;
-  padding: 1vw 0 1vw 0;
+  padding: 1vw 0vw 1vw 0vw;
 
   path {
     fill: c.$text;
