@@ -14,7 +14,7 @@
 }
 
 body {
-  background: -webkit-linear-gradient(275deg, #e68a97 80%, white 80.08%);
+  background: -webkit-linear-gradient(275deg, #c1a3a3 80%, white 80.08%);
 }
 
 html,
@@ -103,7 +103,7 @@ body,
 .nav-cont .cover {
   position: absolute;
   cursor: -webkit-grab;
-  background-color: #e68a97;
+  background-color: #c1a3a3;
   color: white;
   height: 100%;
   width: 100%;
@@ -117,7 +117,7 @@ body,
   box-shadow: 2px 2px 20px -5px rgba(0, 0, 0, 0.7);
 }
 .nav-cont .cover:hover {
-  background-color: #c44b5e;
+  background-color: #ccb3b3;
 }
 .nav-cont .cover * {
   pointer-events: none;
@@ -332,7 +332,7 @@ body,
 
 /********************* Works **************************************************/
 .works-cont {
-  background: lightblue;
+  background: #93b5c6;
   cursor: url(../../images/cursor.png) 39 39, auto;
   display: flex;
   align-items: center;

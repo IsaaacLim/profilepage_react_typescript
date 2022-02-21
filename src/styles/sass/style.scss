@@ -138,6 +138,7 @@ body,
     position: absolute;
     cursor: -webkit-grab;
     background-color: c.$accs3; //change
+    // background-color: #e68a97;
     color: c.$white; // change
     // color: c.$bg2;
 
@@ -154,7 +155,7 @@ body,
     }
 
     &:hover {
-      background-color: #c44b5e;
+      background-color: #ccb3b3;
     }
     * {
       // change to specific element
@@ -393,7 +394,8 @@ $card-size: 30vw;
 // --- Default deck style structure from Docs ---
 .works-cont {
   // background: #4ec5c1;
-  background: lightblue;
+  // background: lightblue;
+  background: #93b5c6;
   // background: c.$cream;
   cursor: url(../../images/cursor.png) 39 39, auto;
   display: flex;

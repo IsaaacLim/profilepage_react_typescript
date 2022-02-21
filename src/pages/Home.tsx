@@ -5,7 +5,7 @@ import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
 import Card from "../components/ImgCard";
 import SocialsBar from "../components/SocialsBar";
-import ProfilePic from "../images/me2.jpg";
+import ProfilePic from "../images/profile-pic.jpg";
 
 const navListSmall: INav[] = [navLists[1], navLists[2]]; // about & works
 
