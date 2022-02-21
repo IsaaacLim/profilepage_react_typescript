@@ -1,5 +1,4 @@
 import React from "react";
-import { useSpring, animated } from "@react-spring/web";
 import NavSlider from "../components/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
@@ -16,9 +15,9 @@ const Home = () => {
       <div className="sec-left">
         <div className="text">
           <div className="name-cont">
-            <animated.h1 className="right" id="lim">
+            <h1 className="right" id="lim">
               Isaac Lim
-            </animated.h1>
+            </h1>
           </div>
           <p>
             On a mission to becoming a{" "}
