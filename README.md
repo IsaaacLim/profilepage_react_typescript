@@ -127,7 +127,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - components
   - ImgCard: Change image
   - NavSlider: Change background and text color
-  - SocialsBar: Give padding to each icon div to make it easier to toggle
+  - SocialsBar:
+    - Reduce scale size
 - data (Completed)
 - images
   - removed unused images
@@ -137,11 +138,16 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     - no text, image highlight
     - modularize padding/margin values
     - Change navListSmall to match Works
+    - Dots appearance according to space (bigger ones move faster)
+    - Matching font style
   - Home:
+    - Profile pic render with slight tilt
+    - Maybe same font style
     - Change navListSmall to match Works
-    - Slow fade in when render
   - Test: Give a "no testing in progress sign"
-  - Works: Maybe add this project in
+  - Works:
+    - Maybe add this project in
+    - Maybe use same font style
 - styles:
   - remove unused chinese character
   - organize styles

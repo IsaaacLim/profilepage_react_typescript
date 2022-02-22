@@ -10,8 +10,8 @@ import INav from "../interfaces/navList";
  * --- VARIABLES & their FUNCTIONS ---
  * @const
  *  dst: Sliding distance max/min, initialize within Slider
- *  left: css (bg & element pos) when slider slide to left
- *  right: css (bg & element pos) when slider slide to right
+ *  left: css when slider slide to left
+ *  right: css when slider slide to right
  *  Slider{
  *   	@param:
  *   		children: Elements contained within the calling <Slider></Slider> element
@@ -72,21 +72,18 @@ function useWindowWidth() {
 let dst: number;
 
 const left = {
-  // bg: `linear-gradient(120deg, #f093fb 0%, #f5576c 100%)`,
-  // bg: `linear-gradient(120deg, #fbe893 0%, #f59657 100%)`,
-  bg: `linear-gradient(120deg, #FFFFFF 0%, #FFFFFF 100%)`,
+  bg: "#fc6868",
+  boxShadow: "inset 6px 6px 11px #ca5353, inset -6px -6px 11px #ff7d7d",
+  textColor: "#860214",
   justifySelf: "end",
 };
 
 const right = {
-  // bg: `linear-gradient(120deg, #45c939 0%, #f9f586 100%)`,
-  // bg: `linear-gradient(120deg, #7fff00 0%, #dfff00 100%)`,
-  // bg: `linear-gradient(120deg, #23b2d6 0%, #6addec 100%)`,
-  // bg: `linear-gradient(120deg, #00c4cf 0%, #5aeee2 100%)`,
-  // bg: `linear-gradient(120deg, #7c00cf 0%, #f83ef8 100%)`,
-  // bg: `linear-gradient(120deg, #b149f7 0%, #f36ff3 100%)`,
-  // bg: `linear-gradient(120deg, #84c7d0 0%, #75DDDD 100%)`,
-  bg: `linear-gradient(120deg, #FFFFFF 0%, #FFFFFF 100%)`,
+  bg: "#82D173",
+  boxShadow: "inset 6px 6px 11px #68a75c, inset -6px -6px 11px #9cfb8a",
+  // bg: "#e0ffe6",
+  // boxShadow: "inset 6px 6px 11px #b3ccb8, inset -6px -6px 11px #ffffff",
+  textColor: "#106e08",
   justifySelf: "start",
 };
 
@@ -100,13 +97,14 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   let navigate = useNavigate();
   const rightNav = navItems[0];
   const leftNav = navItems[1];
-  navSize === "small" ? (dst = width / 17) : (dst = width / 6);
-  const [{ x, scale, navText, bg, justifySelf }, api] = useSpring(() => ({
-    x: 0,
-    scale: 1.05,
-    navText: leftNav.name,
-    ...left,
-  }));
+  navSize === "small" ? (dst = width / 17) : (dst = width / 5.8);
+  const [{ x, scale, navText, bg, boxShadow, textColor, justifySelf }, api] =
+    useSpring(() => ({
+      x: 0,
+      scale: 1.05,
+      navText: leftNav.name,
+      ...left,
+    }));
   const bind = useDrag(({ active, movement: [x], down }) => {
     if (!down) {
       if (x <= -dst) return navigate(leftNav.path);
@@ -135,8 +133,12 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
    *  3. Slider cover
    */
   return (
-    <animated.div {...bind()} className="nav-cont" style={{ background: bg }}>
-      <animated.div className="text" style={{ justifySelf }}>
+    <animated.div
+      {...bind()}
+      className="nav-cont"
+      style={{ background: bg, boxShadow: boxShadow }}
+    >
+      <animated.div className="text" style={{ color: textColor, justifySelf }}>
         {navText}
       </animated.div>
       <animated.div className="circle" style={{ scale: crSize, justifySelf }} />

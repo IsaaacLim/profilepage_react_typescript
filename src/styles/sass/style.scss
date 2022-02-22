@@ -112,12 +112,30 @@ body,
     bottom: 0;
     padding-bottom: 30px;
     @include slider-comp-size(18vw);
+    .cover {
+      background-color: c.$accs3;
+      box-shadow: 2px 2px 3px #a48b8b, -2px -2px 3px #debbbb;
+
+      &:active {
+        background: linear-gradient(145deg, #cfaeae, #ae9393);
+        box-shadow: 3px 3px 10px 1px #a48b8b;
+      }
+    }
   }
 
   &#small {
     position: absolute;
     inset: 1vw 85vw;
     @include slider-comp-size(6vw);
+    .cover {
+      background-color: #93b5c6;
+      box-shadow: 1px 1px 2px #76919e, -1px -1px 2px #b0d9ee;
+
+      &:active {
+        background: linear-gradient(145deg, #9dc2d4, #84a3b2);
+        box-shadow: 2px 2px 6px 0.5px #76919e;
+      }
+    }
   }
 }
 
@@ -130,18 +148,37 @@ body,
   display: grid;
   align-items: center;
   text-align: center;
-  // box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3);
   -webkit-user-select: none;
   user-select: none;
+
+  // box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.3);
+  // box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3); // good for homepage
+
+  //#4 , small is cleaner
+  // box-shadow: inset 9px 9px 17px #a48b8b, inset -9px -9px 17px #debbbb;
+  // box-shadow: inset 18px 18px 36px #a48b8b, inset -18px -18px 36px #debbbb;
+  // box-shadow: inset 35px 35px 70px #a48b8b, inset -35px -35px 70px #debbbb;
+
+  // box-shadow: inset 9px 9px 17px #7a6767, inset -9px -9px 17px #ffdfdf;
+  // box-shadow: inset 9px 9px 17px #9a3744, inset -9px -9px 17px #ff7794;
+  // box-shadow: inset 20px 20px 60px #d04a5c, inset -20px -20px 60px #ff647c;
+  // box-shadow: inset 4px 4px 8px #d04a5c, inset -4px -4px 8px #ff647c;
+  // box-shadow: inset 6px 6px 11px #d04a5c, inset -6px -6px 11px #ff647c;
+  // box-shadow: inset 6px 6px 11px #c44656, inset -6px -6px 11px #ff6882;
+  // box-shadow: inset 6px 6px 11px #ac3d4c, inset -6px -6px 11px #ff718c; //56px45c939 size, 0.2px intensity
+
+  //#2, affects the cover's image
+  // box-shadow: 18px 18px 36px #a48b8b, -18px -18px 36px #debbbb;
+
+  //#1, feels weird
+  // box-shadow: 18px 18px 36px #a48b8b, -18px -18px 36px #debbbb;
 
   .cover {
     position: absolute;
     cursor: -webkit-grab;
-    background-color: c.$accs3; //change
     // background-color: white;
     // color: c.$white; // change
-    // color: c.$accs3;
+    color: c.$accs;
 
     height: 100%;
     width: 100%;
@@ -151,16 +188,57 @@ body,
     // box-shadow: 2px 2px 10px -5px rgba(0, 0, 0, 0.3);
     // box-shadow: inset 3px 2px 3px -4px rgba(0, 0, 0, 0.589);
     // border-radius: 69px;
-    background: linear-gradient(145deg, #cfaeae, #ae9393);
-    box-shadow: 26px 26px 51px #a48b8b, -26px -26px 51px #debbbb;
+
+    //#1, Okay, small is better
+    // background: #c1a3a3;
+
+    // background: #c1a3a3;
+    // box-shadow: 20px 20px 60px #a48b8b, -20px -20px 60px #debbbb;
+
+    // background: #c1a3a3;
+    // box-shadow: 35px 35px 70px #a48b8b, -35px -35px 70px #debbbb;
+
+    //#2, Obvious but not so nice (mid size best)
+    // background: #c1a3a3;
+    // box-shadow: 3px 3px 7px #a48b8b, -3px -3px 7px #debbbb;
+
+    // background: linear-gradient(145deg, #ae9393, #cfaeae);
+    // box-shadow: 20px 20px 60px #a48b8b, -20px -20px 60px #debbbb;
+
+    // background: linear-gradient(145deg, #ae9393, #cfaeae);
+    // box-shadow: 13px 13px 25px #a48b8b, -13px -13px 25px #debbbb;
+
+    // background: linear-gradient(145deg, #ae9393, #cfaeae);
+    // box-shadow: 35px 35px 70px #a48b8b, -35px -35px 70px #debbbb;
+
+    //#3. hard to see (blends better)
+    // background: linear-gradient(145deg, #cfaeae, #ae9393);
+    // box-shadow: 3px 3px 7px #a48b8b, -3px -3px 7px #debbbb;
+
+    // background: linear-gradient(145deg, #cfaeae, #ae9393);
+    // box-shadow: 17px 17px 33px #a48b8b, -17px -17px 33px #debbbb;
+    // box-shadow: 17px 17px 33px #7d6a6a, -17px -17px 33px #ffdcdc;
+
+    // background: linear-gradient(145deg, #cfaeae, #ae9393);
+    // box-shadow: 35px 35px 70px #a48b8b, -35px -35px 70px #debbbb;
+
     &:active {
       cursor: -webkit-grabbing;
-      box-shadow: 2px 2px 20px -5px rgba(0, 0, 0, 0.7);
+
+      background: linear-gradient(
+        145deg,
+        #cfaeae,
+        #ae9393
+      ); //curves the surface
+      box-shadow: 3px 3px 10px 1px #a48b8b;
+      // box-shadow: 17px 17px 33px #a48b8b, -17px -17px 33px #debbbb;
     }
 
-    // &:hover {
-    //   // background-color: #ccb3b3;
-    // }
+    &:hover {
+      color: c.$bg2; // lights up words
+      // color: c.$black;
+      //   // background-color: #ccb3b3;
+    }
     * {
       // change to specific element
       pointer-events: none;
@@ -173,12 +251,6 @@ body,
   }
 
   .text {
-    // color: c.$bg2;
-    // color: c.$accs3;
-    background: -webkit-linear-gradient(right, c.$gradient2);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
     position: absolute;
   }
 }
