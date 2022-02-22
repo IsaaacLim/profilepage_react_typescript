@@ -73,7 +73,7 @@ let dst: number;
 
 const left = {
   bg: "#fc6868",
-  boxShadow: "inset 6px 6px 11px #ca5353, inset -6px -6px 11px #ff7d7d",
+  boxShadow: "inset 6px 6px 11px #b04949, inset -6px -6px 11px #ff8787",
   textColor: "#860214",
   justifySelf: "end",
 };
