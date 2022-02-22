@@ -43,7 +43,7 @@ const trans = (x: number, y: number, s: number) =>
 /* -------- Main function  ---------------------------------------------------*/
 const Card: React.FC<{ image: string }> = ({ image }) => {
   const ref = useRef<HTMLInputElement>(null);
-  const [xys, set] = useState([-10, -10, 1]);
+  const [xys, set] = useState([0, -10, 1]);
 
   const props = useSpring({ xys, config: config["gentle"] });
 
