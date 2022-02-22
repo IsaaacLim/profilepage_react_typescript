@@ -361,7 +361,6 @@ body,
  */
 .works-cont {
   background: #93b5c6;
-  cursor: url(../../images/cursor.png) 39 39, auto;
   display: flex;
   align-items: center;
   height: 100%;
@@ -369,6 +368,7 @@ body,
 }
 
 .deck {
+  cursor: url(../../images/cursor.png) 39 39, auto;
   position: absolute;
   will-change: transform;
   display: flex;
