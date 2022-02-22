@@ -72,16 +72,26 @@ function useWindowWidth() {
 let dst: number;
 
 const left = {
-  bg: "#fc6868",
-  boxShadow: "inset 6px 6px 11px #b04949, inset -6px -6px 11px #ff8787",
-  textColor: "#860214",
+  bg: "#85afd5",
+  boxShadow: "inset 6px 6px 11px #6c8ead, inset -6px -6px 11px #9ed0fd",
+  textColor: "#072299",
+  circleColor: "#eaf9ff",
+  // bg: "#9fd095",
+  // boxShadow: "inset  6px 6px 11px #87b17f, inset -6px -6px 11px #b7efab",
+  // textColor: "#106e08",
+
   justifySelf: "end",
 };
 
 const right = {
-  bg: "#82D173",
-  boxShadow: "inset 6px 6px 11px #68a75c, inset -6px -6px 11px #9cfb8a",
-  textColor: "#106e08",
+  // bg: "#9fd095",
+  // boxShadow: "inset 2px 2px 4px #87b17f, inset -2px -2px 4px #b7efab",
+  // textColor: "#106e08",
+  bg: "#ba9cce",
+  boxShadow: "inset 6px 6px 11px #9e85af, inset -6px -6px 11px #d6b3ed",
+  textColor: "#6405a3",
+  circleColor: "#f8ecff",
+
   justifySelf: "start",
 };
 
@@ -96,13 +106,15 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   const rightNav = navItems[0];
   const leftNav = navItems[1];
   navSize === "small" ? (dst = width / 17) : (dst = width / 5.8);
-  const [{ x, scale, navText, bg, boxShadow, textColor, justifySelf }, api] =
-    useSpring(() => ({
-      x: 0,
-      scale: 1.05,
-      navText: leftNav.name,
-      ...left,
-    }));
+  const [
+    { x, scale, navText, bg, boxShadow, textColor, circleColor, justifySelf },
+    api,
+  ] = useSpring(() => ({
+    x: 0,
+    scale: 1.05,
+    navText: leftNav.name,
+    ...(navSize === "small" ? left : right), // mod this
+  }));
   const bind = useDrag(({ active, movement: [x], down }) => {
     if (!down) {
       if (x <= -dst) return navigate(leftNav.path);
@@ -130,16 +142,28 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
    *  2. Circle animation
    *  3. Slider cover
    */
+  if (navSize === "10") {
+    return (
+      <div>
+        <div>go away</div>
+        <div>and away</div>
+      </div>
+    );
+  }
   return (
     <animated.div
       {...bind()}
       className="nav-cont"
       style={{ background: bg, boxShadow: boxShadow }}
+      // style={{ background: bg }}
     >
       <animated.div className="text" style={{ color: textColor, justifySelf }}>
         {navText}
       </animated.div>
-      <animated.div className="circle" style={{ scale: crSize, justifySelf }} />
+      <animated.div
+        className="circle"
+        style={{ scale: crSize, backgroundColor: circleColor, justifySelf }}
+      />
       <animated.div className="cover" style={{ x, scale }}>
         {children}
       </animated.div>

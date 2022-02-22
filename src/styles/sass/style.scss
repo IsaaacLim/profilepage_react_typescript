@@ -94,7 +94,8 @@ body,
 
     .text {
       font-size: $base-size / 8;
-      margin: 0 ($base-size / 2.4) 0 ($base-size / 2.4);
+      // margin: 0 ($base-size / 2.3) 0 ($base-size / 2.3);
+      margin: 0 ($base-size / 2.6) 0 ($base-size / 2.6);
     }
 
     .cover {
@@ -173,6 +174,8 @@ body,
 
   // box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.3);
   // box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3); // good for homepage
+  background: #c1a3a3;
+  box-shadow: 2px 2px 3px #857070;
 
   //#4 , small is cleaner
   // box-shadow: inset 9px 9px 17px #a48b8b, inset -9px -9px 17px #debbbb;
@@ -229,10 +232,12 @@ body,
   .circle {
     border-radius: 50%;
     background-color: c.$bg2;
+    // background-color: #dba4ff;
   }
 
   .text {
     position: absolute;
+    // font-weight: bold;
   }
 }
 
@@ -466,6 +471,23 @@ $card-size: 30vw;
   // background: lightblue;
   background: #93b5c6;
   // background: c.$cream;
+  // background: #fdf8c4;
+  // background-color: #8bc6ec;
+  // background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  // background-color: #8bc6ec;
+  // background-image: linear-gradient(45deg, #8bc6ec 0%, #93b5c6 100%);
+  // background-color: #fbab7e;
+  // background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+  // background-image: linear-gradient(
+  //   174.2deg,
+  //   rgba(255, 244, 228, 1) 7.1%,
+  //   rgba(240, 246, 238, 1) 67.4%
+  // );
+  // background-image: linear-gradient(
+  //   90.5deg,
+  //   rgba(255, 207, 139, 0.5) 1.1%,
+  //   rgba(255, 207, 139, 1) 81.3%
+  // );
   display: flex;
   align-items: center;
   height: 100%;
@@ -486,7 +508,7 @@ $card-size: 30vw;
   z-index: 41;
 
   .deck-cont {
-    background-color: #fff;
+    background-color: #f6f6f6;
     border-radius: 0.5rem;
 
     display: flex; //test
@@ -502,7 +524,7 @@ $card-size: 30vw;
     width: 55vw;
     height: 80vh;
     will-change: transform;
-    box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
+    box-shadow: 0 12.5px 100px -80px #cecca7,
       0 10px 10px -10px rgba(50, 50, 73, 0.3);
   }
 }

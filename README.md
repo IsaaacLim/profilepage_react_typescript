@@ -121,6 +121,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   ```
 
 - React-Spring hover over animation [guide](https://www.joshwcomeau.com/react/boop/)
+- Neumorphism [helper](https://neumorphism.io/)
 
 ### Checklist
 
@@ -148,6 +149,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   - Works:
     - Maybe add this project in
     - Maybe use same font style
+    - adjust the card shadows
+    - add "flick!"
 - styles:
   - remove unused chinese character
   - organize styles
