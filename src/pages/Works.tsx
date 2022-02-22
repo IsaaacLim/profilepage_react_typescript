@@ -14,7 +14,7 @@ const Works = () => {
   return (
     <div>
       <div className="works-cont">
-        <div className="navbar" id="small">
+        <div className="navbar small" id="works">
           <NavSlider navItems={navListSmall} navSize="small">
             Slide.
           </NavSlider>

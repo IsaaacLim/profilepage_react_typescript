@@ -81,8 +81,6 @@ const left = {
 const right = {
   bg: "#82D173",
   boxShadow: "inset 6px 6px 11px #68a75c, inset -6px -6px 11px #9cfb8a",
-  // bg: "#e0ffe6",
-  // boxShadow: "inset 6px 6px 11px #b3ccb8, inset -6px -6px 11px #ffffff",
   textColor: "#106e08",
   justifySelf: "start",
 };

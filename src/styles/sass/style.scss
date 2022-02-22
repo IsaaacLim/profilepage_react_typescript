@@ -123,10 +123,13 @@ body,
     }
   }
 
-  &#small {
+  &.small {
     position: absolute;
     inset: 1vw 85vw;
     @include slider-comp-size(6vw);
+  }
+
+  &#works {
     .cover {
       background-color: #93b5c6;
       box-shadow: 1px 1px 2px #76919e, -1px -1px 2px #b0d9ee;
@@ -134,6 +137,24 @@ body,
       &:active {
         background: linear-gradient(145deg, #9dc2d4, #84a3b2);
         box-shadow: 2px 2px 6px 0.5px #76919e;
+      }
+    }
+  }
+
+  &#about {
+    .cover {
+      color: #a1a1a1;
+      background-color: #fff9ac;
+      box-shadow: 1px 1px 2px #ccc78a, -1px -1px 2px #ffffce;
+
+      &:hover {
+        color: c.$black; // lights up words
+        color: #978d00;
+      }
+
+      &:active {
+        background: linear-gradient(145deg, #ffffb8, #e6e09b);
+        box-shadow: 2px 2px 6px 0.5px #978d00;
       }
     }
   }
@@ -176,51 +197,12 @@ body,
   .cover {
     position: absolute;
     cursor: -webkit-grab;
-    // background-color: white;
-    // color: c.$white; // change
-    color: c.$accs;
-
     height: 100%;
     width: 100%;
     display: grid;
     align-items: center;
     text-align: center;
-    // box-shadow: 2px 2px 10px -5px rgba(0, 0, 0, 0.3);
-    // box-shadow: inset 3px 2px 3px -4px rgba(0, 0, 0, 0.589);
-    // border-radius: 69px;
-
-    //#1, Okay, small is better
-    // background: #c1a3a3;
-
-    // background: #c1a3a3;
-    // box-shadow: 20px 20px 60px #a48b8b, -20px -20px 60px #debbbb;
-
-    // background: #c1a3a3;
-    // box-shadow: 35px 35px 70px #a48b8b, -35px -35px 70px #debbbb;
-
-    //#2, Obvious but not so nice (mid size best)
-    // background: #c1a3a3;
-    // box-shadow: 3px 3px 7px #a48b8b, -3px -3px 7px #debbbb;
-
-    // background: linear-gradient(145deg, #ae9393, #cfaeae);
-    // box-shadow: 20px 20px 60px #a48b8b, -20px -20px 60px #debbbb;
-
-    // background: linear-gradient(145deg, #ae9393, #cfaeae);
-    // box-shadow: 13px 13px 25px #a48b8b, -13px -13px 25px #debbbb;
-
-    // background: linear-gradient(145deg, #ae9393, #cfaeae);
-    // box-shadow: 35px 35px 70px #a48b8b, -35px -35px 70px #debbbb;
-
-    //#3. hard to see (blends better)
-    // background: linear-gradient(145deg, #cfaeae, #ae9393);
-    // box-shadow: 3px 3px 7px #a48b8b, -3px -3px 7px #debbbb;
-
-    // background: linear-gradient(145deg, #cfaeae, #ae9393);
-    // box-shadow: 17px 17px 33px #a48b8b, -17px -17px 33px #debbbb;
-    // box-shadow: 17px 17px 33px #7d6a6a, -17px -17px 33px #ffdcdc;
-
-    // background: linear-gradient(145deg, #cfaeae, #ae9393);
-    // box-shadow: 35px 35px 70px #a48b8b, -35px -35px 70px #debbbb;
+    color: c.$accs;
 
     &:active {
       cursor: -webkit-grabbing;

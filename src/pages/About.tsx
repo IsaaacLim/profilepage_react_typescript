@@ -11,6 +11,7 @@ import WorldTree from "../images/world-tree.svg";
 import HourGlass from "../images/hourglass.svg";
 import CirBlue from "../images/circles/blue.svg";
 import CirBrown from "../images/circles/brown.svg";
+import CirButter from "../images/circles/butter.svg";
 import CirGrass from "../images/circles/green.svg";
 import CirGrey from "../images/circles/grey.svg";
 import CirLime from "../images/circles/lime.svg";
@@ -67,12 +68,12 @@ export default function About() {
           style={{ width: "5", height: "5" }} //prevent layer from overlapping other pages
           className="nav-sticky"
         >
-          <SocialsBar styleType={2} />
-          <div className="navbar" id="small">
+          <div className="navbar small" id="about">
             <NavSlider navItems={navListSmall} navSize="small">
               Slide.
             </NavSlider>
           </div>
+          <SocialsBar styleType={2} />
         </ParallaxLayer>
         {/******************* Background *************************************/}
         <ParallaxLayer // Page 1
@@ -159,6 +160,16 @@ export default function About() {
             style={{ width: "2.6%", marginLeft: "52%" }}
             alt="Teal dot"
           />
+          <img
+            src={CirButter}
+            style={{
+              width: "10%",
+              top: "-20%",
+              right: "6%",
+              position: "absolute",
+            }}
+            alt="Butter dot"
+          />
         </ParallaxLayer>
         {/* - from current to next page - */}
         <ParallaxLayer offset={0.8} speed={-0.1}>
@@ -172,7 +183,7 @@ export default function About() {
             style={{
               position: "absolute",
               width: "5.1%",
-              marginTop: "7%",
+              marginTop: "13%",
               marginLeft: "70%",
             }}
             alt="Grey dot"
@@ -357,6 +368,19 @@ export default function About() {
             src={CirRed}
             style={{ width: "4.3%", marginLeft: "50%" }}
             alt="Red dot"
+          />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={2.05} speed={0.8}>
+          <img
+            src={CirButter}
+            style={{
+              width: "10%",
+              top: "-10%",
+              right: "6%",
+              position: "absolute",
+            }}
+            alt="Butter dot"
           />
         </ParallaxLayer>
       </Parallax>
