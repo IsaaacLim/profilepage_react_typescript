@@ -9,6 +9,9 @@ import HotAirBalloon from "../images/hot-air-balloon.svg";
 import Mountains from "../images/mountains.svg";
 import WorldTree from "../images/world-tree.svg";
 import HourGlass from "../images/hourglass.svg";
+
+import dots from "../data/coloredDots";
+
 import CirBlue from "../images/circles/blue.svg";
 import CirBrown from "../images/circles/brown.svg";
 import CirButter from "../images/circles/butter.svg";
@@ -51,6 +54,25 @@ const home = navLists[0];
 const works = navLists[2];
 const navListSmall: INav[] = [home, works];
 const spaceLeft = "21%";
+
+const Dot: React.FC<{
+  color: string;
+  width?: string;
+  top?: string;
+  left: string;
+}> = ({ color = "a", width = "2%", top = "0%", left }) => {
+  for (var i = 0; i < dots.length; i++) {
+    if (color === dots[i].color)
+      return (
+        <img
+          src={dots[i].img}
+          alt={dots[i].alt}
+          style={{ position: "absolute", width: width, top: top, left: left }}
+        />
+      );
+  }
+  return <div>No such color dot</div>;
+};
 
 export default function About() {
   const parallax = useRef<IParallax>(null!);
@@ -128,6 +150,7 @@ export default function About() {
         </ParallaxLayer>
         {/* --- Decor --- */}
         <ParallaxLayer offset={0.05} speed={0.8}>
+          <Dot color="tea" left="0%" />
           <img
             src={CirRed}
             style={{ width: "2%", marginLeft: "10%" }}
