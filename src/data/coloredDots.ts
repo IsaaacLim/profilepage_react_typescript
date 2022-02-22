@@ -4,7 +4,7 @@ import CirBrown from "../images/circles/brown.svg";
 import CirButter from "../images/circles/butter.svg";
 import CirGrass from "../images/circles/green.svg";
 import CirGrey from "../images/circles/grey.svg";
-import CirLime from "../images/circles/lime.svg";
+import CirLime from "../images/circles/lime.svg"; //unused
 import CirMaroon from "../images/circles/maroon.svg";
 import CirNavy from "../images/circles/navy.svg";
 import CirPeach from "../images/circles/peach.svg";
@@ -12,7 +12,7 @@ import CirRed from "../images/circles/red.svg";
 import CirSkin from "../images/circles/skin.svg";
 import CirTea from "../images/circles/tea.svg";
 import CirTeal from "../images/circles/teal.svg";
-import CirYellow from "../images/circles/yellow.svg";
+import CirYellow from "../images/circles/yellow.svg"; //unused
 
 const dots: IDot[] = [
 	{

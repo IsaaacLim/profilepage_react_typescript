@@ -9,23 +9,7 @@ import HotAirBalloon from "../images/hot-air-balloon.svg";
 import Mountains from "../images/mountains.svg";
 import WorldTree from "../images/world-tree.svg";
 import HourGlass from "../images/hourglass.svg";
-
 import dots from "../data/coloredDots";
-
-import CirBlue from "../images/circles/blue.svg";
-import CirBrown from "../images/circles/brown.svg";
-import CirButter from "../images/circles/butter.svg";
-import CirGrass from "../images/circles/green.svg";
-import CirGrey from "../images/circles/grey.svg";
-import CirLime from "../images/circles/lime.svg";
-import CirMaroon from "../images/circles/maroon.svg";
-import CirNavy from "../images/circles/navy.svg";
-import CirPeach from "../images/circles/peach.svg";
-import CirRed from "../images/circles/red.svg";
-import CirSkin from "../images/circles/skin.svg";
-import CirTea from "../images/circles/tea.svg";
-import CirTeal from "../images/circles/teal.svg";
-import CirYellow from "../images/circles/yellow.svg";
 
 /**
  * @param navListSmall: navLists with only 2 items. Props for NavSlider
@@ -39,6 +23,7 @@ import CirYellow from "../images/circles/yellow.svg";
  *  - Description: >= 10 && < 20
  *  - Decoration: >= 0 && < 10
  * Title sections uses Padding to adjust left/right position for on-click event
+ * @function Dot: used to give circle dot images
  *
  * --- PARALLAX LIB VARIABLES ---
  * @param offset: div end positioning
@@ -50,17 +35,15 @@ import CirYellow from "../images/circles/yellow.svg";
  * Inline styling for positioning
  */
 
-const home = navLists[0];
-const works = navLists[2];
-const navListSmall: INav[] = [home, works];
+const navListSmall: INav[] = [navLists[0], navLists[2]]; // home & works
 const spaceLeft = "21%";
 
 const Dot: React.FC<{
   color: string;
   width?: string;
   top?: string;
-  left: string;
-}> = ({ color = "a", width = "2%", top = "0%", left }) => {
+  left?: string;
+}> = ({ color = "a", width = "2%", top = "0%", left = "0%" }) => {
   for (var i = 0; i < dots.length; i++) {
     if (color === dots[i].color)
       return (
@@ -85,6 +68,7 @@ export default function About() {
       className="about-cont"
     >
       <Parallax ref={parallax} pages={3}>
+        {/******************* Sticky Nav & Social Bar ************************/}
         <ParallaxLayer
           sticky={{ start: 0, end: 2 }}
           style={{ width: "5", height: "5" }} //prevent layer from overlapping other pages
@@ -149,69 +133,25 @@ export default function About() {
           </FadeInDiv>
         </ParallaxLayer>
         {/* --- Decor --- */}
-        <ParallaxLayer offset={0.05} speed={0.8}>
-          <Dot color="tea" left="0%" />
-          <img
-            src={CirRed}
-            style={{ width: "2%", marginLeft: "10%" }}
-            alt="Red dot"
-          />
+        <ParallaxLayer offset={0.73} speed={-0.18}>
+          <Dot color="tea" width="1.6%" left="72%" />
         </ParallaxLayer>
-        <ParallaxLayer offset={0.05} speed={-0.2}>
-          <img
-            src={CirSkin}
-            style={{
-              width: "2.2%",
-              marginTop: "20%",
-              marginLeft: "95%",
-            }}
-            alt="Skin dot"
-          />
-          <img
-            src={CirTea}
-            style={{
-              width: "1.6%",
-              marginTop: "10%",
-              marginLeft: "72%",
-            }}
-            alt="Tea dot"
-          />
+        <ParallaxLayer offset={0.05} speed={-0.23}>
+          <Dot color="red" width="2%" left="10%" />
         </ParallaxLayer>
-        <ParallaxLayer offset={0.1} speed={0.3}>
-          <img
-            src={CirTeal}
-            style={{ width: "2.6%", marginLeft: "52%" }}
-            alt="Teal dot"
-          />
-          <img
-            src={CirButter}
-            style={{
-              width: "10%",
-              top: "-20%",
-              right: "6%",
-              position: "absolute",
-            }}
-            alt="Butter dot"
-          />
+        <ParallaxLayer offset={0.26} speed={-0.3}>
+          <Dot color="skin" width="2.2%" left="48%" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={0.45} speed={0.4}>
+          <Dot color="teal" width="2.6%" left="95%" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={0.8} speed={0.6}>
+          <Dot color="grass" width="5%" left="12%" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={1}>
+          <Dot color="butter" width="10%" top="-5%" left="85%" />
         </ParallaxLayer>
         {/* - from current to next page - */}
-        <ParallaxLayer offset={0.8} speed={-0.1}>
-          <img
-            src={CirYellow}
-            style={{ width: "5%", marginLeft: "12%" }}
-            alt="Yellow dot"
-          />
-          <img
-            src={CirGrey}
-            style={{
-              position: "absolute",
-              width: "5.1%",
-              marginTop: "13%",
-              marginLeft: "70%",
-            }}
-            alt="Grey dot"
-          />
-        </ParallaxLayer>
         <ParallaxLayer offset={1.05} speed={-0.5} style={{ zIndex: "9" }}>
           <FadeInDiv yFrom="0" scaleFrom={0.8} delay={100}>
             <img
@@ -265,26 +205,13 @@ export default function About() {
           </div>
         </ParallaxLayer>
         {/* --- Decor --- */}
-        <ParallaxLayer offset={1.05} speed={0.4}>
-          <img
-            src={CirPeach}
-            style={{ display: "block", width: "3%", marginLeft: "5%" }}
-            alt="Peach dot"
-          />
-          <img
-            src={CirBlue}
-            style={{ display: "block", width: "1.6%", marginLeft: "75%" }}
-            alt="Blue dot"
-          />
-        </ParallaxLayer>
-        <ParallaxLayer offset={1.68} speed={0.8}>
+        <ParallaxLayer offset={1.68} speed={0.8} style={{ zIndex: "2" }}>
           <img
             src={WorldTree}
             style={{ display: "block", width: "15%", marginLeft: "15%" }}
             alt="Tree on globe"
           />
         </ParallaxLayer>
-        {/* - from current to next page - */}
         <ParallaxLayer offset={1.4} speed={-0.1} style={{ zIndex: "1" }}>
           <img
             src={Mountains}
@@ -296,28 +223,22 @@ export default function About() {
             }}
             alt="Mountains"
           />
-          <img
-            src={CirBrown}
-            style={{ display: "block", width: "1%", marginLeft: "30%" }}
-            alt="Brown dot"
-          />
         </ParallaxLayer>
-        <ParallaxLayer offset={1.9} speed={0.8}>
-          <img
-            src={CirGrass}
-            style={{ display: "block", width: "2%", marginLeft: "60%" }}
-            alt="Grass dot"
-          />
-          <img //gets pushed below page view from img element above
-            src={CirLime}
-            style={{
-              display: "block",
-              width: "3%",
-              marginLeft: "40%",
-              marginTop: "10%",
-            }}
-            alt="Lime dot"
-          />
+        <ParallaxLayer offset={1.75} speed={0.15}>
+          <Dot color="brown" width="1%" left="30%" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={1.05} speed={0.18}>
+          <Dot color="blue" width="1.6%" left="65%" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={1.3} speed={0.45}>
+          <Dot color="peach" width="3%" left="11%" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={1.45} speed={-0.5}>
+          <Dot color="grey" width="3.7%" left="92%" />
+        </ParallaxLayer>
+        {/* - from current to next page - */}
+        <ParallaxLayer offset={1.9} speed={-0.23}>
+          <Dot color="grass" width="2%" left="60%" />
         </ParallaxLayer>
         {/*********************** Page 3 *************************************/}
         {/* --- Title --- */}
@@ -331,17 +252,19 @@ export default function About() {
           }}
           onClick={() => parallax.current.scrollTo(0)}
         >
-          <h2 style={{ maxWidth: "22vw" }}>Facts my friends know about me</h2>
+          <h2 style={{ maxWidth: "25%" }}>Facts my friends know about me</h2>
         </ParallaxLayer>
         {/* --- Description --- */}
         <ParallaxLayer
           offset={2.5}
           speed={-0}
-          style={{ left: "58%", maxWidth: "22%", zIndex: "10" }}
+          style={{ left: "58%", maxWidth: "25%", zIndex: "10" }}
         >
           <p>
             Badminton, volleyball, taekwondo, skateboarding, snowboarding, rock
-            climbing; hand crafting, hair cutting; roller coasters, sky diving;
+            climbing; hand crafting, hair cutting;
+            <br />
+            roller coasters, sky diving;
             <br />
             &amp; pet pug called PuiPui (a.k.a Fatty)
           </p>
@@ -360,51 +283,20 @@ export default function About() {
         >
           <img src={HourGlass} alt="Hourglass" style={{ width: "30%" }} />
         </ParallaxLayer>
-        <ParallaxLayer offset={2.1} speed={0.2}>
-          <img
-            src={CirTeal}
-            style={{ width: "1.8%", marginLeft: "45%" }}
-            alt="Teal dot"
-          />
+        <ParallaxLayer offset={2.66} speed={0.15}>
+          <Dot color="maroon" width="1%" left="75%" />
         </ParallaxLayer>
-        <ParallaxLayer offset={2.3} speed={-0.3}>
-          <img
-            src={CirSkin}
-            style={{ width: "1.3%", marginLeft: "91%" }}
-            alt="Skin dot"
-          />
+        <ParallaxLayer offset={2.4} speed={-0.17}>
+          <Dot color="teal" width="1.3%" left="91%" />
         </ParallaxLayer>
-        <ParallaxLayer offset={2.6} speed={0.4}>
-          <img
-            src={CirNavy}
-            style={{ width: "2.6%", marginLeft: "5%" }}
-            alt="Navy dot"
-          />
-          <img
-            src={CirMaroon}
-            style={{ display: "block", width: "1%", marginLeft: "75%" }}
-            alt="Maroon dot"
-          />
+        <ParallaxLayer offset={2.6} speed={0.3}>
+          <Dot color="navy" width="2.6%" left="5%" />
         </ParallaxLayer>
-        <ParallaxLayer offset={2.95} speed={-0.6}>
-          <img
-            src={CirRed}
-            style={{ width: "4.3%", marginLeft: "50%" }}
-            alt="Red dot"
-          />
+        <ParallaxLayer offset={2.95} speed={-0.55}>
+          <Dot color="red" width="4.3%" left="50%" />
         </ParallaxLayer>
-
-        <ParallaxLayer offset={2.05} speed={0.8}>
-          <img
-            src={CirButter}
-            style={{
-              width: "10%",
-              top: "-10%",
-              right: "6%",
-              position: "absolute",
-            }}
-            alt="Butter dot"
-          />
+        <ParallaxLayer offset={2.05} speed={1}>
+          <Dot color="butter" width="10%" top="-10%" left="85%" />
         </ParallaxLayer>
       </Parallax>
     </div>
