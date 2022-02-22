@@ -128,7 +128,7 @@ export default function About() {
                 I'm still gathering more experiences into my stash, I'm proud of
                 my skills in C, C++, HTML, CSS &amp; JavaScript
               </p>
-              <p id="note">Continue scrolling to see what I'm made of</p>
+              <p id="note">Continue scrolling to know more about me</p>
             </div>
           </FadeInDiv>
         </ParallaxLayer>

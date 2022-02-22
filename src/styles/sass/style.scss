@@ -148,13 +148,12 @@ body,
       box-shadow: 1px 1px 2px #ccc78a, -1px -1px 2px #ffffce;
 
       &:hover {
-        color: c.$black; // lights up words
         color: #978d00;
       }
 
       &:active {
         background: linear-gradient(145deg, #ffffb8, #e6e09b);
-        box-shadow: 2px 2px 6px 0.5px #978d00;
+        box-shadow: 2px 2px 6px 0.5px #ccc78a;
       }
     }
   }

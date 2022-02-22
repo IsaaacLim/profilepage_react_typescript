@@ -42,7 +42,7 @@ const Spring: React.FC<{
 
   const [isHovered, setIsHovered] = React.useState(false);
   const hover = useSpring({
-    transform: isHovered ? `scale(1.7)` : `scale(1)`,
+    transform: isHovered ? `scale(1.6)` : `scale(1)`,
     config: {
       mass: 3,
       tension: 340,
