@@ -271,7 +271,7 @@ $card-size: 30vw;
 /** 
  * *********** Works Page ******************************************************
  * .works-cont: Parent div containing .deck
- * .deck: 
+ * .deck: Parent div containing multiple .cards
  */
 // --- Default deck style structure from Docs ---
 .works-cont {
@@ -374,6 +374,7 @@ $card-size: 30vw;
 
 /** 
  * *********** Test Page *******************************************************
+ * Section contains temporary styling
  */
 
 .test-cont {

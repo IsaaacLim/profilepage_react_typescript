@@ -69,31 +69,9 @@ function useWindowWidth() {
 }
 
 /* -------- Main Function ----------------------------------------------------*/
-let dst: number;
-
-const left = {
-  bg: "#85afd5",
-  boxShadow: "inset 6px 6px 11px #6c8ead, inset -6px -6px 11px #9ed0fd",
-  textColor: "#072299",
-  circleColor: "#eaf9ff",
-  // bg: "#9fd095",
-  // boxShadow: "inset  6px 6px 11px #87b17f, inset -6px -6px 11px #b7efab",
-  // textColor: "#106e08",
-
-  justifySelf: "end",
-};
-
-const right = {
-  // bg: "#9fd095",
-  // boxShadow: "inset 2px 2px 4px #87b17f, inset -2px -2px 4px #b7efab",
-  // textColor: "#106e08",
-  bg: "#ba9cce",
-  boxShadow: "inset 6px 6px 11px #9e85af, inset -6px -6px 11px #d6b3ed",
-  textColor: "#6405a3",
-  circleColor: "#f8ecff",
-
-  justifySelf: "start",
-};
+var dst: number;
+var leftShadow: string;
+var rightShadow: string;
 
 const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   children,
@@ -101,20 +79,40 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   navSize,
 }) => {
   const { width } = useWindowWidth();
-
   let navigate = useNavigate();
   const rightNav = navItems[0];
   const leftNav = navItems[1];
-  navSize === "small" ? (dst = width / 17) : (dst = width / 5.8);
+  if (navSize === "small") {
+    dst = width / 17;
+    leftShadow = leftNav.boxShadowSmall;
+    rightShadow = rightNav.boxShadowSmall;
+  } else {
+    dst = width / 5.8;
+    leftShadow = leftNav.boxShadowBig;
+    rightShadow = rightNav.boxShadowBig;
+  }
+
   const [
-    { x, scale, navText, bg, boxShadow, textColor, circleColor, justifySelf },
+    {
+      x,
+      scale,
+      navText,
+      justifySelf,
+      background,
+      boxShadow,
+      textColor,
+      circleColor,
+    },
     api,
   ] = useSpring(() => ({
     x: 0,
     scale: 1.05,
+    justifySelf: "end",
     navText: leftNav.name,
-    ...(navSize === "small" ? left : right), // mod this
+    boxShadow: leftShadow,
+    ...leftNav.fixedCSS,
   }));
+
   const bind = useDrag(({ active, movement: [x], down }) => {
     if (!down) {
       if (x <= -dst) return navigate(leftNav.path);
@@ -123,8 +121,10 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
     api.start({
       x: !active ? 0 : x < 0 ? (x <= -dst ? -dst : x) : x >= dst ? dst : x,
       scale: active ? 1.15 : 1.05,
+      justifySelf: x < 0 ? "end" : "start",
       navText: x < 0 ? leftNav.name : rightNav.name,
-      ...(x < 0 ? left : right),
+      boxShadow: x < 0 ? leftShadow : rightShadow,
+      ...(x < 0 ? leftNav.fixedCSS : rightNav.fixedCSS),
       immediate: (name) => active && name === "x",
     });
   });
@@ -142,19 +142,11 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
    *  2. Circle animation
    *  3. Slider cover
    */
-  if (navSize === "10") {
-    return (
-      <div>
-        <div>go away</div>
-        <div>and away</div>
-      </div>
-    );
-  }
   return (
     <animated.div
       {...bind()}
       className="nav-cont"
-      style={{ background: bg, boxShadow: boxShadow }}
+      style={{ background: background, boxShadow: boxShadow }}
     >
       <animated.div className="text" style={{ color: textColor, justifySelf }}>
         {navText}
