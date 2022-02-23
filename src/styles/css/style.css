@@ -282,9 +282,6 @@ body,
   cursor: url(../../images/cursor.png) 39 39, auto;
   position: absolute;
   will-change: transform;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   touch-action: none;
   z-index: 41;
 }

@@ -15,10 +15,9 @@ const Home = () => {
       <SocialsBar styleType={1} />
       <div className="sec-left">
         <FadeInDiv className="text">
+          {/* update this */}
           <div className="name-cont">
-            <h1 className="right" id="lim">
-              Isaac Lim
-            </h1>
+            <h1>Isaac Lim</h1>
           </div>
           <p>
             On a mission to becoming a

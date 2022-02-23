@@ -87,7 +87,7 @@ const Deck: React.FC<{ cards: IWork[] }> = ({ cards }) => {
           <animated.div
             {...bind(i)}
             style={{ transform: interpolate([rot, scale], trans) }}
-            className="deck-cont"
+            className="cards"
           >
             <div className="content">
               <div className="img-placeholder">

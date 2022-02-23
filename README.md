@@ -117,15 +117,12 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - pages
   - About: Completed
   - Home:
-    - Profile pic render with slight tilt
-    - Maybe same font style
-    - Change navListSmall to match Works
+    - Update css class and id
   - Test: Give a "no testing in progress sign"
   - Works:
-    - Maybe add this project in
-    - Maybe use same font style
     - adjust the card shadows
     - add "flick!"
+    - combine css
 - styles:
   - remove unused chinese character
   - organize styles
