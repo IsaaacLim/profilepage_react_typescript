@@ -110,27 +110,28 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - components
   - ImgCard: Filter affected image
   - NavSlider: Change background and text color
-  - SocialsBar: Complete
+  - SocialsBar:
+    - CV preview
+    - mouse over text
 - data (Completed)
 - images: Completed
 - interfaces (Completed)
 - pages
-  - About: Completed
+  - About:
+    - make Title unselectable
   - Home:
     - Update css class and id
   - Test: Give a "no testing in progress sign"
   - Works:
-    - adjust the card shadows
-    - add "flick!"
     - combine css
 - styles:
   - remove unused chinese character
   - organize styles
   - `vh` to `vw`
   - kebab case or camel case
+  - padding: 0 5 0 5 -> 0 5
 - Others
   - Remove extra default files?
   - Clean this README
   - test on other browsers, eg: -webkit-user-select & user-select
-  - have Home & about render with slight animation
-  - Change my web icon
+  - Update my website description
