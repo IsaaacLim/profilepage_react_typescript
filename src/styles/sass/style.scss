@@ -24,6 +24,15 @@ body,
   overflow-y: hidden; // not sure why it doesn't affect About page
 }
 
+@mixin user-select-none {
+  -webkit-touch-callout: none; // iOS Safari
+  -webkit-user-select: none; // Safari
+  -khtml-user-select: none; // Konqueror HTML
+  -moz-user-select: none; // Old versions of Firefox
+  -ms-user-select: none; // Internet Explorer/Edge
+  user-select: none; // Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox
+}
+
 /** 
  * *********** Nav Bar *********************************************************
  * NavSlider have 2 sizes, #big & #small
@@ -122,8 +131,7 @@ body,
   display: grid;
   align-items: center;
   text-align: center;
-  -webkit-user-select: none;
-  user-select: none;
+  @include user-select-none();
   background: #c1a3a3; // might not need
   box-shadow: 2px 2px 3px #857070; // might not need
 
@@ -229,7 +237,6 @@ body,
       h1 {
         font-size: 7vw;
         font-family: f.$accent;
-        align-self: baseline; //remove?
       }
     }
 
@@ -273,6 +280,7 @@ $card-size: 30vw;
   h2 {
     display: inline-block;
     font-size: 3vw;
+    @include user-select-none();
   }
   #note {
     font-weight: bold;
@@ -336,7 +344,7 @@ $card-size: 30vw;
   }
   .content {
     box-sizing: border-box;
-    user-select: none;
+    @include user-select-none();
     padding: 0.5vw;
     display: flex;
   }

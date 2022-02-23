@@ -125,7 +125,11 @@ body,
   display: grid;
   align-items: center;
   text-align: center;
+  -webkit-touch-callout: none;
   -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   background: #c1a3a3;
   box-shadow: 2px 2px 3px #857070;
@@ -222,7 +226,6 @@ body,
 .home-cont .text .name-cont h1 {
   font-size: 7vw;
   font-family: "Lora", serif;
-  align-self: baseline;
 }
 .home-cont .text p,
 .home-cont .text span {
@@ -260,6 +263,12 @@ body,
 .about-cont h2 {
   display: inline-block;
   font-size: 3vw;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .about-cont #note {
   font-weight: bold;
@@ -311,6 +320,11 @@ body,
 }
 .cards .content {
   box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   padding: 0.5vw;
   display: flex;

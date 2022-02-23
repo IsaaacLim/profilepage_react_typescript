@@ -104,21 +104,19 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 - React-Spring hover over animation [guide](https://www.joshwcomeau.com/react/boop/)
 - Neumorphism [helper](https://neumorphism.io/)
+- Typescript locating PDF files (&other files) (guide)[https://github.com/facebook/create-react-app/issues/8021]
 
 ### Checklist
 
 - components
   - ImgCard: Filter affected image
-  - NavSlider: Change background and text color
-  - SocialsBar:
-    - CV preview
-    - mouse over text
+  - NavSlider: Completed
+  - SocialsBar: Completed
 - data (Completed)
 - images: Completed
 - interfaces (Completed)
 - pages
-  - About:
-    - make Title unselectable
+  - About: Completed
   - Home:
     - Update css class and id
   - Test: Give a "no testing in progress sign"
