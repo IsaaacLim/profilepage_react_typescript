@@ -1,18 +1,15 @@
 @use "abstracts/colors" as c;
 @use "abstracts/fonts" as f;
 
-$margin-LR: 21vw;
-
 * {
   margin: 0;
   font-family: f.$default;
   font-size: 1.15vw;
-  color: c.$text;
+  color: c.$off-black;
 }
 
 body {
-  // background-color: c.$accs3;
-  background: -webkit-linear-gradient(275deg, c.$accs3 80%, c.$bg 80.08%);
+  background: -webkit-linear-gradient(275deg, c.$nude 80%, c.$white 80.08%);
 }
 
 // React-Spring Design Requirements
@@ -25,50 +22,6 @@ body,
   height: 100%;
   overflow-x: hidden;
   overflow-y: hidden; // not sure why it doesn't affect About page
-}
-
-// not needed maybe
-@mixin flexCenter($direction) {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: $direction;
-}
-
-@mixin gradient($direction) {
-  background: -webkit-linear-gradient($direction, c.$gradient1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-//not needed
-@mixin background($img-path, $position: 0 0) {
-  background: {
-    image: url($img-path);
-    position: $position;
-    size: cover;
-    background-repeat: no-repeat;
-  }
-}
-
-//not needed maybe
-@mixin pageTemplate() {
-  margin: 0 18vw 0 18vw;
-}
-
-//not needed
-@mixin links($link: c.$white, $hover: c.$arctic, $active: c.$lavender-pink) {
-  a {
-    color: $link;
-    text-decoration: none;
-    &:hover {
-      color: $hover;
-    }
-    &:active {
-      color: $active;
-    }
-  }
 }
 
 /** 
@@ -114,7 +67,7 @@ body,
     padding-bottom: 30px;
     @include slider-comp-size(18vw);
     .cover {
-      background-color: c.$accs3;
+      background-color: c.$nude;
       box-shadow: 2px 2px 3px #a48b8b, -2px -2px 3px #debbbb;
 
       &:active {
@@ -204,7 +157,7 @@ body,
     display: grid;
     align-items: center;
     text-align: center;
-    color: c.$accs;
+    color: c.$accent-grey;
 
     &:active {
       cursor: -webkit-grabbing;
@@ -219,7 +172,7 @@ body,
     }
 
     &:hover {
-      color: c.$bg2; // lights up words
+      color: c.$off-white; // lights up words
       // color: c.$black;
       //   // background-color: #ccb3b3;
     }
@@ -231,7 +184,7 @@ body,
 
   .circle {
     border-radius: 50%;
-    background-color: c.$bg2;
+    background-color: c.$off-white;
     // background-color: #dba4ff;
   }
 
@@ -261,7 +214,7 @@ body,
   padding: 1vw 0vw 1vw 0vw;
 
   path {
-    fill: c.$text;
+    fill: c.$off-black;
   }
 }
 
@@ -271,7 +224,6 @@ body,
  * .card-cont: Picture container (at ImgCard.tsx)
  */
 .home-cont {
-  // background-color: c.$semi-black;
   display: flex;
   justify-content: space-between;
   .sec-left {
@@ -370,22 +322,6 @@ $card-size: 30vw;
   background: #93b5c6;
   // background: c.$cream;
   // background: #fdf8c4;
-  // background-color: #8bc6ec;
-  // background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
-  // background-color: #8bc6ec;
-  // background-image: linear-gradient(45deg, #8bc6ec 0%, #93b5c6 100%);
-  // background-color: #fbab7e;
-  // background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
-  // background-image: linear-gradient(
-  //   174.2deg,
-  //   rgba(255, 244, 228, 1) 7.1%,
-  //   rgba(240, 246, 238, 1) 67.4%
-  // );
-  // background-image: linear-gradient(
-  //   90.5deg,
-  //   rgba(255, 207, 139, 0.5) 1.1%,
-  //   rgba(255, 207, 139, 1) 81.3%
-  // );
   display: flex;
   align-items: center;
   height: 100%;
@@ -394,19 +330,13 @@ $card-size: 30vw;
 
 .deck {
   cursor: url(../../images/cursor.png) 39 39, auto;
-
   position: absolute;
-  // width: 300px;
-  // height: 200px;
   will-change: transform;
-  display: flex; //test if needed
-  align-items: center; //test
-  justify-content: center; //test
   touch-action: none;
   z-index: 41;
 
   .deck-cont {
-    background-color: #f6f6f6;
+    background-color: c.$off-white;
     border-radius: 0.5rem;
 
     display: flex; //test
