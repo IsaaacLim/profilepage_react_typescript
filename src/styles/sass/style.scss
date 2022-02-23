@@ -350,115 +350,13 @@ $card-size: 30vw;
  */
 .about-cont {
   background-color: c.$white;
-  // p {
-  //   // font-family: f.$accent;
-  // }
-  .section {
-    min-height: 100vh; // not needed
-    width: auto; //not needed
-  }
   h2 {
-    // @include gradient(left); // need
-    display: inline-block; // need
-    font-size: 3vw; // need
+    display: inline-block;
+    font-size: 3vw;
   }
-  img {
-    max-width: 40vw;
-    height: auto;
-    object-fit: contain;
-  }
-
   #note {
-    // font-family: f.$accent;
     font-weight: bold;
     margin-top: 5vh;
-  }
-
-  #sec1 {
-    position: relative;
-    padding-top: 10vh;
-    h2 {
-      margin-left: 21vw; // NO
-      font-size: 4.5vw; //yes
-      max-width: 60vw; //yes
-    }
-    .text {
-      margin-right: $margin-LR; //not needed
-      max-width: 25vw; // need
-      position: absolute; //not needed
-      right: 0px; // not needed
-    }
-    img {
-      margin-left: $margin-LR; // NO
-      max-width: 35vw; // maybe
-      height: auto; // NO
-    }
-  }
-
-  #sec2 {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    // Remove. hot air balloon, not needed
-    #img1 {
-      position: absolute;
-      max-width: 18vw;
-      left: 25vw;
-      top: 2vw;
-    }
-    // Remove
-    #head1 {
-      display: flex; //NO
-      justify-content: flex-end; // NO
-      margin-right: $margin-LR; // NO
-      margin-bottom: 5vh; //NO
-    }
-    #head2 {
-      margin-left: $margin-LR; // No
-      margin-bottom: 8vh; //No
-      h2 {
-        max-width: 40vw; //Yes
-      }
-    }
-    #img2 {
-      position: absolute;
-      max-width: 26vw;
-      right: 13vw;
-      top: 38vh;
-    }
-    .group1 {
-      display: flex;
-      align-items: center;
-      margin-left: 14vw;
-      #img3 {
-        max-width: 15vw;
-      }
-      .text {
-        max-width: 30vw;
-      }
-    }
-  }
-
-  #sec3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      max-width: 30vw;
-      height: auto;
-      margin-right: 3vw;
-    }
-    h2 {
-      max-width: 20vw;
-    }
-    .text {
-      margin-top: 8vh;
-      margin-left: 6vw;
-    }
-    p {
-      max-width: 21vw;
-    }
   }
 }
 

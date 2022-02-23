@@ -22,7 +22,7 @@ import dots from "../data/coloredDots";
  *  - Title: >= 20
  *  - Description: >= 10 && < 20
  *  - Decoration: >= 0 && < 10
- * Title sections uses Padding to adjust left/right position for on-click event
+ * Title sections positioning uses PADDING to allow on-click event to register throughout the whole page
  * @function Dot: used to give circle dot images
  *
  * --- PARALLAX LIB VARIABLES ---
@@ -208,19 +208,14 @@ export default function About() {
         <ParallaxLayer offset={1.68} speed={0.8} style={{ zIndex: "2" }}>
           <img
             src={WorldTree}
-            style={{ display: "block", width: "15%", marginLeft: "15%" }}
+            style={{ width: "15%", marginLeft: "15%" }}
             alt="Tree on globe"
           />
         </ParallaxLayer>
         <ParallaxLayer offset={1.4} speed={-0.1} style={{ zIndex: "1" }}>
           <img
             src={Mountains}
-            style={{
-              display: "block",
-              width: "25vw",
-              marginLeft: "61%",
-              opacity: "0.9",
-            }}
+            style={{ width: "25vw", marginLeft: "61%", opacity: "0.9" }}
             alt="Mountains"
           />
         </ParallaxLayer>
