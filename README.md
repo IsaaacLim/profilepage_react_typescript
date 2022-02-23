@@ -132,4 +132,3 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
   - Remove extra default files?
   - Clean this README
   - test on other browsers, eg: -webkit-user-select & user-select
-  - Update my website description
