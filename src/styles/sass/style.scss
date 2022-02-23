@@ -180,6 +180,18 @@ body,
   height: 1.5vw;
   padding: 1vw 0vw 1vw 0vw;
 
+  .mouse-over-text {
+    visibility: hidden;
+    position: absolute;
+    right: 150%;
+    padding-top: 0.2vw;
+    font-size: 0.8vw;
+  }
+
+  &:hover .mouse-over-text {
+    visibility: visible;
+  }
+
   path {
     fill: c.$off-black;
   }

@@ -69,6 +69,7 @@ const Spring: React.FC<{
         onMouseEnter={enter}
         onMouseLeave={leave}
       >
+        <span className="mouse-over-text">{social.name}</span>
         <a href={social.url} target="_blank" rel="noopener noreferrer">
           <svg xmlns={social.xmlns} viewBox={social.viewBox}>
             <path d={social.d} />
@@ -85,8 +86,9 @@ const SocialsBar: React.FC<{ styleType: number }> = ({ styleType }) => {
     return (
       <div className="socials-bar">
         <Spring social={socials[0]} xFrom={15} delay={1600} />
-        <Spring social={socials[1]} xFrom={15} delay={1500} />
+        <Spring social={socials[1]} xFrom={15} delay={1800} />
         <Spring social={socials[2]} xFrom={15} delay={1700} />
+        <Spring social={socials[3]} xFrom={15} delay={1500} />
       </div>
     );
   } else if (styleType === 2) {
@@ -95,14 +97,16 @@ const SocialsBar: React.FC<{ styleType: number }> = ({ styleType }) => {
         <Spring social={socials[0]} friction={10} scaleFrom={0.1} delay={0} />
         <Spring social={socials[1]} friction={10} scaleFrom={0.1} delay={100} />
         <Spring social={socials[2]} friction={10} scaleFrom={0.1} delay={200} />
+        <Spring social={socials[3]} friction={10} scaleFrom={0.1} delay={300} />
       </div>
     );
   } else if (styleType === 3) {
     return (
       <div className="socials-bar">
         <Spring social={socials[0]} friction={4} xFrom={0.5} delay={0} />
-        <Spring social={socials[1]} friction={4} xFrom={-0.5} delay={100} />
-        <Spring social={socials[2]} friction={4} xFrom={0.5} delay={200} />
+        <Spring social={socials[1]} friction={4} xFrom={-0.4} delay={100} />
+        <Spring social={socials[2]} friction={4} xFrom={0.6} delay={200} />
+        <Spring social={socials[3]} friction={4} xFrom={-0.7} delay={300} />
       </div>
     );
   } else {
