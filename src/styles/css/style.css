@@ -290,7 +290,7 @@ body,
   width: 55vw;
   height: 80vh;
   will-change: transform;
-  box-shadow: 0 12.5px 100px -80px #cecca7, 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+  box-shadow: 0px 0px 10px -5px #2d3d46;
 }
 
 .cards p,
