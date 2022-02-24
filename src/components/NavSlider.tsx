@@ -123,7 +123,7 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   }));
 
   React.useEffect(() => {
-    if (isTouched) return;
+    if (navSize === "small" || isTouched) return;
     const timeoutId = window.setTimeout(() => {
       api({ x: 10 });
     }, 2000);
@@ -144,7 +144,7 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
       window.clearTimeout(timeoutId2);
       window.clearTimeout(timeoutId3);
     };
-  }, [isTouched, leftNav.fixedCSS, leftNav.name, api]);
+  }, [navSize, isTouched, leftNav.fixedCSS, leftNav.name, api]);
 
   const bind = useDrag(({ active, movement: [x], down }) => {
     if (active) setIsTouched(true);
