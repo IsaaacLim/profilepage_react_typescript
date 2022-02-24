@@ -178,7 +178,7 @@ export default function About() {
             <br />
             Artist,
             <br />
-            Gen Y/Z
+            Gen Y
           </h2>
         </ParallaxLayer>
         <ParallaxLayer
