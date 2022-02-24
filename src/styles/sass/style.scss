@@ -38,6 +38,7 @@ body,
  * NavSlider have 2 sizes, #big & #small
  * .navbar: Parent div of the NavSlider (child)
  * .nav-cont: NavSlider item itself
+ * - .text styling are dependant on the navLists item itself
  */
 // Variables for #big & #small
 @mixin slider-comp-size($base-size) {
@@ -56,7 +57,6 @@ body,
 
     .text {
       font-size: $base-size / 8;
-      // margin: 0 ($base-size / 2.3) 0 ($base-size / 2.3); // test if it's ok for small size
       margin: 0 ($base-size / 2.6) 0 ($base-size / 2.6);
     }
 
@@ -64,7 +64,6 @@ body,
       font-size: $base-size / 6.8;
       font-weight: bold;
       border-radius: $base-size / 5;
-      transition: box-shadow 0.75s; //test & move out of here?
     }
   }
 }
@@ -124,16 +123,13 @@ body,
 
 // Constant NavSlider design between both sizes
 .nav-cont {
-  position: relative; // test
-  pointer-events: auto; //test
-  transform-origin: 50% 50% 0px; //???
+  position: relative;
+  pointer-events: auto;
   box-sizing: border-box;
   display: grid;
   align-items: center;
   text-align: center;
   @include user-select-none();
-  background: #c1a3a3; // might not need
-  box-shadow: 2px 2px 3px #857070; // might not need
 
   .cover {
     position: absolute;
@@ -144,6 +140,7 @@ body,
     align-items: center;
     text-align: center;
     color: c.$accent-grey;
+    transition: box-shadow 0.75s;
 
     &:active {
       cursor: -webkit-grabbing;
@@ -152,16 +149,10 @@ body,
     &:hover {
       color: c.$off-white;
     }
-
-    * {
-      // change to specific element
-      pointer-events: none;
-    }
   }
 
   .circle {
     border-radius: 50%;
-    background-color: c.$off-white; // might not need
   }
 
   .text {

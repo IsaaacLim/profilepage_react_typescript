@@ -10,24 +10,31 @@ import INav from "../interfaces/navList";
  * --- VARIABLES & their FUNCTIONS ---
  * @const
  *  dst: Sliding distance max/min, initialize within Slider
- *  left: css when slider slide to left
- *  right: css when slider slide to right
+ *  leftShadow: shadow of .text when slider slide to left
+ *  rightShadow: shadow of .text when slider slide to right
  *  Slider{
  *   	@param:
  *   		children: Elements contained within the calling <Slider></Slider> element
- *   		navItems: An interface array containing navbar name & url link (max of 2)
- *   		navSize: A string used to change dst
+ *   		navItems: An interface array containing navbar name, url link & CSS style (max of 2)
+ *   		navSize: A string used to change dst & ;eft/rightShadow
  *   	@const
+ *      isTouched: Used to stop the Cover slide animation (True when useDrag(active))
+ *      {width}: Window width. Used to limit dst
  *      navigate: used to Programmatically navigate React-router-dom
  *   	  rightNav: 1st navItems[] element
  *   	  leftNav: 2nd navItems[] element
  *   	@function useSpring {
  *  		@var
+ *        config: precision is used to prevent the 'jerk' effect after an animation
  *        x: Sliding distance actual (initiate with 0) *lib var*
  *  		  scale: Cover size when active/inactive (initiate with 1) * lib var*
- *  		  navText: To display navbar names (initiate render with Left val)
- *  		@css ...left:  Initiate render with Left `bg` & `justifySelf` css
+ *        justifySelf: Justify items to the left/right (initiate with left)
+ *  		  navText: To display navbar names (initiate render with right val)
+ *  		@css ...rightNav.fixedCSS:  Nav items css (initiate render with right nav item's css)
  *   	}
+ *    @function useEffect {
+ *        To hint user that NavSlider can slide left & right
+ *    }
  *   	@function useDrag {
  *      - Re-navigate user to other pages
  *   		- changes `x`, limited to `dst` (-ve & +ve)
@@ -78,6 +85,7 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   navItems,
   navSize,
 }) => {
+  const [isTouched, setIsTouched] = React.useState(false);
   const { width } = useWindowWidth();
   let navigate = useNavigate();
   const rightNav = navItems[0];
@@ -108,17 +116,38 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
     config: { precision: 0.0001 },
     x: 0,
     scale: 1,
-    justifySelf: "end",
-    navText: leftNav.name,
-    boxShadow: leftShadow,
-    ...leftNav.fixedCSS,
+    justifySelf: "start",
+    navText: rightNav.name,
+    boxShadow: rightShadow,
+    ...rightNav.fixedCSS,
   }));
 
-  // const shake = useSpring(() => ({
-  //   x: 0,
-  // }));
+  React.useEffect(() => {
+    if (isTouched) return;
+    const timeoutId = window.setTimeout(() => {
+      api({ x: 10 });
+    }, 2000);
+    const timeoutId2 = window.setTimeout(() => {
+      api({
+        x: -10,
+        justifySelf: "end",
+        navText: leftNav.name,
+        boxShadow: leftShadow,
+        ...leftNav.fixedCSS,
+      });
+    }, 3000);
+    const timeoutId3 = window.setTimeout(() => {
+      api({ x: 0 });
+    }, 4000);
+    return () => {
+      window.clearTimeout(timeoutId);
+      window.clearTimeout(timeoutId2);
+      window.clearTimeout(timeoutId3);
+    };
+  }, [isTouched, leftNav.fixedCSS, leftNav.name, api]);
 
   const bind = useDrag(({ active, movement: [x], down }) => {
+    if (active) setIsTouched(true);
     if (!down) {
       if (x <= -dst) return navigate(leftNav.path);
       else if (x >= dst) return navigate(rightNav.path);
