@@ -105,13 +105,18 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
     },
     api,
   ] = useSpring(() => ({
+    config: { precision: 0.0001 },
     x: 0,
-    scale: 1.05,
+    scale: 1,
     justifySelf: "end",
     navText: leftNav.name,
     boxShadow: leftShadow,
     ...leftNav.fixedCSS,
   }));
+
+  // const shake = useSpring(() => ({
+  //   x: 0,
+  // }));
 
   const bind = useDrag(({ active, movement: [x], down }) => {
     if (!down) {
@@ -120,7 +125,7 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
     }
     api.start({
       x: !active ? 0 : x < 0 ? (x <= -dst ? -dst : x) : x >= dst ? dst : x,
-      scale: active ? 1.15 : 1.05,
+      scale: active ? 1.15 : 1,
       justifySelf: x < 0 ? "end" : "start",
       navText: x < 0 ? leftNav.name : rightNav.name,
       boxShadow: x < 0 ? leftShadow : rightShadow,
