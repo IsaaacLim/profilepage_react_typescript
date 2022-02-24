@@ -395,7 +395,6 @@ $card-size: 30vw;
  * *********** Test Page *******************************************************
  * Section contains temporary styling
  */
-
 .test-cont {
   display: flex;
   align-items: center;
@@ -432,5 +431,16 @@ $card-size: 30vw;
     background-size: cover;
     background-position: center center;
     margin: 0vw 0;
+  }
+}
+
+/** 
+ * *********** 404 Page ********************************************************
+ */
+.not-found-cont {
+  // background-color: c.$white;
+  display: flex;
+  justify-content: center;
+  img {
   }
 }

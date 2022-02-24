@@ -410,4 +410,12 @@ body,
   margin: 0vw 0;
 }
 
+/** 
+ * *********** 404 Page ********************************************************
+ */
+.not-found-cont {
+  display: flex;
+  justify-content: center;
+}
+
 /*# sourceMappingURL=style.css.map */

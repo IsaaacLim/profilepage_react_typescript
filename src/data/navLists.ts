@@ -49,6 +49,17 @@ const navLists: INav[] = [
 		boxShadowBig: "inset 6px 6px 11px #a48b8b, inset -6px -6px 11px #debbbb",
 		boxShadowSmall: "inset 2px 2px 4px #a48b8b, inset -2px -2px 4px #debbbb",
 	},
+	{
+		path: "*",
+		name: "404",
+		fixedCSS : {
+			background: "",
+			textColor: "",
+			circleColor: "",
+		},
+		boxShadowBig: "",
+		boxShadowSmall: "",
+	},
 ]
 
 export default navLists;

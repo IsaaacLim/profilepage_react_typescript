@@ -4,6 +4,7 @@ import AboutPage from "../pages/About";
 import HomePage from "../pages/Home";
 import WorksPage from "../pages/Works";
 import TestPage from "../pages/Test";
+import Page404 from "../pages/404";
 
 /**
  * Used only in App.tsx
@@ -17,6 +18,7 @@ const home = navLists[0]
 const about = navLists[1]
 const works = navLists[2]
 const test = navLists[3]
+const notFound = navLists[4]
 
 const routes: IRoute[] = [
 	{
@@ -35,6 +37,10 @@ const routes: IRoute[] = [
 		path: test.path,
 		component: TestPage,
 	},
+	{
+		path: notFound.path,
+		component: Page404,
+	}
 ]
 
 export default routes;
