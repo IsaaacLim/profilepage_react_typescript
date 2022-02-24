@@ -341,10 +341,10 @@ body,
 }
 .cards .img-placeholder {
   display: flex;
+  background-color: #e4e4e4;
 }
 .cards .img-placeholder img {
   width: 30vw;
-  object-fit: cover;
 }
 .cards .img-cover {
   position: absolute;

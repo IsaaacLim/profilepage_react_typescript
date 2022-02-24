@@ -358,9 +358,9 @@ $card-size: 30vw;
   }
   .img-placeholder {
     display: flex;
+    background-color: #e4e4e4;
     img {
       width: 30vw;
-      object-fit: cover;
     }
   }
   .img-cover {
