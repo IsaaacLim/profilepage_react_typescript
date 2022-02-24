@@ -125,11 +125,11 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   React.useEffect(() => {
     if (navSize === "small" || isTouched) return;
     const timeoutId = window.setTimeout(() => {
-      api({ x: 10 });
+      api({ x: 25 });
     }, 2000);
     const timeoutId2 = window.setTimeout(() => {
       api({
-        x: -10,
+        x: -25,
         justifySelf: "end",
         navText: leftNav.name,
         boxShadow: leftShadow,
