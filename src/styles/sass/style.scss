@@ -1,11 +1,38 @@
 @use "abstracts/colors" as c;
 @use "abstracts/fonts" as f;
 
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin phone {
+  @media screen and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
 * {
   margin: 0;
   font-family: f.$default;
   font-size: 1.15vw;
   color: c.$off-black;
+}
+
+@include phone {
+  * {
+    font-size: 16px;
+  }
 }
 
 body {
@@ -33,7 +60,7 @@ body,
   user-select: none; // Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox
 }
 
-/** 
+/**
  * *********** Nav Bar *********************************************************
  * NavSlider have 2 sizes, #big & #small
  * .navbar: Parent div of the NavSlider (child)
@@ -48,7 +75,7 @@ body,
     width: $base-size;
     height: $base-size / 3;
     padding: 0 ($base-size / 9.23) 0 ($base-size / 9.23);
-    border-radius: $base-size / 5;
+    border-radius: ($base-size / 5);
 
     .circle {
       width: $base-size / 4.8;
@@ -89,6 +116,14 @@ body,
     position: absolute;
     inset: 1vw 85vw;
     @include slider-comp-size(6vw);
+  }
+
+  @include phone {
+    &.small {
+      position: absolute;
+      inset: 3vw 73vw;
+      @include slider-comp-size(13vw);
+    }
   }
 
   &#works {
@@ -160,7 +195,7 @@ body,
   }
 }
 
-/** 
+/**
  * *********** Socials Bar *****************************************************
  * .socials-bar: Parent div of each social icons (children)
  * .social-icon: Size of each icon
@@ -196,7 +231,7 @@ body,
   }
 }
 
-/** 
+/**
  * *********** Home Page *******************************************************
  * .home-cont: Home container
  * .card-cont: Picture container (at ImgCard.tsx)
@@ -261,7 +296,7 @@ $card-size: 30vw;
   }
 }
 
-/** 
+/**
  * *********** About Page ******************************************************
  * General styling
  * Specific element styling are in-line styled (position & size)
@@ -279,7 +314,7 @@ $card-size: 30vw;
   }
 }
 
-/** 
+/**
  * *********** Works Page ******************************************************
  * .works-cont: Parent div containing .deck
  * .deck: Parent div containing multiple .cards
@@ -333,6 +368,7 @@ $card-size: 30vw;
     font-family: f.$accent;
     font-size: 1vw;
   }
+
   .content {
     box-sizing: border-box;
     @include user-select-none();
@@ -376,13 +412,37 @@ $card-size: 30vw;
   .txt-placeholder {
     padding-left: 1vw;
   }
+
+  @include phone {
+    p,
+    li {
+      font-size: 3vw;
+    }
+
+    .content {
+      padding: 1.5vw;
+    }
+    #title {
+      font-size: 9vw;
+      margin: 0 0 3vh 0; // update this, so that margin isn't absolute
+    }
+    #subtitle {
+      margin-top: 3vw;
+    }
+    ul {
+      padding-left: 6vw;
+    }
+    .txt-placeholder {
+      padding-left: 3vw;
+    }
+  }
 }
 
 #pug-life {
   width: 5vw;
 }
 
-/** 
+/**
  * *********** Test Page *******************************************************
  * Section contains temporary styling
  */
@@ -425,7 +485,7 @@ $card-size: 30vw;
   }
 }
 
-/** 
+/**
  * *********** 404 Page ********************************************************
  */
 .not-found-cont {
