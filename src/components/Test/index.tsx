@@ -7,20 +7,15 @@ import clamp from "lodash.clamp";
 import styles from "./styles.module.css";
 
 import Testing2 from "../Test2";
+import works from "../../data/works";
 
-const pages = [
-  "https://images.pexels.com/photos/62689/pexels-photo-62689.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/296878/pexels-photo-296878.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/4016596/pexels-photo-4016596.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/351265/pexels-photo-351265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-  "https://images.pexels.com/photos/924675/pexels-photo-924675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-];
+const worksReversed = works.reverse();
 
 function Viewpager() {
   const index = useRef(0);
   const [ref, { width }] = useMeasure();
   const [props, api] = useSprings(
-    pages.length,
+    worksReversed.length,
     (i) => ({
       x: i * width,
       scale: width === 0 ? 0 : 1,
@@ -34,7 +29,7 @@ function Viewpager() {
         index.current = clamp(
           index.current + (xDir > 0 ? -1 : 1),
           0,
-          pages.length - 1
+          worksReversed.length - 1
         );
         cancel();
       }
@@ -56,8 +51,10 @@ function Viewpager() {
           key={i}
           style={{ display, x }}
         >
-          <animated.div style={{ scale, backgroundImage: `url(${pages[i]})` }}>
-            <Testing2 />
+          <animated.div
+            style={{ scale, backgroundImage: `url(${worksReversed[i].img})` }}
+          >
+            <Testing2 work={worksReversed[i]} />
           </animated.div>
         </animated.div>
       ))}
