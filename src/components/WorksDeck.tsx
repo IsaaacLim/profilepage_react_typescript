@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSprings, animated, to as interpolate } from "@react-spring/web";
-import { useDrag } from "react-use-gesture";
+import { useDrag } from "@use-gesture/react";
 import IWork from "../interfaces/work";
 
 /**
@@ -54,15 +54,21 @@ const Deck: React.FC<{ cards: IWork[] }> = ({ cards }) => {
   }));
 
   const bind = useDrag(
-    ({ args: [index], down, movement: [mx], direction: [xDir], velocity }) => {
-      const trigger = velocity > 0.3;
+    ({
+      args: [index],
+      down,
+      movement: [mx],
+      direction: [xDir],
+      velocity: [xVel],
+    }) => {
+      const trigger = xVel > 0.3;
       const dir = xDir < 0 ? -1 : 1;
       if (!down && trigger) gone.add(index);
       api.start((i) => {
         if (index !== i) return;
         const isGone = gone.has(index);
         const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0;
-        const rot = mx / 100 + (isGone ? dir * 10 * velocity : 0);
+        const rot = mx / 100 + (isGone ? dir * 10 * xVel : 0);
         const scale = down ? 1.1 : 1;
         return {
           x,
