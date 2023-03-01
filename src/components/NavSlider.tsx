@@ -90,7 +90,12 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   let navigate = useNavigate();
   const rightNav = navItems[0];
   const leftNav = navItems[1];
-  if (navSize === "small") {
+  // for mobile view; media query follow styles.scss
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    dst = width / 8;
+    leftShadow = leftNav.boxShadowSmall;
+    rightShadow = rightNav.boxShadowSmall;
+  } else if (navSize === "small") {
     dst = width / 17;
     leftShadow = leftNav.boxShadowSmall;
     rightShadow = rightNav.boxShadowSmall;
