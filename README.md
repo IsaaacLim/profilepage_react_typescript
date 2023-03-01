@@ -103,6 +103,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
   ```
 
 - React-Spring hover over animation [guide](https://www.joshwcomeau.com/react/boop/)
+- useGesture issue on behavior dropping for mobile devices [solution](https://use-gesture.netlify.app/docs/extras/#touch-action:~:text=friendly%20UI%20interfaces.-,touch%2Daction,-Let%27s%20take%20the)
 - Neumorphism [helper](https://neumorphism.io/)
 - Typescript locating PDF files (&other files) (guide)[https://github.com/facebook/create-react-app/issues/8021]
 

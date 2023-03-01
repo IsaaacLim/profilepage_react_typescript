@@ -185,7 +185,11 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
     <animated.div
       {...bind()}
       className="nav-cont"
-      style={{ background: background, boxShadow: boxShadow }}
+      style={{
+        background: background,
+        boxShadow: boxShadow,
+        touchAction: "pan-y",
+      }}
     >
       <animated.div className="text" style={{ color: textColor, justifySelf }}>
         {navText}
