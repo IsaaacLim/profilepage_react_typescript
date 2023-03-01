@@ -13,7 +13,7 @@ import IWork from "../interfaces/work";
  * 		Create a gesture. Interested in down-state, delta(current-pos - click-pos), direction and velocity
  * 		@const
  * 			trigger: Force needed to flicker cards out
- * 			dir: Flicker direction (left/right only) 
+ * 			dir: Flicker direction (left/right only)
  * 		@param if(!down & trigger): Condition to throw card out
  * 		@function api.start
  * 			Only interested in changing spring-dat for the current Card
@@ -23,7 +23,7 @@ import IWork from "../interfaces/work";
  * 				rot: How much the card spins, flicking it harder increases rotations
  * 				scale: Active cards are lifted up
  * 	}
- 0-* 		
+ 0-*
  *
  * --- HELPER FUNCTION ---
  * @const to & @const from: To curate spring data/values that are later being interpolated into css
@@ -101,34 +101,38 @@ const Deck: React.FC<{ cards: IWork[] }> = ({ cards }) => {
                   <img src={cards[i].img} alt={cards[i].alt} />
                 )}
               </div>
+              {/* Top card */}
               {i === cards.length - 1 ? (
                 <div className="img-cover" id="cover-full" />
               ) : (
-                <div className="img-cover" />
+                <div>
+                  {/* todo: may be able to remove img-cover */}
+                  <div className="img-cover" />
+                  <div className="txt-placeholder">
+                    <p id="title">{cards[i].title}</p>
+                    <div>
+                      <p id="subtitle">Description:</p>
+                      <ul>
+                        {cards[i].description.map((text, index) => {
+                          return <li key={index}>{text}</li>;
+                        })}
+                      </ul>
+                    </div>
+                    <div>
+                      <p id="subtitle">Tech:</p>
+                      <p>{cards[i].tech}</p>
+                    </div>
+                    <div>
+                      <p id="subtitle">Example Features:</p>
+                      <ul>
+                        {cards[i].features.map((text, index) => {
+                          return <li key={index}>{text}</li>;
+                        })}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               )}
-              <div className="txt-placeholder">
-                <p id="title">{cards[i].title}</p>
-                <div>
-                  <p id="subtitle">Description:</p>
-                  <ul>
-                    {cards[i].description.map((text, index) => {
-                      return <li key={index}>{text}</li>;
-                    })}
-                  </ul>
-                </div>
-                <div>
-                  <p id="subtitle">Tech:</p>
-                  <p>{cards[i].tech}</p>
-                </div>
-                <div>
-                  <p id="subtitle">Example Features:</p>
-                  <ul>
-                    {cards[i].features.map((text, index) => {
-                      return <li key={index}>{text}</li>;
-                    })}
-                  </ul>
-                </div>
-              </div>
             </div>
           </animated.div>
         </animated.div>
