@@ -1,5 +1,5 @@
 // Gradients taken from: https://webgradients.com/
-export default [
+const data = [
   {
     name: "Rare Wind",
     description: "#a8edea → #fed6e3",
@@ -91,3 +91,5 @@ export default [
   //   height: 200,
   // },
 ];
+
+export default data;
