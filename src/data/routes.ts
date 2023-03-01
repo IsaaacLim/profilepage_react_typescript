@@ -4,7 +4,6 @@ import AboutPage from "../pages/About";
 import HomePage from "../pages/Home";
 import WorksPage from "../pages/Works";
 import TestPage from "../pages/Test";
-import TestPage2 from "../pages/Test2";
 import Page404 from "../pages/404";
 
 /**
@@ -41,10 +40,6 @@ const routes: IRoute[] = [
   {
     path: notFound.path,
     component: Page404,
-  },
-  {
-    path: "/test2",
-    component: TestPage2,
   },
 ];
 
