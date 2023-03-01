@@ -3,11 +3,17 @@ import { useSpring, animated, to } from "@react-spring/web";
 import { useGesture } from "react-use-gesture";
 import Forkey from "../images/forkey.jpg";
 
+import Testing from "../components/Test";
+import Testing2 from "../components/Test2";
+import NavSlider from "../components/NavSlider";
+import navLists from "../data/navLists";
+import INav from "../interfaces/navList";
+
 const calcX = (y: number, ly: number) =>
   -(y - ly - window.innerHeight / 2) / 20;
 const calcY = (x: number, lx: number) => (x - lx - window.innerWidth / 2) / 20;
 
-export default function App() {
+function DraggableImage() {
   const domTarget = useRef(null);
   const [isMoved, setIsMoved] = React.useState(false);
   const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(
@@ -84,3 +90,21 @@ export default function App() {
     </div>
   );
 }
+
+const navListSmall: INav[] = [navLists[1], navLists[2]]; // about & works
+
+function Test() {
+  return (
+    <div>
+      <div className="navbar small" id="about">
+        <NavSlider navItems={navListSmall} navSize="small">
+          Slide.
+        </NavSlider>
+      </div>
+      <Testing />
+      {/* <Testing2 /> */}
+    </div>
+  );
+}
+
+export default Test;
