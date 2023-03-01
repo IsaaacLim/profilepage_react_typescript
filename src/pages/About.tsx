@@ -124,9 +124,9 @@ export default function About() {
           <FadeInDiv yFrom="20px">
             <div style={{ maxWidth: "28%" }}>
               <p>
-                My name is Isaac and I'm an upcoming Software Developer. While
-                I'm still gathering more experiences into my stash, I'm proud of
-                my skills in C, C++, HTML, CSS &amp; JavaScript
+                My name is Isaac and I'm a Software Developer. While I'm still
+                gathering more experiences into my stash, I'm proud of my skills
+                in C, C++, HTML, CSS &amp; JavaScript
               </p>
               <p id="note">Continue scrolling to know more about me</p>
             </div>
