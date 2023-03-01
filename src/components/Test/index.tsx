@@ -9,11 +9,11 @@ import styles from "./styles.module.css";
 import Testing2 from "../Test2";
 import works from "../../data/works";
 
-const worksReversed = works.reverse();
-
 function Viewpager() {
   const index = useRef(0);
   const [ref, { width }] = useMeasure();
+  const worksReversed = works.reverse();
+
   const [props, api] = useSprings(
     worksReversed.length,
     (i) => ({
