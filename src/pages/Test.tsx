@@ -6,7 +6,6 @@ import React from "react";
 
 // import Testing from "../components/Test";
 // import TestNavPopup from "../components/TestNavPopup/NavPopup";
-import TestSpringModal from "../components/TestSpringModal/SpringModal";
 // import NavSlider from "../components/NavSlider";
 // import navLists from "../data/navLists";
 // import INav from "../interfaces/navList";
@@ -96,6 +95,7 @@ import TestSpringModal from "../components/TestSpringModal/SpringModal";
 function Test() {
   return (
     <div>
+      ooi
       {/* <div className="navbar small" id="about">
         <NavSlider navItems={navListSmall} navSize="small">
           Slide.
@@ -105,7 +105,6 @@ function Test() {
       {/* <WorksPopup /> */}
       {/* <TestNavPopup /> */}
       {/* <TestFlipCard /> */}
-      <TestSpringModal />
     </div>
   );
 }
