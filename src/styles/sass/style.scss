@@ -37,6 +37,10 @@ $desktop-width: 1024px;
 
 body {
   background: -webkit-linear-gradient(275deg, c.$nude 80%, c.$white 80.08%);
+
+  @include phone {
+  background: -webkit-linear-gradient(270deg, c.$white 35%, c.$nude 35%);
+  }
 }
 
 // React-Spring Design Requirements
@@ -364,6 +368,40 @@ body,
 
     #highlight {
       color: c.$off-white;
+    }
+  }
+
+  @include phone {
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 40px;
+
+    .sec-left {
+      padding-left: 0;
+      width: 100%;
+      gap: 40px
+    }
+
+    .sec-right {
+      position: relative;
+      height: auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .text {
+      text-align: center;
+      .name-cont {
+        display: block;
+        h1 {
+          font-size: xx-large;
+        }
+      }
+
+      p,
+      span {
+        font-size: 16px;
+      }
     }
   }
 }

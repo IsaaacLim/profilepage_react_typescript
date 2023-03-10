@@ -22,6 +22,11 @@
 body {
   background: -webkit-linear-gradient(275deg, #c1a3a3 80%, white 80.08%);
 }
+@media screen and (max-width: 767px) {
+  body {
+    background: -webkit-linear-gradient(270deg, white 35%, #c1a3a3 35%);
+  }
+}
 
 html,
 body,
@@ -333,6 +338,37 @@ body,
 }
 .home-cont .text #highlight {
   color: #f6f6f6;
+}
+@media screen and (max-width: 767px) {
+  .home-cont {
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 40px;
+  }
+  .home-cont .sec-left {
+    padding-left: 0;
+    width: 100%;
+    gap: 40px;
+  }
+  .home-cont .sec-right {
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .home-cont .text {
+    text-align: center;
+  }
+  .home-cont .text .name-cont {
+    display: block;
+  }
+  .home-cont .text .name-cont h1 {
+    font-size: xx-large;
+  }
+  .home-cont .text p,
+.home-cont .text span {
+    font-size: 16px;
+  }
 }
 
 .card-cont {
