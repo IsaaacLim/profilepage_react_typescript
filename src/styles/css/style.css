@@ -464,7 +464,7 @@ body,
   opacity: 0.5;
 }
 
-#modal-container {
+.modal-container {
   position: fixed;
   display: table;
   height: 100%;
@@ -473,13 +473,13 @@ body,
   left: 0;
   z-index: 1;
 }
-#modal-container .modal-background {
+.modal-container .modal-background {
   display: table-cell;
   background: rgba(0, 0, 0, 0.8);
   text-align: center;
   vertical-align: middle;
 }
-#modal-container .modal-background .modal-close {
+.modal-container .modal-background .modal-close {
   position: absolute;
   top: 0;
   right: 0;
@@ -487,9 +487,31 @@ body,
   color: #f6f6f6;
   transition: color 0.15s ease;
 }
-#modal-container .modal-background .modal-close:hover {
+.modal-container .modal-background .modal-close:hover {
   cursor: pointer;
   color: #c1a3a3;
+}
+
+.flipcard-cont {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flipcard-cont .card {
+  position: absolute;
+  max-height: 80vh;
+  aspect-ratio: 9/19.5;
+  background-color: white;
+  border-radius: 6px;
+  padding: 4px;
+  cursor: pointer;
+  will-change: transform, opacity;
+}
+.flipcard-cont .card img {
+  object-fit: contain;
+  height: 80vh;
+  aspect-ratio: 9/19.5;
 }
 
 /**

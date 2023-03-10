@@ -498,7 +498,7 @@ $card-size: 30vw;
 }
 
 // --- Modal Popup ---
- #modal-container {
+ .modal-container {
   position:fixed;
   display:table;
   height:100%;
@@ -526,6 +526,31 @@ $card-size: 30vw;
         cursor: pointer;
         color: c.$nude;
       }
+    }
+  }
+}
+
+// --- Modal Popup ---
+.flipcard-cont {
+  height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+  .card {
+    position: absolute;
+    max-height: 80vh;
+    aspect-ratio: 9/19.5;
+    background-color: white;
+    border-radius: 6px;
+    padding: 4px;
+    cursor: pointer;
+    will-change: transform, opacity;
+
+    img {
+      object-fit: contain;
+      height: 80vh;
+      aspect-ratio: 9/19.5;
     }
   }
 }

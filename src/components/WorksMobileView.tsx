@@ -7,7 +7,7 @@ import {
   animated,
   useSpringRef,
 } from "@react-spring/web";
-import FlipCard from "./TestFlipCard/FlipCard";
+import FlipCard from "./FlipCard";
 import IWork from "../interfaces/work";
 
 /**
@@ -81,7 +81,7 @@ function Modal({
       {transition((style, selectedWork) => {
         const work = works[selectedWork];
         return (
-          <animated.div id="modal-container" style={style}>
+          <animated.div className="modal-container" style={style}>
             <div className="modal-background">
               <p className="modal-close" onClick={handleClose}>
                 X
