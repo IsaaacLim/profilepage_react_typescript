@@ -77,15 +77,18 @@ const NavPopup: React.FC<{
   };
   return (
     <div className="nav-popup-cont" id={bgColor}>
-      <a.div onClick={() => close()} style={bgStyle}>
-        {children}
-      </a.div>
+      <a.div style={bgStyle}>{children}</a.div>
       <div className="actionBtn" onClick={() => open({ canceled: false })} />
+
+      {/* Nav popup */}
       <a.div
         className="nav-options-cont"
         {...bind()}
         style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
       >
+        {/* Background layer to prevent other DOM interaction */}
+        <div id="cover" onClick={() => close()} />
+        {/* Nav options */}
         {navItems.map((navItem) => (
           <div
             key={navItem.name}
