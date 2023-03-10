@@ -3,6 +3,7 @@ import { useSpring, animated } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
 import { useNavigate } from "react-router-dom";
 import INav from "../interfaces/navList";
+import isMobile from "./isMobile";
 
 /**
  * @function Slider
@@ -90,8 +91,8 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   let navigate = useNavigate();
   const rightNav = navItems[0];
   const leftNav = navItems[1];
-  // for mobile view; media query follow styles.scss
-  if (window.matchMedia("(max-width: 767px)").matches) {
+  // mobile view
+  if (isMobile()) {
     dst = width / 8;
     leftShadow = leftNav.boxShadowSmall;
     rightShadow = rightNav.boxShadowSmall;
