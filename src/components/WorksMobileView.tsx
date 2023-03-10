@@ -119,7 +119,7 @@ const WorksMobileView: React.FC<{ works: IWork[] }> = ({ works }) => {
         selectedWork={selectedWork}
         handleClose={handleClose}
       />
-      <div className="contentzz">
+      <div className="works-cont-mobile">
         <h1>Latest Works</h1>
         <WorksButtons works={works} handleSelectWork={handleSelectWork} />
       </div>
