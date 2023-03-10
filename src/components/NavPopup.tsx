@@ -2,12 +2,18 @@ import React from "react";
 import { useDrag } from "@use-gesture/react";
 import { a, useSpring, config } from "@react-spring/web";
 
-import styles from "./styles.module.css";
+import { To, useNavigate } from "react-router-dom";
+import INav from "../interfaces/navList";
 
-const items = ["save item", "open item", "share item", "delete item", "cancel"];
-const height = items.length * 60 + 80;
+type bgColors = "steel" | "royal";
 
-export default function App() {
+const NavPopup: React.FC<{
+  children: React.ReactNode;
+  navItems: INav[];
+  bgColor?: bgColors;
+}> = ({ children, navItems, bgColor }) => {
+  const navigate = useNavigate();
+  const height = navItems.length * 150 + 80;
   const [{ y }, api] = useSpring(() => ({ y: height }));
 
   const open = ({ canceled }: { canceled: boolean }) => {
@@ -19,11 +25,12 @@ export default function App() {
       config: canceled ? config.wobbly : config.stiff,
     });
   };
-  const close = (velocity = 0) => {
+  const close = (velocity = 0, redirect?: string) => {
     api.start({
       y: height,
       immediate: false,
       config: { ...config.stiff, velocity },
+      onRest: () => redirect && navigate(redirect),
     });
   };
 
@@ -64,41 +71,34 @@ export default function App() {
   const bgStyle = {
     transform: y.to(
       [0, height],
-      ["translateY(-8%) scale(1.16)", "translateY(0px) scale(1.05)"]
+      ["translateY(-8%) scale(1.16)", "translateY(0px) scale(1.00)"]
     ),
     opacity: y.to([0, height], [0.4, 1], "clamp"),
   };
   return (
-    <div className="flex" style={{ overflow: "hidden" }}>
-      <a.div className={styles.bg} onClick={() => close()} style={bgStyle}>
-        <img
-          src="https://images.pexels.com/photos/1239387/pexels-photo-1239387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          alt=""
-        />
-        <img
-          src="https://images.pexels.com/photos/5181179/pexels-photo-5181179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          alt=""
-        />
+    <div className="nav-popup-cont" id={bgColor}>
+      <a.div onClick={() => close()} style={bgStyle}>
+        {children}
       </a.div>
-      <div
-        className={styles.actionBtn}
-        onClick={() => open({ canceled: false })}
-      />
+      <div className="actionBtn" onClick={() => open({ canceled: false })} />
       <a.div
-        className={styles.sheet}
+        className="nav-options-cont"
         {...bind()}
         style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
       >
-        {items.map((entry, i) => (
+        {navItems.map((navItem) => (
           <div
-            key={entry}
-            onClick={() =>
-              i < items.length - 1 ? alert("clicked on " + entry) : close()
-            }
-            children={entry}
+            key={navItem.name}
+            onClick={() => close(0, `${navItem.path}`)}
+            children={navItem.name}
           />
         ))}
+        <div onClick={() => close()}>
+          <span>Close</span>
+        </div>
       </a.div>
     </div>
   );
-}
+};
+
+export default NavPopup;

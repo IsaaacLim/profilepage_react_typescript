@@ -9,6 +9,8 @@ import {
 } from "@react-spring/web";
 import FlipCard from "./FlipCard";
 import IWork from "../interfaces/work";
+import NavPopup from "./NavPopup";
+import INav from "../interfaces/navList";
 
 /**
  * @function WorksCards
@@ -98,7 +100,10 @@ function Modal({
 }
 
 /* -------- Main function --------------------------------------------------*/
-const WorksMobileView: React.FC<{ works: IWork[] }> = ({ works }) => {
+const WorksMobileView: React.FC<{
+  works: IWork[];
+  navItems: INav[];
+}> = ({ works, navItems }) => {
   const [isModalActive, setIsModalActive] = useState(false);
   const [selectedWork, setSelectedWork] = useState(0);
 
@@ -119,10 +124,12 @@ const WorksMobileView: React.FC<{ works: IWork[] }> = ({ works }) => {
         selectedWork={selectedWork}
         handleClose={handleClose}
       />
-      <div className="works-cont-mobile">
-        <h1>Latest Works</h1>
-        <WorksButtons works={works} handleSelectWork={handleSelectWork} />
-      </div>
+      <NavPopup bgColor="steel" navItems={navItems}>
+        <div className="works-cont-mobile">
+          <h1>Latest Works</h1>
+          <WorksButtons works={works} handleSelectWork={handleSelectWork} />
+        </div>
+      </NavPopup>
     </>
   );
 };

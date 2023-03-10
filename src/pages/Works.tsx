@@ -10,9 +10,12 @@ import PugLife from "../images/pug-life.png";
 import isMobile from "../components/isMobile";
 import WorksMobileView from "../components/WorksMobileView";
 
-// const navListSmall: INav[] = [navLists[0], navLists[1]]; // home & about
-const navListSmall: INav[] = [navLists[0], navLists[3]]; // home & about
+const navListSmall: INav[] = [navLists[0], navLists[1]]; // home & about
 
+/**
+ * Todo: Refactor mobile view such that NavPopup is rendered at this level.
+ *        Current issue is with the modal
+ */
 const Works = () => {
   const worksWithoutCover = works.slice(1);
   const worksReverse = Array.prototype.slice.call(works).reverse();
@@ -20,7 +23,11 @@ const Works = () => {
   return (
     <>
       {isMobile() ? (
-        <WorksMobileView works={worksWithoutCover} />
+        <>
+          {/* <NavPopup bgColor="steel"> */}
+          <WorksMobileView works={worksWithoutCover} navItems={navListSmall} />
+          {/* </NavPopup> */}
+        </>
       ) : (
         <>
           <div className="navbar small" id="works">

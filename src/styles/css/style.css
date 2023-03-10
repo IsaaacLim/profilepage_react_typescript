@@ -35,6 +35,7 @@ body,
 
 /**
  * *********** Nav Bar *********************************************************
+ * Navigation for web view
  * NavSlider have 2 sizes, #big & #small
  * .navbar: Parent div of the NavSlider (child)
  * .nav-cont: NavSlider item itself
@@ -183,6 +184,73 @@ body,
 }
 .nav-cont .text {
   position: absolute;
+}
+
+/**
+ * *********** NavPopup ********************************************************
+ * Navigation for mobile view
+ */
+.nav-popup-cont#steel {
+  background-color: #93b5c6;
+}
+.nav-popup-cont#royal {
+  background-color: #655d8a;
+}
+.nav-popup-cont .actionBtn {
+  position: fixed;
+  z-index: 50;
+  bottom: 30px;
+  right: 30px;
+  height: 48px;
+  width: 48px;
+  border-radius: 24px;
+  background: coral;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-popup-cont .actionBtn:after {
+  content: " ";
+  display: block;
+  background: #fff;
+  height: 20%;
+  width: 20%;
+  border-radius: 50%;
+}
+.nav-popup-cont .nav-options-cont {
+  z-index: 50;
+  position: fixed;
+  left: 2vw;
+  height: calc(100vh + 100px);
+  width: 96vw;
+  border-radius: 12px 12px 0px;
+  background: #fff;
+  touch-action: none;
+}
+.nav-popup-cont .nav-options-cont > div {
+  height: 60px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  text-transform: capitalize;
+}
+.nav-popup-cont .nav-options-cont > div:first-child {
+  margin-top: 12px;
+}
+.nav-popup-cont .nav-options-cont:after {
+  content: " ";
+  display: block;
+  background: #bdbdbd;
+  height: 3px;
+  width: 30%;
+  border-radius: 4px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  margin-left: -15%;
 }
 
 /**
@@ -449,7 +517,7 @@ body,
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 60;
 }
 .modal-container .modal-background {
   display: table-cell;

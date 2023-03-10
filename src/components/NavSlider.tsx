@@ -88,7 +88,7 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
 }) => {
   const [isTouched, setIsTouched] = React.useState(false);
   const { width } = useWindowWidth();
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const rightNav = navItems[0];
   const leftNav = navItems[1];
   // mobile view
