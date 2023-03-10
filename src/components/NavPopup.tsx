@@ -2,7 +2,7 @@ import React from "react";
 import { useDrag } from "@use-gesture/react";
 import { a, useSpring, config } from "@react-spring/web";
 
-import { To, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import INav from "../interfaces/navList";
 
 type bgColors = "steel" | "royal";
