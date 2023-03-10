@@ -63,7 +63,7 @@ function SpringModal() {
         );
       })}
       <div className="contentzz">
-        <h1>Works Done</h1>
+        <h1>Latest Works</h1>
         <div className="buttons">
           {works.map((work, i) => {
             return (

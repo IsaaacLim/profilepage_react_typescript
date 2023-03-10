@@ -5,9 +5,7 @@ import React from "react";
 // import Forkey from "../images/forkey.jpg";
 
 // import Testing from "../components/Test";
-import TestNavPopup from "../components/TestNavPopup/NavPopup";
-import TestFlipCard from "../components/TestFlipCard/FlipCard";
-import WorksPopup from "../components/TestPopup/WorksPopup";
+// import TestNavPopup from "../components/TestNavPopup/NavPopup";
 import TestSpringModal from "../components/TestSpringModal/SpringModal";
 // import NavSlider from "../components/NavSlider";
 import navLists from "../data/navLists";
@@ -94,8 +92,6 @@ import INav from "../interfaces/navList";
 //     </div>
 //   );
 // }
-
-const navListSmall: INav[] = [navLists[1], navLists[2]]; // about & works
 
 function Test() {
   return (
