@@ -412,30 +412,6 @@ $card-size: 30vw;
   .txt-placeholder {
     padding-left: 1vw;
   }
-
-  @include phone {
-    p,
-    li {
-      font-size: 3vw;
-    }
-
-    .content {
-      padding: 1.5vw;
-    }
-    #title {
-      font-size: 9vw;
-      margin: 0 0 3vh 0; // update this, so that margin isn't absolute
-    }
-    #subtitle {
-      margin-top: 3vw;
-    }
-    ul {
-      padding-left: 6vw;
-    }
-    .txt-placeholder {
-      padding-left: 3vw;
-    }
-  }
 }
 
 #pug-life {

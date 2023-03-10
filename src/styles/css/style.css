@@ -390,28 +390,6 @@ body,
 .cards .txt-placeholder {
   padding-left: 1vw;
 }
-@media screen and (max-width: 767px) {
-  .cards p,
-.cards li {
-    font-size: 3vw;
-  }
-  .cards .content {
-    padding: 1.5vw;
-  }
-  .cards #title {
-    font-size: 9vw;
-    margin: 0 0 3vh 0;
-  }
-  .cards #subtitle {
-    margin-top: 3vw;
-  }
-  .cards ul {
-    padding-left: 6vw;
-  }
-  .cards .txt-placeholder {
-    padding-left: 3vw;
-  }
-}
 
 #pug-life {
   width: 5vw;
