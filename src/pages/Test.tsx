@@ -8,8 +8,8 @@ import React from "react";
 // import TestNavPopup from "../components/TestNavPopup/NavPopup";
 import TestSpringModal from "../components/TestSpringModal/SpringModal";
 // import NavSlider from "../components/NavSlider";
-import navLists from "../data/navLists";
-import INav from "../interfaces/navList";
+// import navLists from "../data/navLists";
+// import INav from "../interfaces/navList";
 
 // const calcX = (y: number, ly: number) =>
 //   -(y - ly - window.innerHeight / 2) / 20;
