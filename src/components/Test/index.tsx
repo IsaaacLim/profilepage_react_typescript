@@ -6,7 +6,7 @@ import clamp from "lodash.clamp";
 
 import styles from "./styles.module.css";
 
-import Testing2 from "../Test2";
+import WorksPopup from "../TestPopup/WorksPopup";
 import works from "../../data/works";
 
 function Viewpager() {
@@ -60,7 +60,7 @@ function Viewpager() {
           <animated.div
             style={{ scale, backgroundImage: `url(${worksReversed[i].img})` }}
           >
-            <Testing2 work={worksReversed[i]} />
+            <WorksPopup />
           </animated.div>
         </animated.div>
       ))}
