@@ -1,12 +1,15 @@
 import React from "react";
 // import React, { useRef } from "react";
 // import { useSpring, animated, to } from "@react-spring/web";
-// import { useGesture } from "react-use-gesture";
+// import { useGesture } from "@use-gesture/react";
 // import Forkey from "../images/forkey.jpg";
 
-import Testing from "../components/Test";
-// import Testing2 from "../components/Test2";
-import NavSlider from "../components/NavSlider";
+// import Testing from "../components/Test";
+import TestNavPopup from "../components/TestNavPopup/NavPopup";
+import TestFlipCard from "../components/TestFlipCard/FlipCard";
+import WorksPopup from "../components/TestPopup/WorksPopup";
+import TestSpringModal from "../components/TestSpringModal/SpringModal";
+// import NavSlider from "../components/NavSlider";
 import navLists from "../data/navLists";
 import INav from "../interfaces/navList";
 
@@ -97,13 +100,16 @@ const navListSmall: INav[] = [navLists[1], navLists[2]]; // about & works
 function Test() {
   return (
     <div>
-      <div className="navbar small" id="about">
+      {/* <div className="navbar small" id="about">
         <NavSlider navItems={navListSmall} navSize="small">
           Slide.
         </NavSlider>
       </div>
-      <Testing />
-      {/* <Testing2 /> */}
+      <Testing /> */}
+      {/* <WorksPopup /> */}
+      {/* <TestNavPopup /> */}
+      {/* <TestFlipCard /> */}
+      <TestSpringModal />
     </div>
   );
 }
