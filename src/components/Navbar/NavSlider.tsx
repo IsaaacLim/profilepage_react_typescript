@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
 import { useNavigate } from "react-router-dom";
-import INav from "../interfaces/navList";
-import isMobile from "./isMobile";
+import INav from "../../interfaces/navList";
+import isMobile from "../../lib/isMobile";
 
 /**
  * Todo: refactor variables
@@ -22,7 +22,7 @@ var rightShadow: string;
  * @param navSize nav size option for web view
  * @returns A slider navbar
  */
-const Slider: React.FC<{ children: React.ReactNode; navItems: INav[]; navSize: "small" | "big" }> = ({
+const NavSlider: React.FC<{ children: React.ReactNode; navItems: INav[]; navSize: "small" | "big" }> = ({
   children,
   navItems,
   navSize,
@@ -202,4 +202,4 @@ function useWindowWidth() {
   return windowWidth;
 }
 
-export default Slider;
+export default NavSlider;

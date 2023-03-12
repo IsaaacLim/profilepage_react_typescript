@@ -7,16 +7,16 @@ import {
   animated,
   useSpringRef,
 } from "@react-spring/web";
-import FlipCard from "./FlipCard";
-import IWork from "../interfaces/work";
-import NavPopup from "./NavPopup";
-import INav from "../interfaces/navList";
+import FlipCard from "../FlipCard";
+import IWork from "../../interfaces/work";
+import NavPopup from "../Navbar/NavPopup";
+import INav from "../../interfaces/navList";
 
 /**
- * @function WorksCards
- * @returns Mobile view of works done
+ * @param works Works data
+ * @returns Works in grid display that opens a modal of its details
  */
-const WorksMobileView: React.FC<{
+const WorksGrid: React.FC<{
   works: IWork[];
   navItems: INav[];
 }> = ({ works, navItems }) => {
@@ -146,4 +146,4 @@ function Modal({
   );
 }
 
-export default WorksMobileView;
+export default WorksGrid;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSprings, animated, to as interpolate } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
-import IWork from "../interfaces/work";
+import IWork from "../../interfaces/work";
 
 /**
  * @param works Works Data
