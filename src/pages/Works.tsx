@@ -4,7 +4,7 @@ import NavSlider from "../components/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
 import SocialsBar from "../components/SocialsBar";
-import Deck from "../components/WorksDeck";
+import WorksDeck from "../components/WorksDeck";
 import FadeInDiv from "../components/FadeInDiv";
 import PugLife from "../images/pug-life.png";
 import isMobile from "../components/isMobile";
@@ -37,7 +37,7 @@ const Works = () => {
           </div>
           <SocialsBar styleType={3} />
           <div className="works-cont">
-            <Deck cards={worksReverse} />
+            <WorksDeck works={worksReverse} />
             <FadeInDiv>
               <img src={PugLife} alt="Pug life" id="pug-life" />
             </FadeInDiv>

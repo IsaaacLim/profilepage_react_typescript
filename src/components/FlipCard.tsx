@@ -3,6 +3,10 @@ import { useSpring, a } from "@react-spring/web";
 
 import IWork from "../interfaces/work";
 
+/**
+ * @param work Work done data
+ * @returns Card with two faces. Flips on click
+ */
 const FlipCard: React.FC<{ work: IWork }> = ({ work }) => {
   const [flipped, setFlipped] = useState(false);
   const { transform, opacity } = useSpring({

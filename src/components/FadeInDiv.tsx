@@ -1,7 +1,13 @@
 import React from "react";
 import { useSpring, animated } from "@react-spring/web";
 
-const FadeIn: React.FC<{
+/**
+ * @param yFrom initial render with y-axis offset
+ * @param scaleFrom initial render with scale
+ * @param delay render component after delay
+ * @returns Div component that fades in according to settings
+ */
+const FadeInDiv: React.FC<{
   className?: string;
   id?: string;
   yFrom?: string;
@@ -21,4 +27,4 @@ const FadeIn: React.FC<{
   );
 };
 
-export default FadeIn;
+export default FadeInDiv;

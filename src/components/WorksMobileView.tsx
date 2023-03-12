@@ -16,8 +16,45 @@ import INav from "../interfaces/navList";
  * @function WorksCards
  * @returns Mobile view of works done
  */
+const WorksMobileView: React.FC<{
+  works: IWork[];
+  navItems: INav[];
+}> = ({ works, navItems }) => {
+  const [isModalActive, setIsModalActive] = useState<boolean>(false);
+  const [selectedWork, setSelectedWork] = useState<IWork | undefined>();
 
-/* -------- Helper function --------------------------------------------------*/
+  const handleSelectWork = (i: number) => {
+    setIsModalActive(true);
+    setSelectedWork(works[i]);
+  };
+
+  const handleClose = () => {
+    setIsModalActive(false);
+  };
+
+  return (
+    <>
+      <Modal
+        isModalActive={isModalActive}
+        work={selectedWork}
+        handleClose={handleClose}
+      />
+      <NavPopup bgColor="steel" navItems={navItems}>
+        <div className="works-cont-mobile">
+          <h1>Latest Works</h1>
+          <WorksButtons works={works} handleSelectWork={handleSelectWork} />
+        </div>
+      </NavPopup>
+    </>
+  );
+};
+
+/**
+ * Helper function
+ * @param works Works data
+ * @param handleSelectWork Open selected work details
+ * @returns Selected work
+ */
 function WorksButtons({
   works,
   handleSelectWork,
@@ -45,19 +82,34 @@ function WorksButtons({
   );
 }
 
+/**
+ * Helper function
+ * @param isModalActive True when user selects a work
+ * @param work Selected work
+ * @param handleClose close modal function 
+ * @returns Modal of selected work details
+ */
 function Modal({
-  works,
   isModalActive,
-  selectedWork,
+  work,
   handleClose,
 }: {
-  works: Array<IWork>;
   isModalActive: boolean;
-  selectedWork: number;
+  work: IWork;
   handleClose: () => void;
 }) {
   const transApi = useSpringRef();
   const modalApi = useSpringRef();
+
+  // Modal and background animation
+  const transition = useTransition(isModalActive ? work : [], {
+    ref: transApi,
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
+
+  // Modal animation
   const modalRender = useSpring({
     ref: modalApi,
     config: config.stiff,
@@ -67,12 +119,8 @@ function Modal({
       scale: isModalActive ? "1" : "0",
     },
   });
-  const transition = useTransition(isModalActive ? selectedWork : [], {
-    ref: transApi,
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
-  });
+
+  // Sequence of animations on open & on close
   useChain(
     isModalActive ? [transApi, modalApi] : [modalApi, transApi],
     [0, 0.1]
@@ -80,8 +128,7 @@ function Modal({
 
   return (
     <>
-      {transition((style, selectedWork) => {
-        const work = works[selectedWork];
+      {transition((style: {opacity: number}, work: IWork) => {
         return (
           <animated.div className="modal-container" style={style}>
             <div className="modal-background">
@@ -98,40 +145,5 @@ function Modal({
     </>
   );
 }
-
-/* -------- Main function --------------------------------------------------*/
-const WorksMobileView: React.FC<{
-  works: IWork[];
-  navItems: INav[];
-}> = ({ works, navItems }) => {
-  const [isModalActive, setIsModalActive] = useState(false);
-  const [selectedWork, setSelectedWork] = useState(0);
-
-  const handleSelectWork = (i: number) => {
-    setIsModalActive(true);
-    setSelectedWork(i);
-  };
-
-  const handleClose = () => {
-    setIsModalActive(false);
-  };
-
-  return (
-    <>
-      <Modal
-        works={works}
-        isModalActive={isModalActive}
-        selectedWork={selectedWork}
-        handleClose={handleClose}
-      />
-      <NavPopup bgColor="steel" navItems={navItems}>
-        <div className="works-cont-mobile">
-          <h1>Latest Works</h1>
-          <WorksButtons works={works} handleSelectWork={handleSelectWork} />
-        </div>
-      </NavPopup>
-    </>
-  );
-};
 
 export default WorksMobileView;
