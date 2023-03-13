@@ -1,5 +1,5 @@
 import React from "react";
-import NavSlider from "../components/NavSlider";
+import NavSlider from "../components/Navbar/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
 import Card from "../components/ImgCard";

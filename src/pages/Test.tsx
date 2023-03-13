@@ -6,7 +6,7 @@ import React from "react";
 
 // import Testing from "../components/Test";
 // import TestNavPopup from "../components/TestNavPopup/NavPopup";
-// import NavSlider from "../components/NavSlider";
+// import NavSlider from "../components/Navbar/NavSlider";
 // import navLists from "../data/navLists";
 // import INav from "../interfaces/navList";
 

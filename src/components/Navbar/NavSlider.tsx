@@ -1,111 +1,66 @@
 import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
-import { useDrag } from "@use-gesture/react";
+import { Handler, useDrag, Vector2 } from "@use-gesture/react";
 import { useNavigate } from "react-router-dom";
-import INav from "../interfaces/navList";
-import isMobile from "./isMobile";
+import INav from "../../interfaces/navList";
+import isMobile from "../../lib/isMobile";
 
 /**
- * @function Slider
- * @returns A slider navbar
- * --- VARIABLES & their FUNCTIONS ---
- * @const
- *  dst: Sliding distance max/min, initialize within Slider
- *  leftShadow: shadow of .text when slider slide to left
- *  rightShadow: shadow of .text when slider slide to right
- *  Slider{
- *   	@param:
- *   		children: Elements contained within the calling <Slider></Slider> element
- *   		navItems: An interface array containing navbar name, url link & CSS style (max of 2)
- *   		navSize: A string used to change dst & ;eft/rightShadow
- *   	@const
- *      isTouched: Used to stop the Cover slide animation (True when useDrag(active))
- *      {width}: Window width. Used to limit dst
- *      navigate: used to Programmatically navigate React-router-dom
- *   	  rightNav: 1st navItems[] element
- *   	  leftNav: 2nd navItems[] element
- *   	@function useSpring {
- *  		@var
- *        config: precision is used to prevent the 'jerk' effect after an animation
- *        x: Sliding distance actual (initiate with 0) *lib var*
- *  		  scale: Cover size when active/inactive (initiate with 1) * lib var*
- *        justifySelf: Justify items to the left/right (initiate with left)
- *  		  navText: To display navbar names (initiate render with right val)
- *  		@css ...rightNav.fixedCSS:  Nav items css (initiate render with right nav item's css)
- *   	}
- *    @function useEffect {
- *        To hint user that NavSlider can slide left & right
- *    }
- *   	@function useDrag {
- *      - Re-navigate user to other pages
- *   		- changes `x`, limited to `dst` (-ve & +ve)
- *  		- changes `scale`
- *  		- changes `navText` based on left/right slide
- *  		- changes `left` or `right` css based of left/right slide
- *   	}
- *  	@const crSize
- *      - Circle animation (scale-up upon slider slide)
- *  		@param
- *        range: Animation affected within this Slider range
- *  		  output: Animation speed
- *  		  extrapolate: "clamp": Limit scale size
- *   }
+ * Todo: refactor variables
  *
- * --- HELPER FUNCTION ---
- * @function useWindowWidth
- * @returns window width to limit Slider Cover dragging distance (`dst`)
+ * @var dst Sliding distance max/min, initialize within Slider
+ * @var leftShadow Shadow of .text when slider slide to left
+ * @var rightShadow Shadow of .text when slider slide to right
  */
-
-/* -------- Helper function --------------------------------------------------*/
-function getWindowWidth() {
-  const { innerWidth: width } = window;
-  return { width };
-}
-
-function useWindowWidth() {
-  const [windowWidth, setWindowWidth] = useState(getWindowWidth());
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowWidth(getWindowWidth());
-    }
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  });
-
-  return windowWidth;
-}
-
-/* -------- Main Function ----------------------------------------------------*/
 var dst: number;
 var leftShadow: string;
 var rightShadow: string;
 
-const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
-  children,
-  navItems,
-  navSize,
-}) => {
+/**
+ * @param children NavSlider cover display
+ * @param navItems Redirection data
+ * @param navSize nav size option for web view
+ * @returns A slider navbar
+ */
+const NavSlider: React.FC<{
+  children: React.ReactNode;
+  navItems: INav[];
+  navSize: "small" | "big";
+}> = ({ children, navItems, navSize }) => {
+  /**
+   * @const isTouched Used to stop the Cover slide animation (True when useDrag(active))
+   * @const windowWidth Used to limit dst
+   */
   const [isTouched, setIsTouched] = React.useState(false);
-  const { width } = useWindowWidth();
+  const { windowWidth } = useWindowWidth();
   const navigate = useNavigate();
   const rightNav = navItems[0];
   const leftNav = navItems[1];
-  // mobile view
+
+  // Initialize slider variables for mobile view, or web view (small / large size)
   if (isMobile()) {
-    dst = width / 8;
+    dst = windowWidth / 8;
     leftShadow = leftNav.boxShadowSmall;
     rightShadow = rightNav.boxShadowSmall;
   } else if (navSize === "small") {
-    dst = width / 17;
+    dst = windowWidth / 17;
     leftShadow = leftNav.boxShadowSmall;
     rightShadow = rightNav.boxShadowSmall;
   } else {
-    dst = width / 5.8;
+    dst = windowWidth / 5.8;
     leftShadow = leftNav.boxShadowBig;
     rightShadow = rightNav.boxShadowBig;
   }
 
+  /**
+   * Slider animation
+   * @param config Precision is used to prevent the 'jerk' effect after an animation
+   * @param x Actual sliding distance (inital with 0) *lib var*
+   * @param scale Cover size when active/inactive (initiate with 1) * lib var*
+   * @param justifySelf Justify items to the left/right (initiate with left)
+   * @param navText To display navbar names (initiate render with right val)
+   * @param css Nav items css (initiate render with right nav item's css)
+   */
   const [
     {
       x,
@@ -128,8 +83,11 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
     ...rightNav.fixedCSS,
   }));
 
+  // To hint user that NavSlider can slide left & right
+  // Used for web view home page initial render
   React.useEffect(() => {
     if (navSize === "small" || isTouched) return;
+
     const timeoutId = window.setTimeout(() => {
       api({ x: 25 });
     }, 2000);
@@ -152,6 +110,11 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
     };
   }, [navSize, isTouched, leftNav.fixedCSS, leftNav.name, api]);
 
+  // Redirect user to other pages
+  // - changes 'x', limited to `dst` (-ve & +ve)
+  // - changes `scale`
+  // - changes `navText` based on left/right slide
+  // - changes `left` or `right` css based of left/right slide
   const bind = useDrag(({ active, movement: [x], down }) => {
     if (active) setIsTouched(true);
     if (!down) {
@@ -165,10 +128,16 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
       navText: x < 0 ? leftNav.name : rightNav.name,
       boxShadow: x < 0 ? leftShadow : rightShadow,
       ...(x < 0 ? leftNav.fixedCSS : rightNav.fixedCSS),
-      immediate: (name) => active && name === "x",
+      immediate: (name: string) => active && name === "x",
     });
   });
 
+  /**
+   * Circle animation (scale-up with Slider slide)
+   * @param range Animation affected within this Slider range
+   * @param output Animation speed
+   * @param extrapolate "clamp" to Limit scale size
+   */
   const crSize = x.to({
     map: Math.abs,
     range: [0, dst],
@@ -206,4 +175,31 @@ const Slider: React.FC<{ navItems: INav[]; navSize: string }> = ({
   );
 };
 
-export default Slider;
+/**
+ * Helper function
+ * @returns Media inner width
+ */
+function getWindowWidth() {
+  const { innerWidth: windowWidth } = window;
+  return { windowWidth };
+}
+
+/**
+ * Helper function
+ * @returns window width to limit Slider Cover dragging distance (`dst`)
+ */
+function useWindowWidth() {
+  const [windowWidth, setWindowWidth] = useState(getWindowWidth());
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(getWindowWidth());
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  });
+
+  return windowWidth;
+}
+
+export default NavSlider;

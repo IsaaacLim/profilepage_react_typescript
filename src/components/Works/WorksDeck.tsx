@@ -1,58 +1,23 @@
 import React, { useState } from "react";
 import { useSprings, animated, to as interpolate } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
-import IWork from "../interfaces/work";
+import IWork from "../../interfaces/work";
 
 /**
- * @function Deck
+ * @param works Works Data
  * @returns Deck of Works card
- * @const
- * 	gone: Flag when all cards are flickered out
- * 	[props, api]: Create a bunch of springs using the Helper functions
- * 	bind{
- * 		Create a gesture. Interested in down-state, delta(current-pos - click-pos), direction and velocity
- * 		@const
- * 			trigger: Force needed to flicker cards out
- * 			dir: Flicker direction (left/right only)
- * 		@param if(!down & trigger): Condition to throw card out
- * 		@function api.start
- * 			Only interested in changing spring-dat for the current Card
- * 			@const
- * 				isGone: Used to trigger card flicker out effects
- * 				x: If a card isGone, it flies out left/right, else return to 0
- * 				rot: How much the card spins, flicking it harder increases rotations
- * 				scale: Active cards are lifted up
- * 	}
- 0-*
- *
- * --- HELPER FUNCTION ---
- * @const to & @const from: To curate spring data/values that are later being interpolated into css
- * @const trans: Transforms the positions of the cards (add rotateX for x-axis rotations)
  */
+const WorksDeck: React.FC<{ works: IWork[] }> = ({ works }) => {
+  // Flag when all cards are flickered out
+  const [gone] = useState<Set<number>>(() => new Set());
 
-/* -------- Helper functions -------------------------------------------------*/
-const to = (i: number) => ({
-  x: 0,
-  y: i * -4,
-  scale: 1,
-  rot: -10 + Math.random() * 20,
-  delay: i * 100,
-});
-
-const from = (_i: number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
-
-const trans = (r: number, s: number) =>
-  `perspective(1500px) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
-
-/* -------- Main function  ---------------------------------------------------*/
-const Deck: React.FC<{ cards: IWork[] }> = ({ cards }) => {
-  const [gone] = useState(() => new Set());
-
-  const [props, api] = useSprings(cards.length, (i) => ({
+  // Create a bunch of Springs using the Helper functions
+  const [props, api] = useSprings(works.length, (i: number) => ({
     ...to(i),
     from: from(i),
   }));
 
+  // Create a gesture. Interested in down-state, delta(current-pos - click-pos), direction and velocity
   const bind = useDrag(
     ({
       args: [index],
@@ -61,9 +26,20 @@ const Deck: React.FC<{ cards: IWork[] }> = ({ cards }) => {
       direction: [xDir],
       velocity: [xVel],
     }) => {
+      // Force needed to flicker cards out
       const trigger = xVel > 0.3;
+      // Flicker direction (left/right only)
       const dir = xDir < 0 ? -1 : 1;
+      // Condition to throw card out
       if (!down && trigger) gone.add(index);
+
+      /**
+       * Only interested in changing spring-dat for the current Card
+       * @const isGone Used to trigger card flicker out effects
+       * @const x If a card isGone, it flies out left/right, else return to 0
+       * @const rot How much the card spins, flicking it harder increases rotations
+       * @const scale Active cards are lifted up
+       */
       api.start((i) => {
         if (index !== i) return;
         const isGone = gone.has(index);
@@ -78,10 +54,12 @@ const Deck: React.FC<{ cards: IWork[] }> = ({ cards }) => {
           config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 },
         };
       });
-      if (!down && gone.size === cards.length)
+
+      // Reset deck once all cards are flicked out
+      if (!down && gone.size === works.length)
         setTimeout(() => {
           gone.clear();
-          api.start((i) => to(i));
+          api.start((i: number) => to(i));
         }, 600);
     }
   );
@@ -97,41 +75,42 @@ const Deck: React.FC<{ cards: IWork[] }> = ({ cards }) => {
           >
             <div className="content">
               <div className="img-placeholder">
-                {i === cards.length - 1 ? (
+                {i === works.length - 1 ? (
                   <img
-                    src={cards[i].img}
-                    alt={cards[i].alt}
+                    src={works[i].img}
+                    alt={works[i].alt}
                     id={"cover-full"}
                   />
                 ) : (
-                  <img src={cards[i].img} alt={cards[i].alt} />
+                  <img src={works[i].img} alt={works[i].alt} />
                 )}
               </div>
-              {/* Top card */}
-              {i === cards.length - 1 ? (
+              {i === works.length - 1 ? (
+                // Top card
                 <div className="img-cover" id="cover-full" />
               ) : (
+                // Every other cards
                 <div>
                   {/* todo: may be able to remove img-cover */}
                   <div className="img-cover" />
                   <div className="txt-placeholder">
-                    <p id="title">{cards[i].title}</p>
+                    <p id="title">{works[i].title}</p>
                     <div>
                       <p id="subtitle">Description:</p>
                       <ul>
-                        {cards[i].description.map((text, index) => {
+                        {works[i].description.map((text, index) => {
                           return <li key={index}>{text}</li>;
                         })}
                       </ul>
                     </div>
                     <div>
                       <p id="subtitle">Tech:</p>
-                      <p>{cards[i].tech}</p>
+                      <p>{works[i].tech}</p>
                     </div>
                     <div>
                       <p id="subtitle">Example Features:</p>
                       <ul>
-                        {cards[i].features.map((text, index) => {
+                        {works[i].features.map((text, index) => {
                           return <li key={index}>{text}</li>;
                         })}
                       </ul>
@@ -147,4 +126,29 @@ const Deck: React.FC<{ cards: IWork[] }> = ({ cards }) => {
   );
 };
 
-export default Deck;
+/**
+ * Helper function
+ * @returns To curate spring data/values that are later being interpolated into css
+ */
+const to = (i: number) => ({
+  x: 0,
+  y: i * -4,
+  scale: 1,
+  rot: -10 + Math.random() * 20,
+  delay: i * 100,
+});
+
+/**
+ * Helper function
+ * @returns To curate spring data/values that are later being interpolated into css
+ */
+const from = (_i: number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
+
+/**
+ * Helper function
+ * @returns Transforms the positions of the cards (add rotateX for x-axis rotations)
+ */
+const trans = (r: number, s: number) =>
+  `perspective(1500px) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
+
+export default WorksDeck;

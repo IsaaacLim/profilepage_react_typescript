@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import FadeInDiv from "../components/FadeInDiv";
-import NavSlider from "../components/NavSlider";
+import NavSlider from "../components/Navbar/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
 import SocialsBar from "../components/SocialsBar";
@@ -12,8 +12,6 @@ import HourGlass from "../images/hourglass.svg";
 import dots from "../data/coloredDots";
 
 /**
- * @param navListSmall: navLists with only 2 items. Props for NavSlider
- *
  * --- PAGE STRUCTURE ---
  * Sectioned into 3 pages (offset 0, 1, 2)
  * Each page has a Title, Description, & Decoration section
@@ -23,7 +21,6 @@ import dots from "../data/coloredDots";
  *  - Description: >= 10 && < 20
  *  - Decoration: >= 0 && < 10
  * Title sections positioning uses PADDING to allow on-click event to register throughout the whole page
- * @function Dot: used to give circle dot images
  *
  * --- PARALLAX LIB VARIABLES ---
  * @param offset: div end positioning
@@ -34,30 +31,10 @@ import dots from "../data/coloredDots";
  * Modular styling for font size, color & div container size
  * Inline styling for positioning
  */
-
 const navListSmall: INav[] = [navLists[0], navLists[2]]; // home & works
 const spaceLeft = "21%";
 
-const Dot: React.FC<{
-  color: string;
-  width?: string;
-  top?: string;
-  left?: string;
-}> = ({ color = "a", width = "2%", top = "0%", left = "0%" }) => {
-  for (var i = 0; i < dots.length; i++) {
-    if (color === dots[i].color)
-      return (
-        <img
-          src={dots[i].img}
-          alt={dots[i].alt}
-          style={{ position: "absolute", width: width, top: top, left: left }}
-        />
-      );
-  }
-  return <div>No such color dot</div>;
-};
-
-export default function About() {
+const About = () => {
   const parallax = useRef<IParallax>(null!);
   return (
     <div
@@ -297,3 +274,28 @@ export default function About() {
     </div>
   );
 }
+
+/**
+ * Helper function
+ * @returns circle dot images
+ */
+const Dot: React.FC<{
+  color: string;
+  width?: string;
+  top?: string;
+  left?: string;
+}> = ({ color = "a", width = "2%", top = "0%", left = "0%" }) => {
+  for (var i = 0; i < dots.length; i++) {
+    if (color === dots[i].color)
+      return (
+        <img
+          src={dots[i].img}
+          alt={dots[i].alt}
+          style={{ position: "absolute", width: width, top: top, left: left }}
+        />
+      );
+  }
+  return <div>No such color dot</div>;
+};
+
+export default About;

@@ -3,17 +3,9 @@ import { useRef, useState } from "react";
 import { useSpring, animated, config } from "@react-spring/web";
 
 /**
- * @function Card
- * @param image: Background image
+ * @param image: Card image
+ * @note other config options: gentle, wobbly, stiff, slow, molasses
  * @returns Image card that wobbles
- * other config options: gentle, wobbly, stiff, slow, molasses
- *
- * --- HELPER FUNCTION ---
- * @function calc
- * @returns Mouse contact points; 3rd variable is the scale factor
- *
- * @function trans
- * @returns Card transformation style
  *
  * --- NOTES ---
  * @IMPORTANT
@@ -25,22 +17,6 @@ import { useSpring, animated, config } from "@react-spring/web";
  *  - rect x & y: ( ... ) / 10;
  *  - trans: perspective(900px)
  */
-
-/* -------- Helper functions -------------------------------------------------*/
-const calc = (
-  x: number,
-  y: number,
-  rect: { top: number; height: number; left: number; width: number }
-) => [
-  -(y - rect.top - rect.height / 2) / 10,
-  (x - rect.left - rect.width / 2) / 10,
-  1.2,
-];
-
-const trans = (x: number, y: number, s: number) =>
-  `perspective(900px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
-
-/* -------- Main function  ---------------------------------------------------*/
 const Card: React.FC<{ image: string }> = ({ image }) => {
   const ref = useRef<HTMLInputElement>(null);
   const [xys, set] = useState([-5, -10, 1]);
@@ -67,5 +43,32 @@ const Card: React.FC<{ image: string }> = ({ image }) => {
     </div>
   );
 };
+
+/**
+ * Helper function
+ * @param x x-axis contact point
+ * @pararm y y-axis contact point
+ * @rect scale factor
+ * @returns Mouse contact points
+ */
+ const calc = (
+  x: number,
+  y: number,
+  rect: { top: number; height: number; left: number; width: number }
+) => [
+  -(y - rect.top - rect.height / 2) / 10,
+  (x - rect.left - rect.width / 2) / 10,
+  1.2,
+];
+
+/**
+ * Helper function
+ * @param x x-axis transformation
+ * @param y y-axis transformation 
+ * @param s scale transformation
+ * @returns Card transformation style
+ */
+const trans = (x: number, y: number, s: number) =>
+  `perspective(900px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
 export default Card;

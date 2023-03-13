@@ -1,14 +1,14 @@
 import React from "react";
 import works from "../data/works";
-import NavSlider from "../components/NavSlider";
+import NavSlider from "../components/Navbar/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
 import SocialsBar from "../components/SocialsBar";
-import Deck from "../components/WorksDeck";
+import WorksDeck from "../components/Works/WorksDeck";
 import FadeInDiv from "../components/FadeInDiv";
 import PugLife from "../images/pug-life.png";
-import isMobile from "../components/isMobile";
-import WorksMobileView from "../components/WorksMobileView";
+import isMobile from "../lib/isMobile";
+import WorksGrid from "../components/Works/WorksGrid";
 
 const navListSmall: INav[] = [navLists[0], navLists[1]]; // home & about
 
@@ -25,7 +25,7 @@ const Works = () => {
       {isMobile() ? (
         <>
           {/* <NavPopup bgColor="steel"> */}
-          <WorksMobileView works={worksWithoutCover} navItems={navListSmall} />
+          <WorksGrid works={worksWithoutCover} navItems={navListSmall} />
           {/* </NavPopup> */}
         </>
       ) : (
@@ -37,7 +37,7 @@ const Works = () => {
           </div>
           <SocialsBar styleType={3} />
           <div className="works-cont">
-            <Deck cards={worksReverse} />
+            <WorksDeck works={worksReverse} />
             <FadeInDiv>
               <img src={PugLife} alt="Pug life" id="pug-life" />
             </FadeInDiv>
