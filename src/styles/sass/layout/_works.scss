@@ -1,0 +1,193 @@
+@use "../abstracts/" as a;
+
+/**
+ * *********** Works Page (Web) ************************************************
+ * .works-cont: Parent div containing .deck
+ * .deck: Parent div containing multiple .cards
+ */
+// --- Default deck style structure from Docs ---
+.works-cont {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  background: a.$steel;
+  // background: #4ec5c1;
+  // background: lightblue;
+  // background: a.$cream;
+  // background: #fdf8c4;
+}
+
+.deck {
+  cursor: url(../../images/cursor.png) 39 39, auto;
+  position: absolute;
+  will-change: transform;
+  touch-action: none;
+  z-index: 41;
+
+  .cards {
+    background-color: a.$off-white;
+    border-radius: 0.5rem;
+
+    display: flex; //test
+    justify-content: center; //test
+    align-items: center; //test if needed
+
+    background-size: auto 85%; // test if needed
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .content {
+    width: 55vw;
+    height: 80vh;
+    will-change: transform;
+    box-shadow: 0px 0px 10px -5px #2d3d46;
+  }
+}
+
+// --- My add-on styles ---
+.cards {
+  p,
+  li {
+    color: a.$black;
+    font-family: a.$accent;
+    font-size: 1vw;
+  }
+
+  .content {
+    box-sizing: border-box;
+    @include a.user-select-none();
+    padding: 0.5vw;
+    display: flex;
+  }
+  #title {
+    font-family: a.$default;
+    font-size: 3vw;
+    margin: 3vh 0;
+    display: flex;
+    justify-content: center;
+    border-style: none none solid none;
+    border-color: a.$royal;
+    border-width: thin;
+  }
+  #subtitle {
+    font-weight: bold;
+    margin-top: 1vw;
+  }
+  ul {
+    padding-left: 2vw;
+  }
+  .img-placeholder {
+    display: flex;
+    background-color: #e4e4e4;
+    img {
+      width: 30vw;
+    }
+  }
+  .img-cover {
+    position: absolute;
+    width: 30vw;
+    height: 78vh;
+  }
+  #cover-full {
+    position: absolute;
+    width: 98%;
+    height: 97%;
+  }
+  .txt-placeholder {
+    padding-left: 1vw;
+  }
+}
+
+#pug-life {
+  width: 5vw;
+}
+
+/**
+   * *********** Works Page (Mobile) *********************************************
+   */
+// --- Work Cards Display ---
+.works-cont-mobile {
+  background: a.$steel;
+  min-height: 100vh;
+  position: relative;
+  padding: 10px;
+
+  h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .works-buttons {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    text-align: center;
+    .button {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      padding: 0px;
+      font-size: 18px;
+      background-color: a.$off-white;
+      border-radius: 5px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      .img-placeholder {
+        img {
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          object-fit: cover;
+        }
+      }
+
+      // --- Hover effect ---
+      &::after {
+        position: absolute;
+        inset: 0;
+        content: "";
+        transition: opacity 0.3s ease;
+        opacity: 0;
+        background-color: a.$white;
+      }
+
+      &:hover::after {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+// --- Modal Popup ---
+.modal-container {
+  position: fixed;
+  display: table;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 60;
+
+  .modal-background {
+    display: table-cell;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    vertical-align: middle;
+
+    .modal-close {
+      position: absolute;
+      // inset: 0 0 auto;
+      top: 0;
+      right: 0;
+      padding: 12px;
+      color: a.$off-white;
+      transition: color 0.15s ease;
+
+      &:hover {
+        cursor: pointer;
+        color: a.$nude;
+      }
+    }
+  }
+}

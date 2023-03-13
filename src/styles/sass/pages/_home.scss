@@ -1,0 +1,79 @@
+@use "../abstracts/" as a;
+
+/**
+ * *********** Home Page *******************************************************
+ */
+.home-cont {
+  display: flex;
+  justify-content: space-between;
+
+  .sec-left {
+    padding-left: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .sec-right {
+    position: absolute;
+    height: 100%;
+    right: 0;
+  }
+
+  .text {
+    align-self: center;
+    .name-cont {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 2vw;
+      h1 {
+        font-size: 7vw;
+        font-family: a.$accent;
+      }
+    }
+
+    p,
+    span {
+      font-size: 1.7vw;
+    }
+
+    #highlight {
+      color: a.$off-white;
+    }
+  }
+
+  @include a.phone {
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 40px;
+
+    .sec-left {
+      padding-left: 0;
+      width: 100%;
+      gap: 40px;
+    }
+
+    .sec-right {
+      position: relative;
+      height: auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .text {
+      text-align: center;
+      .name-cont {
+        display: block;
+        h1 {
+          font-size: xx-large;
+        }
+      }
+
+      p,
+      span {
+        font-size: 16px;
+      }
+    }
+  }
+}

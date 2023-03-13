@@ -1,0 +1,29 @@
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin phone {
+  @media screen and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin user-select-none {
+  -webkit-touch-callout: none; // iOS Safari
+  -webkit-user-select: none; // Safari
+  -khtml-user-select: none; // Konqueror HTML
+  -moz-user-select: none; // Old versions of Firefox
+  -ms-user-select: none; // Internet Explorer/Edge
+  user-select: none; // Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox
+}

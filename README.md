@@ -34,6 +34,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - SASS
   - [Intro to SASS](https://youtu.be/Zz6eOVaaelI)
   - replacing `@import` with `@use` & `@forward` [source](https://youtu.be/CR-a8upNjJ0)
+  - structuring sass project [source](https://itnext.io/structuring-your-sass-projects-c8d41fa55ed4)
   - watch on terminal with `sass --watch .\src\styles\sass:.\src\styles\css`
 - [React Scroll Motion](https://www.npmjs.com/package/react-scroll-motion)
 - [React Router in Typescript](https://www.pluralsight.com/guides/react-router-typescript)

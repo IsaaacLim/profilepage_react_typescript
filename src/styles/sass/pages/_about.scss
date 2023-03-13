@@ -1,0 +1,19 @@
+@use "../abstracts/" as a;
+
+/**
+ * *********** About Page ******************************************************
+ * General styling
+ * Specific element styling are in-line styled (position & size)
+ */
+.about-cont {
+  background-color: a.$white;
+  h2 {
+    display: inline-block;
+    font-size: 3vw;
+    @include a.user-select-none();
+  }
+  #note {
+    font-weight: bold;
+    margin-top: 5vh;
+  }
+}
