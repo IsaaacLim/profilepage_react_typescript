@@ -4,6 +4,7 @@ import { a, useSpring, config } from "@react-spring/web";
 
 import { useNavigate } from "react-router-dom";
 import INav from "../../interfaces/navList";
+import SocialsBar from "../SocialsBar";
 
 type bgColors = "steel" | "royal";
 
@@ -117,6 +118,7 @@ const NavPopup: React.FC<{
         <div onClick={() => close()}>
           <span>Close</span>
         </div>
+        <SocialsBar styleType={4} />
       </a.div>
     </div>
   );
