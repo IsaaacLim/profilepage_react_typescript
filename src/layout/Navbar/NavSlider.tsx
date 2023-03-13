@@ -39,7 +39,11 @@ const NavSlider: React.FC<{
   const isMobile = isMobileView();
 
   // Initialize slider variables for mobile view, or web view (small / large size)
-  if (isMobile) {
+  if (isMobile && navSize === "big") {
+    dst = windowWidth / 5.3;
+    leftShadow = leftNav.boxShadowSmall;
+    rightShadow = rightNav.boxShadowSmall;
+  } else if (isMobile) {
     dst = windowWidth / 8;
     leftShadow = leftNav.boxShadowSmall;
     rightShadow = rightNav.boxShadowSmall;
