@@ -20,8 +20,8 @@ const WorksGrid: React.FC<{
   works: IWork[];
   navItems: INav[];
 }> = ({ works, navItems }) => {
-  const [isModalActive, setIsModalActive] = useState<boolean>(false);
-  const [selectedWork, setSelectedWork] = useState<IWork | undefined>();
+  const [isModalActive, setIsModalActive] = useState(false);
+  const [selectedWork, setSelectedWork] = useState(works[0]);
 
   const handleSelectWork = (i: number) => {
     setIsModalActive(true);
@@ -86,7 +86,7 @@ function WorksButtons({
  * Helper function
  * @param isModalActive True when user selects a work
  * @param work Selected work
- * @param handleClose close modal function 
+ * @param handleClose close modal function
  * @returns Modal of selected work details
  */
 function Modal({
@@ -128,7 +128,7 @@ function Modal({
 
   return (
     <>
-      {transition((style: {opacity: number}, work: IWork) => {
+      {transition((style, work) => {
         return (
           <animated.div className="modal-container" style={style}>
             <div className="modal-background">

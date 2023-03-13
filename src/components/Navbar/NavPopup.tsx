@@ -53,13 +53,6 @@ const NavPopup: React.FC<{
       movement: [, my],
       cancel,
       canceled,
-    }:{
-      last: boolean,
-      velocity: [number, number],
-      direction: [number, number],
-      movement: [number, number],
-      cancel: () => void,
-      canceled: boolean,
     }) => {
       // if the user drags up passed a threshold, then we cancel
       // the drag so that the sheet resets to its open position
@@ -87,7 +80,7 @@ const NavPopup: React.FC<{
   // NavPopup display/hide
   const display = y.to((py: number) => (py < height ? "block" : "none"));
 
-  // Page content display style when Navpopup is opened 
+  // Page content display style when Navpopup is opened
   const bgStyle = {
     transform: y.to(
       [0, height],

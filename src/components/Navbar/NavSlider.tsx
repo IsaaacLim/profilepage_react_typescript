@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
-import { useDrag } from "@use-gesture/react";
+import { Handler, useDrag, Vector2 } from "@use-gesture/react";
 import { useNavigate } from "react-router-dom";
 import INav from "../../interfaces/navList";
 import isMobile from "../../lib/isMobile";
 
 /**
  * Todo: refactor variables
- * 
+ *
  * @var dst Sliding distance max/min, initialize within Slider
  * @var leftShadow Shadow of .text when slider slide to left
  * @var rightShadow Shadow of .text when slider slide to right
@@ -22,11 +22,11 @@ var rightShadow: string;
  * @param navSize nav size option for web view
  * @returns A slider navbar
  */
-const NavSlider: React.FC<{ children: React.ReactNode; navItems: INav[]; navSize: "small" | "big" }> = ({
-  children,
-  navItems,
-  navSize,
-}) => {
+const NavSlider: React.FC<{
+  children: React.ReactNode;
+  navItems: INav[];
+  navSize: "small" | "big";
+}> = ({ children, navItems, navSize }) => {
   /**
    * @const isTouched Used to stop the Cover slide animation (True when useDrag(active))
    * @const windowWidth Used to limit dst
@@ -115,7 +115,7 @@ const NavSlider: React.FC<{ children: React.ReactNode; navItems: INav[]; navSize
   // - changes `scale`
   // - changes `navText` based on left/right slide
   // - changes `left` or `right` css based of left/right slide
-  const bind = useDrag(({ active, movement: [x], down }: {active: boolean, movement: [number], down: boolean}) => {
+  const bind = useDrag(({ active, movement: [x], down }) => {
     if (active) setIsTouched(true);
     if (!down) {
       if (x <= -dst) return navigate(leftNav.path);
@@ -179,7 +179,7 @@ const NavSlider: React.FC<{ children: React.ReactNode; navItems: INav[]; navSize
  * Helper function
  * @returns Media inner width
  */
- function getWindowWidth() {
+function getWindowWidth() {
   const { innerWidth: windowWidth } = window;
   return { windowWidth };
 }
