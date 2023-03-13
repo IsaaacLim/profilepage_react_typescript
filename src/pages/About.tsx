@@ -11,6 +11,29 @@ import WorldTree from "../images/world-tree.svg";
 import HourGlass from "../images/hourglass.svg";
 import dots from "../data/coloredDots";
 import isMobileView from "../lib/isMobileView";
+import NavPopup from "../layout/Navbar/NavPopup";
+
+const navListSmall: INav[] = [navLists[0], navLists[2]]; // home & works
+const spaceLeft = "21%";
+
+const About = () => {
+  const isMobile = isMobileView();
+
+  return (
+    <>
+      {isMobile ? (
+        <>
+          <AboutContent />
+          <NavPopup navItems={navListSmall}>
+            <p></p>
+          </NavPopup>
+        </>
+      ) : (
+        <AboutContent />
+      )}
+    </>
+  );
+};
 
 /**
  * --- PAGE STRUCTURE ---
@@ -32,10 +55,7 @@ import isMobileView from "../lib/isMobileView";
  * Modular styling for font size, color & div container size
  * Inline styling for positioning
  */
-const navListSmall: INav[] = [navLists[0], navLists[2]]; // home & works
-const spaceLeft = "21%";
-
-const About = () => {
+const AboutContent = () => {
   const parallax = useRef<IParallax>(null!);
   const isMobile = isMobileView();
 
