@@ -29,20 +29,18 @@ const Works = () => {
           {/* </NavPopup> */}
         </>
       ) : (
-        <>
+        <div className="works-cont">
           <div className="navbar small" id="works">
             <NavSlider navItems={navListSmall} navSize="small">
               Slide.
             </NavSlider>
           </div>
           <SocialsBar styleType={3} />
-          <div className="works-cont">
-            <WorksDeck works={worksReverse} />
-            <FadeInDiv>
-              <img src={PugLife} alt="Pug life" id="pug-life" />
-            </FadeInDiv>
-          </div>
-        </>
+          <WorksDeck works={worksReverse} />
+          <FadeInDiv>
+            <img src={PugLife} alt="Pug life" id="pug-life" />
+          </FadeInDiv>
+        </div>
       )}
     </>
   );
