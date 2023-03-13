@@ -2,17 +2,20 @@ import React from "react";
 import NavSlider from "../layout/Navbar/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
-import Card from "../layout/ImgCard";
+import ImgCard from "../layout/ImgCard";
 import SocialsBar from "../layout/SocialsBar";
 import ProfilePic from "../images/profile-pic.jpg";
 import FadeInDiv from "../components/FadeInDiv";
+import isMobileView from "../lib/isMobileView";
 
 const navListSmall: INav[] = [navLists[1], navLists[2]]; // about & works
 
 const Home = () => {
+  const isMobile = isMobileView();
+
   return (
     <div className="home-cont">
-      <SocialsBar styleType={1} />
+      {!isMobile && <SocialsBar styleType={1} />}
       <div className="sec-left">
         <FadeInDiv className="text">
           {/* update this */}
@@ -21,7 +24,7 @@ const Home = () => {
           </div>
           <p>
             On a mission to becoming a
-            <span id="highlight"> Software Developer</span>,<br />
+            <span id="highlight"> Fullstack Developer</span>,<br />
             with an interest in tasteful designs.
           </p>
         </FadeInDiv>
@@ -30,11 +33,35 @@ const Home = () => {
             Slide.
           </NavSlider>
         </div>
+        {isMobile && <SocialsBar styleType={4} />}
       </div>
-      <FadeInDiv className="sec-right" yFrom="0" scaleFrom={1.2} delay={200}>
-        <Card image={ProfilePic}></Card>
-      </FadeInDiv>
+      <ProfileImage />
     </div>
   );
 };
+
+const ProfileImage = () => {
+  const isMobile = isMobileView();
+
+  if (isMobile) {
+    return (
+      <FadeInDiv className="sec-right" yFrom="0">
+        <div className="img-card-cont" id="mobile">
+          <div
+            className="img-card"
+            style={{
+              backgroundImage: `url(${ProfilePic})`,
+            }}
+          />
+        </div>
+      </FadeInDiv>
+    );
+  }
+  return (
+    <FadeInDiv className="sec-right" yFrom="0" scaleFrom={1.2} delay={200}>
+      <ImgCard image={ProfilePic} />
+    </FadeInDiv>
+  );
+};
+
 export default Home;

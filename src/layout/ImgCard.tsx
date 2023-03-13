@@ -9,7 +9,7 @@ import { useSpring, animated, config } from "@react-spring/web";
  *
  * --- NOTES ---
  * @IMPORTANT
- * Deployment through Netlify calculates `cals` and `trans` differently
+ * Deployment through Netlify calculates `calc` and `trans` differently
  * Original values:
  *  - rect x & y: ( ... ) / 5;
  *  - trans: perspective(600px)
@@ -17,27 +17,27 @@ import { useSpring, animated, config } from "@react-spring/web";
  *  - rect x & y: ( ... ) / 10;
  *  - trans: perspective(900px)
  */
-const Card: React.FC<{ image: string }> = ({ image }) => {
+const ImgCard: React.FC<{ image: string }> = ({ image }) => {
   const ref = useRef<HTMLInputElement>(null);
-  const [xys, set] = useState([-5, -10, 1]);
+  const [xys, setXYZ] = useState([-5, -10, 1]);
 
   const props = useSpring({ xys, config: config["gentle"] });
 
   return (
-    <div className="card-cont" ref={ref}>
+    <div className="img-card-cont" ref={ref}>
       <animated.div
-        className="card"
+        className="img-card"
         style={{
           transform: props.xys.to(trans),
           backgroundImage: `url(${image})`,
         }}
-        onMouseLeave={() => set([0, 0, 1])}
+        onMouseLeave={() => setXYZ([0, 0, 1])}
         onMouseMove={(e) => {
           let rect: any;
           if (!!ref.current) {
             rect = ref.current.getBoundingClientRect();
           }
-          set(calc(e.clientX, e.clientY, rect));
+          setXYZ(calc(e.clientX, e.clientY, rect));
         }}
       />
     </div>
@@ -51,7 +51,7 @@ const Card: React.FC<{ image: string }> = ({ image }) => {
  * @rect scale factor
  * @returns Mouse contact points
  */
- const calc = (
+const calc = (
   x: number,
   y: number,
   rect: { top: number; height: number; left: number; width: number }
@@ -64,11 +64,11 @@ const Card: React.FC<{ image: string }> = ({ image }) => {
 /**
  * Helper function
  * @param x x-axis transformation
- * @param y y-axis transformation 
+ * @param y y-axis transformation
  * @param s scale transformation
  * @returns Card transformation style
  */
 const trans = (x: number, y: number, s: number) =>
   `perspective(900px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-export default Card;
+export default ImgCard;

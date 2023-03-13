@@ -33,9 +33,10 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 - SASS
   - [Intro to SASS](https://youtu.be/Zz6eOVaaelI)
+  - watch on terminal with `sass --watch .\src\styles\sass:.\src\styles\css`
   - replacing `@import` with `@use` & `@forward` [source](https://youtu.be/CR-a8upNjJ0)
   - structuring sass project [source](https://itnext.io/structuring-your-sass-projects-c8d41fa55ed4)
-  - watch on terminal with `sass --watch .\src\styles\sass:.\src\styles\css`
+  - Media queries using [Landon Schropp](https://css-tricks.com/approaches-media-queries-sass/#aa-landon-schropps-technique:~:text=%3B%0A%20%20%7D%0A%7D-,Landon%20Schropp%E2%80%99s%20technique,-Landon%20Schropp%E2%80%99s%20was)'s technique
 - [React Scroll Motion](https://www.npmjs.com/package/react-scroll-motion)
 - [React Router in Typescript](https://www.pluralsight.com/guides/react-router-typescript)
 - Illustration [source](https://themeisle.com/illustrations/)

@@ -7,7 +7,7 @@ import SocialsBar from "../layout/SocialsBar";
 import WorksDeck from "../layout/Works/WorksDeck";
 import FadeInDiv from "../components/FadeInDiv";
 import PugLife from "../images/pug-life.png";
-import isMobile from "../lib/isMobile";
+import isMobileView from "../lib/isMobileView";
 import WorksGrid from "../layout/Works/WorksGrid";
 
 const navListSmall: INav[] = [navLists[0], navLists[1]]; // home & about
@@ -19,10 +19,11 @@ const navListSmall: INav[] = [navLists[0], navLists[1]]; // home & about
 const Works = () => {
   const worksWithoutCover = works.slice(1);
   const worksReverse = Array.prototype.slice.call(works).reverse();
+  const isMobile = isMobileView();
 
   return (
     <>
-      {isMobile() ? (
+      {isMobile ? (
         <>
           {/* <NavPopup bgColor="steel"> */}
           <WorksGrid works={worksWithoutCover} navItems={navListSmall} />

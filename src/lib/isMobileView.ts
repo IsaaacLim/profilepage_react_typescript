@@ -1,5 +1,5 @@
 // for mobile view; media query follow styles.scss
-export default function isMobile() {
+export default function isMobileView() {
   if (window.matchMedia("(max-width: 767px)").matches) {
     return true;
   }

@@ -3,7 +3,7 @@ import { useSpring, animated } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
 import { useNavigate } from "react-router-dom";
 import INav from "../../interfaces/navList";
-import isMobile from "../../lib/isMobile";
+import isMobileView from "../../lib/isMobileView";
 
 /**
  * Todo: refactor variables
@@ -36,9 +36,10 @@ const NavSlider: React.FC<{
   const navigate = useNavigate();
   const rightNav = navItems[0];
   const leftNav = navItems[1];
+  const isMobile = isMobileView();
 
   // Initialize slider variables for mobile view, or web view (small / large size)
-  if (isMobile()) {
+  if (isMobile) {
     dst = windowWidth / 8;
     leftShadow = leftNav.boxShadowSmall;
     rightShadow = rightNav.boxShadowSmall;
