@@ -2,6 +2,7 @@ import React from "react";
 import { useSpring, animated } from "@react-spring/web";
 import ISocial from "../interfaces/social";
 import socials from "../data/socials";
+import isMobileView from "../lib/isMobileView";
 
 /**
  * @param styleType: 1(spring entry), 2(wave in/out), 3(wobble left/right), or 4 (web view)
@@ -117,14 +118,21 @@ const SocialsBar: React.FC<{ styleType: number }> = ({ styleType }) => {
  *  1. @const render: Entry effects
  *  2. @const hover:  Hover effects
  */
-const SocialSpring: React.FC<{
+const SocialSpring = ({
+  social,
+  friction = 20,
+  xFrom = 0,
+  scaleFrom = 1,
+  delay = 0,
+}: {
   social: ISocial;
   friction?: number;
   xFrom?: number;
   scaleFrom?: number;
   delay?: number;
-}> = ({ social, friction = 20, xFrom = 0, scaleFrom = 1, delay = 0 }) => {
+}) => {
   const [isHovered, setIsHovered] = React.useState(false);
+  const isMobile = isMobileView();
 
   const render = useSpring({
     config: {
@@ -152,10 +160,10 @@ const SocialSpring: React.FC<{
     }
   }, [isHovered]);
   const enter = () => {
-    setIsHovered(true);
+    if (!isMobile) setIsHovered(true);
   };
   const leave = () => {
-    setIsHovered(false);
+    if (!isMobile) setIsHovered(false);
   };
 
   return (
