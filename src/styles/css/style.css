@@ -629,6 +629,11 @@ body,
   -ms-user-select: none;
   user-select: none;
 }
+@media screen and (max-width: 767px) {
+  .about-cont h2 {
+    font-size: 22px;
+  }
+}
 .about-cont #note {
   font-weight: bold;
   margin-top: 5vh;

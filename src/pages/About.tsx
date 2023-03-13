@@ -10,6 +10,7 @@ import Mountains from "../images/mountains.svg";
 import WorldTree from "../images/world-tree.svg";
 import HourGlass from "../images/hourglass.svg";
 import dots from "../data/coloredDots";
+import isMobileView from "../lib/isMobileView";
 
 /**
  * --- PAGE STRUCTURE ---
@@ -36,6 +37,8 @@ const spaceLeft = "21%";
 
 const About = () => {
   const parallax = useRef<IParallax>(null!);
+  const isMobile = isMobileView();
+
   return (
     <div
       style={{
@@ -46,18 +49,22 @@ const About = () => {
     >
       <Parallax ref={parallax} pages={3}>
         {/******************* Sticky Nav & Social Bar ************************/}
-        <ParallaxLayer
-          sticky={{ start: 0, end: 2 }}
-          style={{ width: "5", height: "5" }} //prevent layer from overlapping other pages
-          className="nav-sticky"
-        >
-          <div className="navbar small" id="about">
-            <NavSlider navItems={navListSmall} navSize="small">
-              Slide.
-            </NavSlider>
-          </div>
-          <SocialsBar styleType={2} />
-        </ParallaxLayer>
+        {!isMobile ? (
+          <ParallaxLayer
+            sticky={{ start: 0, end: 2 }}
+            style={{ width: "5", height: "5" }} //prevent layer from overlapping other pages
+            className="nav-sticky"
+          >
+            <div className="navbar small" id="about">
+              <NavSlider navItems={navListSmall} navSize="small">
+                Slide.
+              </NavSlider>
+            </div>
+            <SocialsBar styleType={2} />
+          </ParallaxLayer>
+        ) : (
+          <></>
+        )}
         {/******************* Background *************************************/}
         <ParallaxLayer // Page 1
           offset={0}
@@ -82,12 +89,17 @@ const About = () => {
           onClick={() => parallax.current.scrollTo(1)}
           style={{
             paddingLeft: spaceLeft,
-            paddingTop: "8%",
+            paddingTop: `${isMobile ? "20%" : "8%"}`,
             zIndex: "20",
           }}
         >
           <FadeInDiv>
-            <h2 style={{ fontSize: "4.5vw", maxWidth: "62%" }}>
+            <h2
+              style={{
+                fontSize: `${isMobile ? "26px" : "4.5vw"}`,
+                maxWidth: "62%",
+              }}
+            >
               Making my way into the software development industry.
             </h2>
           </FadeInDiv>
@@ -96,14 +108,14 @@ const About = () => {
         <ParallaxLayer
           offset={0.45}
           speed={0.1}
-          style={{ left: "50%", zIndex: "10" }}
+          style={{ left: `${isMobile ? "35%" : "50%"}`, zIndex: "10" }}
         >
           <FadeInDiv yFrom="20px">
-            <div style={{ maxWidth: "28%" }}>
+            <div style={{ maxWidth: `${isMobile ? "50%" : "28%"}` }}>
               <p>
-                My name is Isaac and I'm a Software Developer. While I'm still
+                My name is Isaac and I'm a Fullstack Developer. While I'm still
                 gathering more experiences into my stash, I'm proud of my skills
-                in C, C++, HTML, CSS &amp; JavaScript
+                in React, TypeScript, NodeJs, CSS, C &amp; C++
               </p>
               <p id="note">Continue scrolling to know more about me</p>
             </div>
@@ -111,29 +123,53 @@ const About = () => {
         </ParallaxLayer>
         {/* --- Decor --- */}
         <ParallaxLayer offset={0.73} speed={-0.18}>
-          <Dot color="tea" width="1.6%" left="72%" />
+          <Dot
+            color="tea"
+            width={`${isMobile ? "6.4%" : "1.6%"}`}
+            left={`${isMobile ? "80%" : "72%"}`}
+          />
         </ParallaxLayer>
         <ParallaxLayer offset={0.05} speed={-0.23}>
-          <Dot color="red" width="2%" left="10%" />
+          <Dot color="red" width={`${isMobile ? "8%" : "2%"}`} left="10%" />
         </ParallaxLayer>
         <ParallaxLayer offset={0.26} speed={-0.3}>
-          <Dot color="skin" width="2.2%" left="48%" />
+          <Dot
+            color="skin"
+            width={`${isMobile ? "8.8%" : "2.2%"}`}
+            left="48%"
+          />
         </ParallaxLayer>
         <ParallaxLayer offset={0.45} speed={0.4}>
-          <Dot color="teal" width="2.6%" left="95%" />
+          <Dot
+            color="teal"
+            width={`${isMobile ? "10.4%" : "2.6%"}`}
+            left="95%"
+          />
         </ParallaxLayer>
         <ParallaxLayer offset={0.8} speed={0.6}>
-          <Dot color="grass" width="5%" left="12%" />
+          <Dot
+            color="grass"
+            width={`${isMobile ? "6.4%" : "1.6%"}`}
+            left="12%"
+          />
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={1}>
-          <Dot color="butter" width="10%" top="-5%" left="85%" />
+          <Dot
+            color="butter"
+            width={`${isMobile ? "40%" : "10%"}`}
+            top="-5%"
+            left="85%"
+          />
         </ParallaxLayer>
         {/* - from current to next page - */}
         <ParallaxLayer offset={1.05} speed={-0.5} style={{ zIndex: "9" }}>
           <FadeInDiv yFrom="0" scaleFrom={0.8} delay={100}>
             <img
               src={HotAirBalloon}
-              style={{ width: "25%", marginLeft: "22%" }}
+              style={{
+                width: `${isMobile ? "45%" : "25%"}`,
+                marginLeft: `${isMobile ? "2%" : "22%"}`,
+              }}
               alt="Hot air balloon"
             />
           </FadeInDiv>
@@ -145,8 +181,8 @@ const About = () => {
           speed={0.2}
           onClick={() => parallax.current.scrollTo(2)}
           style={{
-            paddingLeft: "51%",
-            paddingTop: "8%",
+            paddingLeft: `${isMobile ? "42%" : "51%"}`,
+            paddingTop: `${isMobile ? "20%" : "8%"}`,
             zIndex: "21",
           }}
         >
@@ -155,28 +191,39 @@ const About = () => {
             <br />
             Artist,
             <br />
-            Millennial
+            Programmer
           </h2>
         </ParallaxLayer>
         <ParallaxLayer
-          offset={1.45}
+          offset={isMobile ? 1.4 : 1.45}
           speed={0.15}
-          style={{ left: spaceLeft, maxWidth: "40%", zIndex: "20" }}
+          style={{
+            left: `${isMobile ? "12%" : spaceLeft}`,
+            maxWidth: "60%",
+            zIndex: "20",
+          }}
         >
-          <h2>Something tells me I'm on the right path.</h2>
+          <h2>
+            Ecole 42 Cadet,
+            <br />
+            Cradle Fund Award Winner
+          </h2>
         </ParallaxLayer>
         {/* --- Description --- */}
         <ParallaxLayer
-          offset={1.7}
+          offset={isMobile ? 1.65 : 1.7}
           speed={0.1}
-          style={{ left: "32%", maxWidth: "32%", zIndex: "10" }}
+          style={{
+            left: `${isMobile ? "30%" : "32%"}`,
+            maxWidth: `${isMobile ? "60%" : "32%"}`,
+            zIndex: "10",
+          }}
         >
           <div>
             <p>
               My talent lies within my ability to think critically.
               <br />
-              My passion is in creating aesthetically pleasing work. Technology
-              sector? Yes please!
+              My passion is in creating aesthetically pleasing work.
             </p>
             <p id="note">Don't forget to check out my 'Works'</p>
           </div>
@@ -185,32 +232,51 @@ const About = () => {
         <ParallaxLayer offset={1.68} speed={0.8} style={{ zIndex: "2" }}>
           <img
             src={WorldTree}
-            style={{ width: "15%", marginLeft: "15%" }}
+            style={{
+              width: `${isMobile ? "27%" : "15%"}`,
+              marginLeft: `${isMobile ? "0%" : "15%"}`,
+            }}
             alt="Tree on globe"
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={1.4} speed={-0.1} style={{ zIndex: "1" }}>
+        <ParallaxLayer
+          offset={isMobile ? 1.45 : 1.4}
+          speed={-0.1}
+          style={{ zIndex: "1" }}
+        >
           <img
             src={Mountains}
-            style={{ width: "25vw", marginLeft: "61%", opacity: "0.9" }}
+            style={{
+              width: `${isMobile ? "40%" : "25%"}`,
+              marginLeft: "61%",
+              opacity: "0.9",
+            }}
             alt="Mountains"
           />
         </ParallaxLayer>
         <ParallaxLayer offset={1.75} speed={0.15}>
-          <Dot color="brown" width="1%" left="30%" />
+          <Dot color="brown" width={`${isMobile ? "4%" : "1%"}`} left="30%" />
         </ParallaxLayer>
         <ParallaxLayer offset={1.05} speed={0.18}>
-          <Dot color="blue" width="1.6%" left="65%" />
+          <Dot
+            color="blue"
+            width={`${isMobile ? "6.4%" : "1.6%"}`}
+            left="65%"
+          />
         </ParallaxLayer>
         <ParallaxLayer offset={1.3} speed={0.45}>
-          <Dot color="peach" width="3%" left="11%" />
+          <Dot color="peach" width={`${isMobile ? "12%" : "3%"}`} left="11%" />
         </ParallaxLayer>
         <ParallaxLayer offset={1.45} speed={-0.5}>
-          <Dot color="grey" width="3.7%" left="92%" />
+          <Dot
+            color="grey"
+            width={`${isMobile ? "14.8%" : "3.7%"}`}
+            left="92%"
+          />
         </ParallaxLayer>
         {/* - from current to next page - */}
         <ParallaxLayer offset={1.9} speed={-0.23}>
-          <Dot color="grass" width="2%" left="60%" />
+          <Dot color="grass" width={`${isMobile ? "8%" : "2%"}`} left="60%" />
         </ParallaxLayer>
         {/*********************** Page 3 *************************************/}
         {/* --- Title --- */}
@@ -218,19 +284,25 @@ const About = () => {
           offset={2}
           speed={-0.1}
           style={{
-            paddingLeft: "52%",
-            paddingTop: "12%",
+            paddingLeft: `${isMobile ? "20%" : "52%"}`,
+            paddingTop: `${isMobile ? "30%" : "12%"}`,
             zIndex: "20",
           }}
           onClick={() => parallax.current.scrollTo(0)}
         >
-          <h2 style={{ maxWidth: "25%" }}>Facts my friends know about me</h2>
+          <h2 style={{ maxWidth: `${isMobile ? "50%" : "25%"}` }}>
+            Facts my friends know about me
+          </h2>
         </ParallaxLayer>
         {/* --- Description --- */}
         <ParallaxLayer
           offset={2.5}
           speed={-0}
-          style={{ left: "58%", maxWidth: "25%", zIndex: "10" }}
+          style={{
+            left: `${isMobile ? "35%" : "58%"}`,
+            maxWidth: `${isMobile ? "60%" : "25%"}`,
+            zIndex: "10",
+          }}
         >
           <p>
             Badminton, volleyball, taekwondo, skateboarding, snowboarding, rock
@@ -249,26 +321,48 @@ const About = () => {
           style={{
             display: "flex",
             alignItems: "center",
-            left: "19%",
+            left: `${isMobile ? "4%" : "19%"}`,
             zIndex: "1",
+            opacity: `${isMobile && 0.5}`,
           }}
         >
-          <img src={HourGlass} alt="Hourglass" style={{ width: "30%" }} />
+          <img
+            src={HourGlass}
+            alt="Hourglass"
+            style={{ width: `${isMobile ? "50%" : "30%"}` }}
+          />
         </ParallaxLayer>
         <ParallaxLayer offset={2.66} speed={0.15}>
-          <Dot color="maroon" width="1%" left="75%" />
+          <Dot color="maroon" width={`${isMobile ? "4%" : "1%"}`} left="75%" />
         </ParallaxLayer>
         <ParallaxLayer offset={2.4} speed={-0.17}>
-          <Dot color="teal" width="1.3%" left="91%" />
+          <Dot
+            color="teal"
+            width={`${isMobile ? "5.2%" : "1.3%"}`}
+            left="91%"
+          />
         </ParallaxLayer>
         <ParallaxLayer offset={2.6} speed={0.3}>
-          <Dot color="navy" width="2.6%" left="5%" />
+          <Dot
+            color="navy"
+            width={`${isMobile ? "10.4%" : "2.6%"}`}
+            left="5%"
+          />
         </ParallaxLayer>
         <ParallaxLayer offset={2.95} speed={-0.55}>
-          <Dot color="red" width="4.3%" left="50%" />
+          <Dot
+            color="red"
+            width={`${isMobile ? "17.2%" : "4.3%"}`}
+            left="50%"
+          />
         </ParallaxLayer>
         <ParallaxLayer offset={2.05} speed={1}>
-          <Dot color="butter" width="10%" top="-10%" left="85%" />
+          <Dot
+            color="butter"
+            width={`${isMobile ? "40%" : "10%"}`}
+            top="-10%"
+            left="85%"
+          />
         </ParallaxLayer>
       </Parallax>
     </div>
