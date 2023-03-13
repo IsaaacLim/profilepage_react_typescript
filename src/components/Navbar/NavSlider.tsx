@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
-import { Handler, useDrag, Vector2 } from "@use-gesture/react";
+import { useDrag } from "@use-gesture/react";
 import { useNavigate } from "react-router-dom";
 import INav from "../../interfaces/navList";
 import isMobile from "../../lib/isMobile";
