@@ -1,9 +1,9 @@
 import React from "react";
-import NavSlider from "../components/Navbar/NavSlider";
+import NavSlider from "../layout/Navbar/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
-import Card from "../components/ImgCard";
-import SocialsBar from "../components/SocialsBar";
+import Card from "../layout/ImgCard";
+import SocialsBar from "../layout/SocialsBar";
 import ProfilePic from "../images/profile-pic.jpg";
 import FadeInDiv from "../components/FadeInDiv";
 

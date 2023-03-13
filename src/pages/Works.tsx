@@ -1,14 +1,14 @@
 import React from "react";
 import works from "../data/works";
-import NavSlider from "../components/Navbar/NavSlider";
+import NavSlider from "../layout/Navbar/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
-import SocialsBar from "../components/SocialsBar";
-import WorksDeck from "../components/Works/WorksDeck";
+import SocialsBar from "../layout/SocialsBar";
+import WorksDeck from "../layout/Works/WorksDeck";
 import FadeInDiv from "../components/FadeInDiv";
 import PugLife from "../images/pug-life.png";
 import isMobile from "../lib/isMobile";
-import WorksGrid from "../components/Works/WorksGrid";
+import WorksGrid from "../layout/Works/WorksGrid";
 
 const navListSmall: INav[] = [navLists[0], navLists[1]]; // home & about
 

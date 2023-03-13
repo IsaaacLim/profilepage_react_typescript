@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import FadeInDiv from "../components/FadeInDiv";
-import NavSlider from "../components/Navbar/NavSlider";
+import NavSlider from "../layout/Navbar/NavSlider";
 import INav from "../interfaces/navList";
 import navLists from "../data/navLists";
-import SocialsBar from "../components/SocialsBar";
+import SocialsBar from "../layout/SocialsBar";
 import HotAirBalloon from "../images/hot-air-balloon.svg";
 import Mountains from "../images/mountains.svg";
 import WorldTree from "../images/world-tree.svg";
@@ -273,7 +273,7 @@ const About = () => {
       </Parallax>
     </div>
   );
-}
+};
 
 /**
  * Helper function
