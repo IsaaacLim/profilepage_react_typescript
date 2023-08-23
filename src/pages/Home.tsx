@@ -23,10 +23,10 @@ const Home = () => {
             <h1>Isaac Lim</h1>
           </div>
           <p>
-            On a mission to becoming a
-            <span id="highlight"> Fullstack Developer</span>,<br />
-            with an interest in tasteful designs.
+            Master's in CS &<span id="highlight"> fullstack Developer</span>
           </p>
+          <p>Experienced in software houses and fintech</p>
+          <p>Passionate about problem-solving and design</p>
         </FadeInDiv>
         <div className="navbar" id="big">
           <NavSlider navItems={navListSmall} navSize="big">
