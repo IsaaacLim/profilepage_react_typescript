@@ -507,7 +507,6 @@ body,
 }
 .cards .img-placeholder img {
   width: 30vw;
-  pointer-events: none;
 }
 .cards .img-cover {
   position: absolute;
@@ -708,7 +707,7 @@ body,
     font-size: xx-large;
   }
   .home-cont .text p,
-  .home-cont .text span {
+.home-cont .text span {
     font-size: 16px;
   }
 }
